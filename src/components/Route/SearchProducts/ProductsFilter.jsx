@@ -1,5 +1,4 @@
-import InputRange from "react-input-range";
-import "react-input-range/lib/css/index.css";
+import { Slider } from "@react-spectrum/slider";
 
 import Checkbox from "./../../Checkbox/Checkbox";
 
@@ -23,9 +22,8 @@ export default function ProductsFilter({
   return (
     <>
       <div
-        className={`filter-widget w-full fixed lg:relative left-0 top-0 h-screen z-5 lg:h-auto overflow-y-scroll lg:overflow-y-auto bg-white px-[30px] pt-[40px] ${
-          className || ""
-        } `}
+        className={`filter-widget w-full fixed lg:relative left-0 top-0 h-screen z-5 lg:h-auto overflow-y-scroll lg:overflow-y-auto bg-white px-[30px] pt-[40px] ${className || ""
+          } `}
       >
         <div className="filter-subject-item pb-10 border-b border-qgray-border">
           <div className="subject-title mb-[30px]">
@@ -86,12 +84,11 @@ export default function ProductsFilter({
             <h1 className="text-black text-base font-500">Price Range</h1>
           </div>
           <div className="price-range mb-5">
-            <InputRange
-              draggableTrack
-              maxValue={50000000}
-              minValue={0}
+  
+            <Slider
               value={volume}
-              onChange={volumeHandler}
+              minValue={0}
+              maxValue={50000000}
             />
           </div>
           <p className="text-xs text-qblack font-400">
@@ -147,51 +144,46 @@ export default function ProductsFilter({
             <div className="flex space-x-[5px] flex-wrap">
               <span
                 onClick={() => filterstorage("64GB")}
-                className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${
-                  storage === "64GB"
-                    ? "bg-qyellow text-qblack border-none"
-                    : " text-qgray "
-                }`}
+                className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${storage === "64GB"
+                  ? "bg-qyellow text-qblack border-none"
+                  : " text-qgray "
+                  }`}
               >
                 64GB
               </span>
               <span
                 onClick={() => filterstorage("128GB")}
-                className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${
-                  storage === "128GB"
-                    ? "bg-qyellow text-qblack border-none"
-                    : " text-qgray "
-                }`}
+                className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${storage === "128GB"
+                  ? "bg-qyellow text-qblack border-none"
+                  : " text-qgray "
+                  }`}
               >
                 128GB
               </span>
               <span
                 onClick={() => filterstorage("256GB")}
-                className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${
-                  storage === "256GB"
-                    ? "bg-qyellow text-qblack border-none"
-                    : " text-qgray "
-                }`}
+                className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${storage === "256GB"
+                  ? "bg-qyellow text-qblack border-none"
+                  : " text-qgray "
+                  }`}
               >
                 256GB
               </span>
               <span
                 onClick={() => filterstorage("512GB")}
-                className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${
-                  storage === "512GB"
-                    ? "bg-qyellow text-qblack border-none"
-                    : " text-qgray "
-                }`}
+                className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${storage === "512GB"
+                  ? "bg-qyellow text-qblack border-none"
+                  : " text-qgray "
+                  }`}
               >
                 512GB
               </span>
               <span
                 onClick={() => filterstorage("1024GB")}
-                className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${
-                  storage === "1024GB"
-                    ? "bg-qyellow text-qblack border-none"
-                    : " text-qgray "
-                }`}
+                className={` font-400 border border-qgray-border text-xs px-[14px] py-[6px] cursor-pointer mb-[5px] ${storage === "1024GB"
+                  ? "bg-qyellow text-qblack border-none"
+                  : " text-qgray "
+                  }`}
               >
                 1024GB
               </span>
@@ -204,7 +196,7 @@ export default function ProductsFilter({
           </div>
           <div className="filter-items">
             <ul>
-            {sizes.map((size) => (
+              {sizes.map((size) => (
                 <li className="item flex justify-between items-center mb-5">
                   <div className="flex space-x-[14px] items-center">
                     <div>
