@@ -10,7 +10,7 @@ import styles from "../../styles/styles";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsShop } from "../../redux/actions/product";
 import Ratings from "./Ratings";
-import { backend_url, server } from "../../server";
+import { server } from "../../server";
 import {
   addToWishlist,
   removeFromWishlist,
@@ -18,7 +18,6 @@ import {
 import { toast } from "react-toastify";
 import { addTocart } from "../../redux/actions/cart";
 import axios from "axios";
-import { sizeData } from "../../static/data";
 
 const ProductDetails = ({ data,sizesData }) => {
   const { wishlist } = useSelector((state) => state.wishlist);

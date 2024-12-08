@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import {
   LoginPage,
@@ -20,7 +19,7 @@ import {
   UserInbox,
 } from "./Routes.js";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { server } from "./server.js";
@@ -28,7 +27,6 @@ import Store from "./redux/store.js";
 import { loadSeller, loadUser } from "./redux/actions/user.js";
 import ProfilePage from "./pages/ProfilePage.jsx";
 import ProtectedRoute from "./routes/ProtectedRoute.js";
-import { useSelector } from "react-redux";
 import ShopCreatePage from "./pages/ShopCreate.jsx";
 import SellerActivationPage from "./pages/SellerActivationPage.jsx";
 import ShopLoginPage from "./pages/ShopLoginPage.jsx";

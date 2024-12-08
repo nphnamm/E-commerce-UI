@@ -4,7 +4,7 @@ import EventCard from './EventCard'
 import { useSelector } from 'react-redux';
 
 const Events = () => {
-  const {allEvents,isLoading} = useSelector((state) => state.events);  
+  const {allEvents} = useSelector((state) => state.events);  
 
   return (
     <div>

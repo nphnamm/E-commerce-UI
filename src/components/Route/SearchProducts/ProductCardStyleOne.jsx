@@ -5,7 +5,6 @@ import formatPrice from "../../../utils/formatPrice";
 export default function ProductCardStyleOne({ datas, type }) {
   const [isHovered, setIsHovered] = useState(false);
   console.log("product item", datas);
-  const available = (datas?.stock / (datas?.stock + datas?.sold_out)) * 100;
   const originalPrice = formatPrice(datas.originalPrice);
   const discountPrice = formatPrice(datas.discountPrice);
   console.log('price', originalPrice);

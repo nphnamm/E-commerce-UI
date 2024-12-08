@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Banner1 from "../../../Assests/images/banner-1.png";
 import Banner2 from "../../../Assests/images/banner-2.png";
 import Banner3 from "../../../Assests/images/banner-3.png";
-import { Link } from "react-router-dom";
 
 const Slider = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -2,14 +2,15 @@ import axios from "axios";
 import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 import { backend_url, server } from "../../server";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
 import styles from "../../styles/styles";
 import { TfiGallery } from "react-icons/tfi";
 import socketIO from "socket.io-client";
-import { format } from 'timeago.js';
-
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime'; // Import plugin
+dayjs.extend(relativeTime); 
 const ENDPOINT = "https://e-commerce-socket-s6ww.onrender.com/10000";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
@@ -273,7 +274,7 @@ const MessageList = ({
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const userId = data.members.find((user) => user != me);
+    const userId = data.members.find((user) => user !== me);
 
     const getUser = async () => {
       try {
@@ -393,7 +394,7 @@ const SellerInbox = ({
                     </div>
 
                     <p className="text-[12px] text-[#000000d3] pt-1">
-                      {format(item.createdAt)}
+                      {dayjs(item.createdAt)}
                     </p>
                   </div>
                 )}

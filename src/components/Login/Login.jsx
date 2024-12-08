@@ -11,7 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
-  const { isAuthenticated, user } = useSelector((state) => state.user);
+  const { isAuthenticated } = useSelector((state) => state.user);
   useEffect(() => {
     if (isAuthenticated) {
       navigate("/"); // Điều hướng về trang chủ nếu đã đăng nhập

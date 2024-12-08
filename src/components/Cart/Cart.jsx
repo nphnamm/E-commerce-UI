@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addTocart, removeFromCart } from "../../redux/actions/cart";
-import { backend_url } from "../../server";
 
 const Cart = ({ setOpenCart }) => {
   const { cart } = useSelector((state) => state.cart);
@@ -99,7 +98,6 @@ const Cart = ({ setOpenCart }) => {
 const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
   const [value, setValue] = useState(data.qty);
   const totalPrice = data.discountPrice * value;
-  const [editedName, setEditedName] = useState("");
   const increment = (data) => {
     if (data.stock < value) {
       toast.error("Product stock limited");
@@ -114,13 +112,7 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
     const updateCartData = { ...data, qty: value === 1 ? 1 : value - 1 };
     quantityChangeHandler(updateCartData);
   };
-  function truncateText(text, maxLength) {
-    if (text.length > maxLength) {
-      return text.substring(0, maxLength) + "...";
-    } else {
-      return text;
-    }
-  }
+
 
   return (
     <div className="border-b p-4">

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../../styles/styles";
 import { useSelector } from "react-redux";
-import ProductCard from "../ProductCard/ProductCard";
 import { brandingData } from "../../../static/data";
 const Category = () => {
-  const [data, setData] = useState([]);
   const { allProducts } = useSelector((state) => state.products);
   useEffect(() => {
     const allProductsData = allProducts ? [...allProducts] : [];

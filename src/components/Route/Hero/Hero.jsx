@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../../../styles/styles";
 import { Link } from "react-router-dom";
-import Slider from "./Slider";
 
 function Hero() {
   return (

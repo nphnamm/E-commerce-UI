@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import ProductsFilter from "./ProductsFilter";
-import { useDispatch, useSelector } from "react-redux";
 import Banner3 from "../../../Assests/images/banner-3.png";
 import DataIteration from "./DataIteration";
 import ProductCardStyleOne from "./ProductCardStyleOne";

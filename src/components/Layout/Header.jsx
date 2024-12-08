@@ -2,25 +2,23 @@ import React, { useState } from "react";
 import styles from "../../styles/styles";
 import { Link } from "react-router-dom";
 import {
-  AiOutlineSearch,
+
   AiOutlineHeart,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 
-import { productData } from "../../static/data";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { categoriesData } from "./../../static/data";
 import DropDown from "./DropDown";
 import Navbar from "./Navbar";
 import { useSelector } from "react-redux";
-import { backend_url } from "../../server";
 import Cart from "../Cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
 import { RxCross1 } from "react-icons/rx";
 import { useTranslation } from "react-i18next";
-import { Menu, MenuItem, Button, ListItemIcon, ListItemText } from '@mui/material';
+import { Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 import { ArrowDropDown } from '@mui/icons-material';
 import LanguageIcon from '@mui/icons-material/Language';
 import logoVi from '../../Assests/images/vietnamese.png';

@@ -30,7 +30,6 @@ const CreateEvent = () => {
 
     const minEndDate = new Date(startDate.getTime() + 1 * 24 * 60 * 60 * 1000);
     // console.log('min data', minEndDate);
-    const today = new Date();
     // console.log('today',today.getTime());
     // console.log('startDate',startDate.getTime());
 

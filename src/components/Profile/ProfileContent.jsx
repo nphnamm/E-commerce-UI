@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { backend_url, server } from "../../server";
+import {  server } from "../../server";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "../../styles/styles";
 import { DataGrid } from "@mui/x-data-grid";
@@ -30,9 +30,6 @@ const ProfileContent = ({ active }) => {
   const [email, setEmail] = useState(user && user.email);
   const [phoneNumber, setPhoneNumber] = useState(user && user.phoneNumber);
   const [password, setPassword] = useState("");
-  const [zipCode, setZipCode] = useState();
-  const [address1, setAddress1] = useState();
-  const [address2, setAddress2] = useState();
   const dispatch = useDispatch();
   const [avatar, setAvatar] = useState();
 

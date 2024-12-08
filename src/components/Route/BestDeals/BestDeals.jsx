@@ -5,20 +5,7 @@ import ProductCard from "../ProductCard/ProductCard";
 const BestDeals = () => {
   const [data, setData] = useState([]);
   const { allProducts } = useSelector((state) => state.products);
-  const getUniqueProductsByTag = (products) => {
-    const productMap = new Map();
-    
-    products.forEach(product => {
-      const tags = product.tags.split(','); // nếu có nhiều tag
-      tags.forEach(tag => {
-        if (!productMap.has(tag)) {
-          productMap.set(tag, product); // Chỉ lưu sản phẩm đầu tiên của mỗi tag
-        }
-      });
-    });
-  
-    return Array.from(productMap.values()); // Trả về các sản phẩm duy nhất
-  };
+
   
   useEffect(() => {
     const allProductsData = allProducts ? [...allProducts] : [];

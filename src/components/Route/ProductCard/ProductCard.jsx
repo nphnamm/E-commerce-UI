@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "../../../styles/styles";
 import {
   AiFillHeart,
-  AiOutlineEye,
+  
   AiOutlineHeart,
-  AiOutlineShoppingCart,
+  
 } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import ProductDetailsCard from "../ProductDetailsCard/ProductDetailsCard";
 import Ratings from "../../Products/Ratings";
 import { toast } from "react-toastify";
 import {
@@ -16,14 +15,11 @@ import {
   removeFromWishlist,
 } from "../../../redux/actions/wishlist";
 import { addTocart } from "../../../redux/actions/cart";
-import { backend_url } from "../../../server";
 
 const ProductCard = ({ data, isEvent }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
   const [click, setClick] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [imgSrc, setImgSrc] = useState("Invalid Image Source");
 
   const dispatch = useDispatch();
 
@@ -62,7 +58,6 @@ const ProductCard = ({ data, isEvent }) => {
     }
   };
   const d = data.name;
-  const product_name = d.replace(/\s+/g, "-");
   // console.log("product from db  ", data);
   return (
     //TODO: Full width is 253
