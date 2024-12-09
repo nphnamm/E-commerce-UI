@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { brandingData } from "../../../static/data";
 const Category = () => {
   const { allProducts } = useSelector((state) => state.products);
+  const [data, setData] = useState([]);
   useEffect(() => {
     const allProductsData = allProducts ? [...allProducts] : [];
     const sortedData = allProductsData?.sort((a, b) => b.sold_out - a.sold_out);

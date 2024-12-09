@@ -20,7 +20,7 @@ const ProductCard = ({ data, isEvent }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
   const [click, setClick] = useState(false);
-
+  const [imgSrc, setImgSrc] = useState("Invalid Image Source");
   const dispatch = useDispatch();
 
   useEffect(() => {
