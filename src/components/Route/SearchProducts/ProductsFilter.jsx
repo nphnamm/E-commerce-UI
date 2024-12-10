@@ -1,6 +1,9 @@
 import Slider from "@mui/material/Slider";
 
 import Checkbox from "./../../Checkbox/Checkbox";
+import { useState } from "react";
+import _ from "lodash";
+
 
 export default function ProductsFilter({
   selectedCategories,
@@ -19,6 +22,18 @@ export default function ProductsFilter({
   className,
 }) {
   console.log("brand", brands);
+
+  const [currentValue, setCurrentValue] = useState([0, 500000000]); // Giá trị trong khi thao tác
+  const [finalValue, setFinalValue] = useState([0, 500000000]); // Giá trị cuối cùng
+
+  const handleChange = (event, newValue) => {
+    setCurrentValue(newValue); // Cập nhật giá trị trong khi thao tác
+  };
+
+  const handleSliderChangeCommitted = _.debounce((newValue) => {
+    volumeHandler(newValue); // Gọi hàm từ cha để cập nhật giá trị
+  }, 1000); // 500ms chờ sau khi người dùng ngừng trượt
+
   return (
     <>
       <div
@@ -85,18 +100,15 @@ export default function ProductsFilter({
           </div>
           <div className="price-range mb-5">
 
+
             <Slider
-              value={volume}
-              minValue={0}
-              maxValue={50000000}
-            />
-            <Slider
-              defaultValue={[50000, 500000]}
-              value={volume}
+              value={[volume.min, volume.max]} // Giá trị được lấy từ cha
+              onChange={handleChange}
+              onChangeCommitted={handleSliderChangeCommitted}
               valueLabelDisplay="auto"
-              getAriaLabel={() => "Range slider"}
               min={0}
               max={50000000}
+
             />
           </div>
           <p className="text-xs text-qblack font-400">

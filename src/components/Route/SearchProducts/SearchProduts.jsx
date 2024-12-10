@@ -47,14 +47,16 @@ export default function SearchProducts({ allProducts }) {
   const [totalProduct, setTotalProduct] = useState(0);
   const [filterToggle, setToggle] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [volume, setVolume] = useState({ min: 0, max: 50000000 });
+  const [volume, setVolume] = useState({ min: 0, max: 500000000 });
   const [storage, setStorage] = useState(null);
 
   const filterStorage = (value) => {
     setStorage(value);
   };
   // console.log('volume', storage)
-
+  const volumeHandler = (newValue) => {
+    setVolume({ min: newValue[0], max: newValue[1] });
+  };
   const [filtersAPI, setFilterAPI] = useState({
     minPrice: null,
     maxPrice: null,
@@ -160,7 +162,7 @@ export default function SearchProducts({ allProducts }) {
                     }
                     handleCheckboxSizesChange={handleCheckboxSizesChange}
                     volume={volume}
-                    volumeHandler={(value) => setVolume(value)}
+                    volumeHandler={volumeHandler}
                     storage={storage}
                     filterstorage={filterStorage}
                     className="mb-[30px]"
