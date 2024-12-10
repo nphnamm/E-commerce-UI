@@ -62,12 +62,12 @@ const ProductCard = ({ data, isEvent }) => {
   return (
     //TODO: Full width is 253
     <>
-      <section className="text-center my-5 px-5 shadow-xl pb-5">
+      <section className="text-center my-5 px-5 shadow-xl pb-5 rounded-[10px]">
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
           {/* Product 1 */}
           <div className="col">
             <div className="card border-0 ">
-              <div className="group relative w-[100%] h-[320px] overflow-hidden  shadow-xl">
+              <div className="group relative w-[100%] h-[320px] overflow-hidden  shadow-xl rounded-[10px]">
                 <Link to={`/product/${data?._id}`}>
                   <img
                     src={data?.images[0]?.url}

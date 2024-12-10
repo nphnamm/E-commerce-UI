@@ -125,7 +125,7 @@ function Header({ activeHeading }) {
               <div className="h-[48px]">
                 <button
                   className="w-[93px] h-full text-sm font-600
-                bg-[#1868d5] text-white"
+                bg-[#22bba7] text-white"
                   type="button"
                 >
                   Search
@@ -177,7 +177,7 @@ function Header({ activeHeading }) {
 
       <div
         className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-          } transition hidden 800px:flex items-center justify-between w-full bg-[#1868d5] h-[70px]`}
+          } transition hidden 800px:flex items-center justify-between w-full bg-[#22bba7] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.normalFlex} justify-between`}

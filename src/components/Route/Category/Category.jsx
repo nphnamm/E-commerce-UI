@@ -4,11 +4,17 @@ import { useSelector } from "react-redux";
 import { brandingData, categoriesData } from "../../../static/data";
 import IconComponent from "../../Icons";
 import { useNavigate } from "react-router-dom";
+import { Slider } from "@mui/material";
+
+function valuetext(value) {
+  return `${value}°C`;
+}
 const Category = () => {
   const { allProducts } = useSelector((state) => state.products);
   const [data, setData] = useState([]);
   const filteredCategories = categoriesData.slice(10); // Starting from index 10 (category 11)
   const navigate = useNavigate(); // Sử dụng useNavigate để điều hướng
+  const [value, setValue] = useState([20, 37]);
 
   // Split into two arrays
   const categories1 = filteredCategories.slice(0, 8); // First 8 items
@@ -22,6 +28,9 @@ const Category = () => {
   }, []);
   const handleCategoryClick = (categoryId) => {
     navigate(`/search?category=${categoryId}`); // Điều hướng đến route
+  };
+  const handleChange = (event, newValue) => {
+    setValue(newValue );
   };
 
   // Chia các category thành nhóm (mỗi nhóm 8 phần tử)
@@ -109,6 +118,13 @@ const Category = () => {
             </div>
           </div>
         </>
+        <Slider
+        getAriaLabel={() => 'Temperature range'}
+        value={value}
+        onChange={handleChange}
+        valueLabelDisplay="auto"
+        getAriaValueText={valuetext}
+      />
       </div>
     </div>
   );

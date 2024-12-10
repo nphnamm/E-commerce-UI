@@ -47,16 +47,21 @@ export default function SearchProducts({ allProducts }) {
   const [totalProduct, setTotalProduct] = useState(0);
   const [filterToggle, setToggle] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [volume, setVolume] = useState({ min: 0, max: 500000000 });
+  const [volume, setVolume] = useState([0,500000]);
   const [storage, setStorage] = useState(null);
+  const totalPages = Math.ceil(totalProduct / pageSize);
+  const [volum1, setVolum1] = useState([0,500000]);
 
   const filterStorage = (value) => {
     setStorage(value);
   };
   // console.log('volume', storage)
-  const volumeHandler = (newValue) => {
-    setVolume({ min: newValue[0], max: newValue[1] });
-  };
+  // const volumeHandler = (newValue) => {
+  //   setVolume({ min: newValue[0], max: newValue[1] });
+    
+  // };
+
+
   const [filtersAPI, setFilterAPI] = useState({
     minPrice: null,
     maxPrice: null,
@@ -69,18 +74,7 @@ export default function SearchProducts({ allProducts }) {
 
   // console.log('all products',allProducts)
 
-  // Cập nhật `filtersAPI.category` khi `selectedCategories` thay đổi
-  useEffect(() => {
-    setFilterAPI((prev) => ({
-      ...prev,
-      category: selectedCategories.length > 0 ? selectedCategories : null,
-      brand: selectedBrands.length > 0 ? selectedBrands : null,
-      size: selectedSizes.length > 0 ? selectedSizes : null,
-      minPrice: volume.min,
-      maxPrice: volume.max,
-      storage: storage,
-    }));
-  }, [selectedCategories, selectedBrands, volume, storage, selectedSizes]);
+
 
   const handleCheckboxCategoriesChange = (title) => {
     setSelectedCategories((prevSelected) =>
@@ -129,13 +123,24 @@ export default function SearchProducts({ allProducts }) {
       setLoading(false);
     }
   }, [filtersAPI, pageNumber, pageSize]);
+  // Cập nhật `filtersAPI.category` khi `selectedCategories` thay đổi
+  useEffect(() => {
+    setFilterAPI((prev) => ({
+      ...prev,
+      category: selectedCategories.length > 0 ? selectedCategories : null,
+      brand: selectedBrands.length > 0 ? selectedBrands : null,
+      size: selectedSizes.length > 0 ? selectedSizes : null,
+      minPrice: volume[0],
+      maxPrice: volume[1],
+      storage: storage,
+    }));
+  }, [selectedCategories, selectedBrands,volume, storage, selectedSizes]);
 
   useEffect(() => {
     fetchProducts();
-  }, [fetchProducts]);
-  const totalPages = Math.ceil(totalProduct / pageSize);
+  }, [filtersAPI]);
 
-
+  console.log('value', volum1);
   return (
     allProducts && (
       <>
@@ -162,7 +167,7 @@ export default function SearchProducts({ allProducts }) {
                     }
                     handleCheckboxSizesChange={handleCheckboxSizesChange}
                     volume={volume}
-                    volumeHandler={volumeHandler}
+                    volumeHandler={(value) => setVolume(value)}
                     storage={storage}
                     filterstorage={filterStorage}
                     className="mb-[30px]"

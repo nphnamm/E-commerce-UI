@@ -1,7 +1,7 @@
-import Slider from "@mui/material/Slider";
+import { Slider } from "@mui/material";
 
 import Checkbox from "./../../Checkbox/Checkbox";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import _ from "lodash";
 
 
@@ -21,18 +21,11 @@ export default function ProductsFilter({
   filterstorage,
   className,
 }) {
-  console.log("brand", brands);
-
-  const [currentValue, setCurrentValue] = useState([0, 500000000]); // Giá trị trong khi thao tác
-  const [finalValue, setFinalValue] = useState([0, 500000000]); // Giá trị cuối cùng
+  // console.log('volume',volume)
 
   const handleChange = (event, newValue) => {
-    setCurrentValue(newValue); // Cập nhật giá trị trong khi thao tác
+    volumeHandler(newValue);
   };
-
-  const handleSliderChangeCommitted = _.debounce((newValue) => {
-    volumeHandler(newValue); // Gọi hàm từ cha để cập nhật giá trị
-  }, 1000); // 500ms chờ sau khi người dùng ngừng trượt
 
   return (
     <>
@@ -100,25 +93,41 @@ export default function ProductsFilter({
           </div>
           <div className="price-range mb-5">
 
+            {/* 
+            <Slider
+                value={value} // Giá trị được lấy từ cha
+                onChange={handleChangeCommitted}
+                valueLabelDisplay="auto"
+                max={500000000}
+                min={0}
+
+              /> */}
 
             <Slider
-              value={[volume.min, volume.max]} // Giá trị được lấy từ cha
-              onChange={handleChange}
-              onChangeCommitted={handleSliderChangeCommitted}
-              valueLabelDisplay="auto"
+              value={volume}
+              onChangeCommitted={handleChange}
+              
+              max={500000000}
               min={0}
-              max={50000000}
-
             />
+
+
+            {/* <Slider
+              getAriaLabel={() => 'Temperature range'}
+              value={value}
+              onChange={handleChange}
+              valueLabelDisplay="auto"
+              getAriaValueText={valuetext}
+            /> */}
           </div>
           <p className="text-xs text-qblack font-400">
             Price:
-            {parseInt(volume.min).toLocaleString("vi-VN", {
+            {parseInt(volume[0]).toLocaleString("vi-VN", {
               style: "currency",
               currency: "VND",
             })}{" "}
             -{" "}
-            {parseInt(volume.max).toLocaleString("vi-VN", {
+            {parseInt(volume[1]).toLocaleString("vi-VN", {
               style: "currency",
               currency: "VND",
             })}

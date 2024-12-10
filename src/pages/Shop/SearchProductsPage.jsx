@@ -14,7 +14,7 @@ function SearchProductsPage() {
 
     }
 
-  },[dispatch,allProducts])
+  },[allProducts])
   
   return (
     <div>
