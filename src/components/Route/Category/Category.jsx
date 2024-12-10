@@ -63,7 +63,7 @@ const Category = () => {
       </div>
       <div className={`${styles.section}  mb-12`}>
         <div className={`${styles.heading}`}>
-          <h1>My Category</h1>
+          <h1 className="font-extrabold">My Category</h1>
         </div>
         <>
           <div className="categories-section-wrapper w-full">
@@ -98,7 +98,7 @@ const Category = () => {
 
                     >
                       <div className="w-full flex justify-center">
-                      <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center group-hover:bg-[#e6eeff] group-hover:text-[#e6eeff]">
+                      <div className="w-[80px] h-[80px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center group-hover:bg-[#e6eeff] group-hover:text-[#e6eeff]">
                       <span className="text-black ">
                             {/* Replace with your IconComponent */}
                             <IconComponent name={category.icon}/>
