@@ -116,7 +116,7 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
 
   return (
     <div className="border-b p-4">
-      <div className="w-full flex items-center">
+      <div className="w-full flex items-center bg-[#f7eeee] rounded-[10px] justify-between px-[15px]">
         <div>
           <div
             className={`bg-[#e44343] border border-[#e4434373] rounded-full w-[25px] h-[25px] ${styles.normalFlex} justify-center cursor-pointer`}
@@ -135,7 +135,7 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
         <img
           src={data?.images[0].url}
           alt=""
-          className="w-[130px] h-min ml-2 mr-2 rounded-[5px]"
+          className="w-[40px] h-min ml-2 mr-2 rounded-[5px]"
         />
         <div className="pl-[5px]">
           <h1>{data.name.substring(0, 20) + "..."}</h1>

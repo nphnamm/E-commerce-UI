@@ -1,4 +1,4 @@
-import { Slider } from "@react-spectrum/slider";
+import Slider from "@mui/material/Slider";
 
 import Checkbox from "./../../Checkbox/Checkbox";
 
@@ -84,11 +84,19 @@ export default function ProductsFilter({
             <h1 className="text-black text-base font-500">Price Range</h1>
           </div>
           <div className="price-range mb-5">
-  
+
             <Slider
               value={volume}
               minValue={0}
               maxValue={50000000}
+            />
+            <Slider
+              defaultValue={[50000, 500000]}
+              value={volume}
+              valueLabelDisplay="auto"
+              getAriaLabel={() => "Range slider"}
+              min={0}
+              max={50000000}
             />
           </div>
           <p className="text-xs text-qblack font-400">

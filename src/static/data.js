@@ -323,7 +323,7 @@ export const categoriesData = [
   {
     id: 12,
     title: "TV Cabinet",
-    icon:'Television',
+    icon:'TVCabinet',
     subTitle: "",
     image_Url:
       "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
@@ -355,7 +355,7 @@ export const categoriesData = [
   {
     id: 16,
     title: "Dressing Table",
-    icon:'DressignTable',
+    icon:'DressingTable',
     subTitle: "",
     image_Url:
       "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
@@ -419,7 +419,7 @@ export const categoriesData = [
   {
     id: 23,
     title: "Chest Drawers",
-    icon:'Television',
+    icon:'ChestDrawer',
     subTitle: "",
     image_Url:
       "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
