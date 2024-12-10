@@ -18,7 +18,7 @@ const ProfileSidebar = ({setActive,active}) => {
   const {user} = useSelector((state) => state.user);
 
     const navigate = useNavigate();
-    const logoutHandler = () => {
+    const logoutHandler = async() => {
       axios.get(`${server}/user/logout`,{withCredentials:true}).then((res)=>{
         toast.success(res.data.message);
         navigate("/login");

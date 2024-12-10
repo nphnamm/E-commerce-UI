@@ -50,6 +50,28 @@ export const loadSeller = () => async (dispatch) => {
   }
 };
 
+export const Loggout = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: "LogoutRequest",
+    });
+    const { data } = await axios.get(`${server}/logout`, {
+      withCredentials: true,
+    });
+    
+
+    dispatch({
+      type: "LogoutRequestSuccess",
+      payload: data.seller,
+    });
+  } catch (error) {
+    dispatch({
+      type: "LogoutRequestFail",
+      payload: error.response.data.message,
+    });
+  }
+};
+
 // user update information
 export const updateUserInformation =
   (name, email, phoneNumber, password) => async (dispatch) => {
