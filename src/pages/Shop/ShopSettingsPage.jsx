@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/Layout/Footer";
 import DashboardHeader from "../../components/Shop/Layout/DashboardHeader";
 import DashboardSideBar from "../../components/Shop/Layout/DashboardSidebar";
 import ShopSettings from "../../components/Shop/ShopSetting";

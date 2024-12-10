@@ -7,7 +7,6 @@ import { server } from "./../../server";
 import { toast } from "react-toastify";
 import { RxAvatar } from "react-icons/rx";
 const ShopCreate = () => {
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();

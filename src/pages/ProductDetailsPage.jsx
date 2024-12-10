@@ -5,8 +5,6 @@ import Footer from "../components/Layout/Footer";
 import SuggestedProduct from "../components/Products/SuggestedProduct";
 import ProductDetails from "../components/Products/ProductDetails";
 import { useSelector } from "react-redux";
-import axios from "axios";
-import { server } from "../server";
 
 const ProductDetailsPage = () => {
   const { allProducts } = useSelector((state) => state.products);
@@ -17,8 +15,6 @@ const ProductDetailsPage = () => {
   const { id } = useParams();
 
   const [data, setData] = useState(null);
-  const [searchParams] = useSearchParams();
-  const eventData = searchParams.get("isEvent");
 
   useEffect(() => {
     const data = allProducts && allProducts.find((i) => i._id === id);

@@ -26,7 +26,7 @@ function Navbar({ active }) {
               className={`${active === index + 1
                   ? "text-[#17dd1f]"
                   : "text-black 800px:text-[#fff]"
-                } pb-[30px] 800px:pb-0 font-[500] cursor-pointer font-[16px] `}
+                } pb-[30px] 800px:pb-0 font-[500] cursor-pointer font-[16px] hover:text-[#e6eeff]`}
             >
               {i.title}
             </Link>

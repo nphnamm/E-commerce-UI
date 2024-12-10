@@ -17,7 +17,7 @@ function DropDown({ categoriesData, setDropDown }) {
         categoriesData.map((i, index) => (
           <div
             key={index}
-            className={`${styles.normalFlex}`}
+            className={`${styles.normalFlex} hover:bg-[#e6eeff]`}
             onClick={() => submitHandle(i)}
           >
             {/* <img

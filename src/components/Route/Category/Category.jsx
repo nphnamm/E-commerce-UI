@@ -21,7 +21,7 @@ const Category = () => {
         {/* //TODO: my-12 is used to margin top and bottom 48px; rounded-md = 0.375rem = 6px; */}
         {/* //TODO: Justify-between is used to align four elements  */}
 
-        <div className={`branding my-12 flex justify-between w-full shadow-sm bg-white p-5 rounded-md`}>
+        <div className={`branding my-12 flex justify-between w-full shadow-sm bg-white p-5 rounded-md shadow-xl`}>
             {brandingData && brandingData.map((i,index)=>(
                 // TODO: items-start is used to align item following vertical <=> aligins-item:start # justify-content:center
                 <div className='flex items-start ' key={index}>
@@ -48,7 +48,7 @@ const Category = () => {
             <div className="grid xl:grid-cols-8 sm:grid-cols-4 grid-cols-2 gap-10 mb-[46px]">
               <div className="item w-full group cursor-pointer">
                 <div className="w-full flex justify-center">
-                  <div className="w-[110px] h-[110px] rounded-full bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
+                  <div className="w-[110px] h-[110px] rounded-full hover:bg-[#e6eeff] bg-[#EEF1F1] group-hover:bg-qh2-green mb-2.5 flex justify-center items-center">
                     <span className="text-qblack group-hover:text-white">
                       <svg
                         className="fill-current"

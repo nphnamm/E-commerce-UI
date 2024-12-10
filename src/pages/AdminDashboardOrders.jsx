@@ -8,7 +8,7 @@ import AdminSideBar from "../components/Admin/Layout/AdminSideBar";
 const AdminDashboardOrders = () => {
   const dispatch = useDispatch();
 
-  const { adminOrders, adminOrderLoading } = useSelector(
+  const { adminOrders } = useSelector(
     (state) => state.order
   );
 
