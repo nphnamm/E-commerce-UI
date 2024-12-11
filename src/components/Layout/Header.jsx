@@ -185,7 +185,8 @@ function Header({ activeHeading }) {
           {/*Categories*/}
 
           <div
-            onClick={() => setDropDown(!dropDown)}
+              onMouseEnter={() => setDropDown(true)} // Hiển thị dropdown khi hover vào
+              onMouseLeave={() => setDropDown(false)} // Ẩn dropdown khi rời chuột
             className="relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block"
           >
             <BiMenuAltLeft size={30} className="absolute top-3 left-2" />
@@ -199,8 +200,8 @@ function Header({ activeHeading }) {
             />
             {dropDown && (
               <div
-                className="max-h-[500px]
-             overflow-hidden transition-transform duration-1000"
+                className="h-[500px]
+             overflow-hidden transition-height duration-300"
               >
                 <DropDown
                   categoriesData={limitedCategoriesData}

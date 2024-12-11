@@ -150,7 +150,7 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
         <img
           src={data?.images[0].url}
           alt=""
-          className="w-[40px] h-min ml-2 mr-2 rounded-[5px]"
+          className="w-[65px] h-min ml-2 mr-2 rounded-[5px]"
         />
         <div className="pl-[5px]">
           <h1>{data.name.substring(0, 20) + "..."}</h1>

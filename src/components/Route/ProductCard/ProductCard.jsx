@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import styles from "../../../styles/styles";
 import {
   AiFillHeart,
-  
+
   AiOutlineHeart,
-  
+
 } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import Ratings from "../../Products/Ratings";
@@ -93,7 +93,7 @@ const ProductCard = ({ data, isEvent }) => {
 
                 <h4
                   onClick={() => addToCartHandler(data._id)}
-                  className="relative top-[320px] text-center p-2.5 bg-[#fdfdfd] transition-all duration-200 ease-custom mx-2.5 uppercase font-medium text-sm z-30 cursor-pointer group-hover:top-[270px]"
+                  className="relative top-[320px] rounded-[4px] text-center p-2.5 bg-[#fdfdfd] transition-all duration-200 ease-custom mx-2.5 uppercase font-medium text-sm z-30 cursor-pointer group-hover:top-[270px] hover:bg-[#e0e0e0]"
                 >
                   Add to cart
                 </h4>
@@ -127,20 +127,20 @@ const ProductCard = ({ data, isEvent }) => {
                   <h5 className={`${styles.productDiscountPrice} `}>
                     {data.originalPrice === 0
                       ? parseInt(data.originalPrice).toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        })
+                        style: "currency",
+                        currency: "VND",
+                      })
                       : parseInt(data.discountPrice).toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        })}
+                        style: "currency",
+                        currency: "VND",
+                      })}
                   </h5>
                   <h4 className={`${styles.price}`}>
                     {data.originalPrice
                       ? parseInt(data.originalPrice).toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        })
+                        style: "currency",
+                        currency: "VND",
+                      })
                       : null}
                   </h4>
                 </div>{" "}
