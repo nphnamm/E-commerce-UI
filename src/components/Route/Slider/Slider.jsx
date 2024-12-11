@@ -8,9 +8,9 @@ const Slider = ({ className }) => {
 
   const slides = [
     {
-      image: Banner1, // Đường dẫn đến hình đầu tiên
-      title: "VR BOX 3D Glass",
-      description: "Explore Our Tech Collection Perfect Gadget",
+      image: Banner3, // Đường dẫn đến hình thứ ba
+      title: "Virtual Reality Gear",
+      description: "Experience Immersive VR",
       buttonText: "Shop Now",
     },
     {
@@ -20,11 +20,13 @@ const Slider = ({ className }) => {
       buttonText: "Shop Now",
     },
     {
-      image: Banner3, // Đường dẫn đến hình thứ ba
-      title: "Virtual Reality Gear",
-      description: "Experience Immersive VR",
+      image: Banner1, // Đường dẫn đến hình đầu tiên
+      title: "VR BOX 3D Glass",
+      description: "Explore Our Tech Collection Perfect Gadget",
       buttonText: "Shop Now",
     },
+
+
   ];
 
   const handlePrevSlide = () => {
