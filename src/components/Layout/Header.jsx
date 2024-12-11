@@ -53,7 +53,7 @@ function Header({ activeHeading }) {
 
 
 
-  const changeLanguage = (lng,index) => {
+  const changeLanguage = (lng, index) => {
     i18n.changeLanguage(lng);
     setLanguage(lng);
     setSelectedIndex(index);
@@ -63,6 +63,11 @@ function Header({ activeHeading }) {
 
   const handleSearchChange = (e) => {
     const term = e.target.value;
+    if(term.length == 0){
+      setSearchData(null);
+      setSearchTerm(term);
+      return;
+    }
     setSearchTerm(term);
     const filteredProducts =
       allProducts &&
@@ -101,6 +106,8 @@ function Header({ activeHeading }) {
                 src="https://shopo.quomodothemes.website/assets/images/logo.svg"
                 alt="logo"
                 className="w-[100px]"
+                style={{ filter: "brightness(0) invert(0)" }}
+
               />
             </Link>
           </div>
@@ -108,24 +115,43 @@ function Header({ activeHeading }) {
                       // ! use relative class to customize the position of elements in the search box
   
                   */}
-          <div className="w-[50%] relative">
-            <div className={`w-full h-full flex items-center justify-between`}>
-              <div className="w-[100%]">
-                <form action="#" className="h-full">
+          <div className="w-[50%] ">
+            <div className={`w-full h-full flex items-center justify-between gap-4`}>
+              <div className="w-[100%] relative">
+                <form action="#" className="h-full ">
                   <input
                     type="text"
-                    className="search-input pl-5 h-[48px] w-full border border-qgray-border bg-white flex-1"
+                    className="search-input pl-5 h-[48px] w-full border border-qgray-border bg-white flex-1 rounded-[10px] focus:border-[#22bba7] focus:ring-2 focus:ring-[#22bba7] focus:outline-none transition-all duration-300"
                     placeholder="Search Product..."
                     onChange={handleSearchChange}
                     value={searchTerm}
                   />
                 </form>
+                {searchData && searchData.length !== 0 ? (
+                  <div className="absolute min-h-[30vh] min-w-full bg-white shadow-3xl z-[1000] p-4 mt-2 rounded-[10px]">
+                    {searchData &&
+                      searchData.map((i, index) => {
+                        return (
+                          <Link to={`/product/${i._id}`}>
+                            <div className="w-full flex items-start py-3 hover:bg-[#ebeff4] rounded-[10px] shadow-2xl border-neutral-400 mb-2 p-2 ">
+                              <img
+                                src={i.images[0].url}
+                                alt=""
+                                className="w-[40px] h-[40px] mr-[10px]"
+                              />
+                              <h1>{i.name}</h1>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                  </div>
+                ) : null}
               </div>
 
               <div className="h-[48px]">
                 <button
                   className="w-[93px] h-full text-sm font-600
-                bg-[#22bba7] text-white"
+                bg-[#22bba7] text-white rounded-[10px]"
                   type="button"
                 >
                   Search
@@ -133,25 +159,7 @@ function Header({ activeHeading }) {
               </div>
             </div>
 
-            {searchData && searchData.length !== 0 ? (
-              <div className="absolute min-h-[30vh] min-w-full bg-slate-50 shadow-sm-2 z-[1000] p-4 hover:">
-                {searchData &&
-                  searchData.map((i, index) => {
-                    return (
-                      <Link to={`/product/${i._id}`}>
-                        <div className="w-full flex items-start py-3 hover:bg-slate-300   border-b-2 border-neutral-400 mb-2 ">
-                          <img
-                            src={i.images[0].url}
-                            alt=""
-                            className="w-[40px] h-[40px] mr-[10px]"
-                          />
-                          <h1>{i.name}</h1>
-                        </div>
-                      </Link>
-                    );
-                  })}
-              </div>
-            ) : null}
+
           </div>
           <div className={`${styles.button}`}>
             <Link
@@ -185,8 +193,8 @@ function Header({ activeHeading }) {
           {/*Categories*/}
 
           <div
-              onMouseEnter={() => setDropDown(true)} // Hiển thị dropdown khi hover vào
-              onMouseLeave={() => setDropDown(false)} // Ẩn dropdown khi rời chuột
+            onMouseEnter={() => setDropDown(true)} // Hiển thị dropdown khi hover vào
+            onMouseLeave={() => setDropDown(false)} // Ẩn dropdown khi rời chuột
             className="relative h-[60px] mt-[10px] w-[270px] hidden 1000px:block"
           >
             <BiMenuAltLeft size={30} className="absolute top-3 left-2" />
@@ -290,10 +298,10 @@ function Header({ activeHeading }) {
                 }}
               >
                 {Object.keys(languageMap).map((lang, index) => (
-                  <MenuItem 
-                  key={lang} 
-                  onClick={() => changeLanguage(lang,index)}
-                  selected={index === selectedIndex}
+                  <MenuItem
+                    key={lang}
+                    onClick={() => changeLanguage(lang, index)}
+                    selected={index === selectedIndex}
 
                   >
                     <ListItemIcon>
@@ -381,7 +389,7 @@ function Header({ activeHeading }) {
                   value={searchTerm}
                   onChange={handleSearchChange}
                 />
-                {searchData && (
+                {searchData && searchTerm.length() > 0 && (
                   <div className="absolute bg-[#fff] z-10 shadow w-full left-0 p-3">
                     {searchData.map((i) => {
                       const d = i.name;
