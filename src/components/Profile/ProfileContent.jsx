@@ -126,20 +126,20 @@ const ProfileContent = ({ active }) => {
             <form onSubmit={handleSubmit} aria-required={true}>
               <div className="w-full 800px:flex block pb-3">
                 <div className=" w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Full Name</label>
+                  <label className="block pb-2 font-bold">Full Name</label>
                   <input
                     type="text"
-                    className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
+                    className={`${styles.input} !w-[95%] mb-4 800px:mb-0 rounded-[10px] h-[48px]`}
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div className=" w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Email Address</label>
+                  <label className="block pb-2 font-bold">Email Address</label>
                   <input
                     type="text"
-                    className={`${styles.input} !w-[95%] mb-1 800px:mb-0`}
+                    className={`${styles.input} !w-[95%] mb-1 800px:mb-0 rounded-[10px] h-[48px]`}
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -148,10 +148,10 @@ const ProfileContent = ({ active }) => {
               </div>
               <div className="w-full 800px:flex block pb-3">
                 <div className="w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Phone Number</label>
+                  <label className="block pb-2 font-bold">Phone Number</label>
                   <input
                     type="text"
-                    className={`${styles.input} !w-[95%]`}
+                    className={`${styles.input} !w-[95%] rounded-[10px] h-[48px]`}
                     required
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
@@ -159,10 +159,10 @@ const ProfileContent = ({ active }) => {
                 </div>
 
                 <div className=" w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Enter your password</label>
+                  <label className="block pb-2 font-bold">Enter your password</label>
                   <input
                     type="password"
-                    className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
+                    className={`${styles.input} !w-[95%] mb-4 800px:mb-0 rounded-[10px] h-[48px]`}
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -499,7 +499,7 @@ const ChangePassword = () => {
           className="flex flex-col items-center"
         >
           <div className=" w-[100%] 800px:w-[50%] mt-5">
-            <label className="block pb-2">Enter your old password</label>
+            <label className="block pb-2 font-bold">Enter your old password</label>
             <input
               type="password"
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -509,7 +509,7 @@ const ChangePassword = () => {
             />
           </div>
           <div className=" w-[100%] 800px:w-[50%] mt-2">
-            <label className="block pb-2">Enter your new password</label>
+            <label className="block pb-2 font-bold">Enter your new password</label>
             <input
               type="password"
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -519,7 +519,7 @@ const ChangePassword = () => {
             />
           </div>
           <div className=" w-[100%] 800px:w-[50%] mt-2">
-            <label className="block pb-2">Enter your confirm password</label>
+            <label className="block pb-2 font-bold">Enter your confirm password</label>
             <input
               type="password"
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -613,7 +613,7 @@ const Address = () => {
               <form aria-required onSubmit={handleSubmit} className="w-full">
                 <div className="w-full block p-4">
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Country</label>
+                    <label className="block pb-2 font-bold">Country</label>
                     <select
                       name=""
                       id=""
@@ -627,7 +627,7 @@ const Address = () => {
                       {Country &&
                         Country.getAllCountries().map((item) => (
                           <option
-                            className="block pb-2"
+                            className="block pb-2 font-bold"
                             key={item.isoCode}
                             value={item.isoCode}
                           >
@@ -638,7 +638,7 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Choose your City</label>
+                    <label className="block pb-2 font-bold">Choose your City</label>
                     <select
                       name=""
                       id=""
@@ -652,7 +652,7 @@ const Address = () => {
                       {State &&
                         State.getStatesOfCountry(country).map((item) => (
                           <option
-                            className="block pb-2"
+                            className="block pb-2 font-bold"
                             key={item.isoCode}
                             value={item.isoCode}
                           >
@@ -663,7 +663,7 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Address 1</label>
+                    <label className="block pb-2 font-bold">Address 1</label>
                     <input
                       type="address"
                       className={`${styles.input}`}
@@ -673,7 +673,7 @@ const Address = () => {
                     />
                   </div>
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Address 2</label>
+                    <label className="block pb-2 font-bold">Address 2</label>
                     <input
                       type="address"
                       className={`${styles.input}`}
@@ -684,7 +684,7 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Zip Code</label>
+                    <label className="block pb-2 font-bold">Zip Code</label>
                     <input
                       type="number"
                       className={`${styles.input}`}
@@ -695,7 +695,7 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2">Address Type</label>
+                    <label className="block pb-2 font-bold">Address Type</label>
                     <select
                       name=""
                       id=""
@@ -709,7 +709,7 @@ const Address = () => {
                       {addressTypeData &&
                         addressTypeData.map((item) => (
                           <option
-                            className="block pb-2"
+                            className="block pb-2 font-bold"
                             key={item.name}
                             value={item.name}
                           >

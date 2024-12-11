@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import styles from "../../styles/styles";
 import { IoBagHandleOutline } from "react-icons/io5";
@@ -15,7 +15,11 @@ const Cart = ({ setOpenCart }) => {
   const removeFromCartHandler = (data) => {
     dispatch(removeFromCart(data));
   };
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    setIsVisible(true); // Bật trạng thái hiển thị khi component được mount
+  }, []);
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.qty * item.discountPrice,
     0
@@ -24,11 +28,20 @@ const Cart = ({ setOpenCart }) => {
   const quantityChangeHandler = (data) => {
     dispatch(addTocart(data));
   };
-  console.log("cart", cart);
+  const handleClose = () => {
+    setIsVisible(false); // Tắt trạng thái hiển thị
+    setTimeout(() => {
+      setOpenCart(false); // Đóng component sau khi animation kết thúc
+    }, 300); // Thời gian khớp với animation
+  };
+
 
   return (
     <div className="fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10">
-      <div className="fixed top-0 right-0 h-full w-[80%] 800px:w-[25%] bg-white flex flex-col overflow-y-scroll justify-between shadow-sm">
+       <div className={`fixed top-0 right-0 h-full w-[80%] 800px:w-[25%] bg-white flex flex-col overflow-y-scroll justify-between shadow-sm transition-transform duration-300 
+      ${isVisible ? "translate-x-0" : "translate-x-full"}
+      `}
+      >
         {cart && cart.length === 0 ? (
           <div className="w-full h-screen flex items-center justify-center">
             <div className="flex w-full justify-end pt-5 pr-5 fixed top-3 right-3">
@@ -47,7 +60,7 @@ const Cart = ({ setOpenCart }) => {
                 <RxCross1
                   size={25}
                   className="cursor-pointer"
-                  onClick={() => setOpenCart(false)}
+                  onClick={() => handleClose(false)}
                 />
               </div>
               {/* Item length */}
@@ -112,6 +125,8 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
     const updateCartData = { ...data, qty: value === 1 ? 1 : value - 1 };
     quantityChangeHandler(updateCartData);
   };
+
+  
 
 
   return (
