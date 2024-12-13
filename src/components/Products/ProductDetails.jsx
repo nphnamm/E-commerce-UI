@@ -19,7 +19,7 @@ import { toast } from "react-toastify";
 import { addTocart } from "../../redux/actions/cart";
 import axios from "axios";
 
-const ProductDetails = ({ data,sizesData }) => {
+const ProductDetails = ({ data,sizesData ,filterdColors}) => {
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -45,7 +45,8 @@ const ProductDetails = ({ data,sizesData }) => {
   useEffect(() => {
     // const filteredData = data.filter(obj => obj.tags === data.tags);
     dispatch(getAllProductsShop(data && data?.shop._id));
-    console.log('size',sizesData)
+    
+    console.log('filterdColors', filterdColors)
 
   }, []);
   // console.log("data tags", data?.tags);

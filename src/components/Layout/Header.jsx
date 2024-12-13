@@ -23,6 +23,8 @@ import { ArrowDropDown } from '@mui/icons-material';
 import LanguageIcon from '@mui/icons-material/Language';
 import logoVi from '../../Assests/images/vietnamese.png';
 import logoUs from '../../Assests/images/us.png';
+import Siderbar from "./Siderbar";
+import Sidebar from "./Siderbar";
 function Header({ activeHeading }) {
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const { isSeller } = useSelector((state) => state.seller);
@@ -63,7 +65,7 @@ function Header({ activeHeading }) {
 
   const handleSearchChange = (e) => {
     const term = e.target.value;
-    if(term.length == 0){
+    if (term.length == 0) {
       setSearchData(null);
       setSearchTerm(term);
       return;
@@ -333,12 +335,21 @@ function Header({ activeHeading }) {
           w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
         <div className="w-full flex items-center justify-between">
-          <div>
+          {/* <div>
             <BiMenuAltLeft
               size={40}
               className="ml-4"
               onClick={() => setOpen(true)}
             />
+          </div> */}
+          <div>
+            <div
+              className=" ml-[20px]"
+              onClick={() => setOpen(true)}
+            >
+              <BiMenuAltLeft size={30} />
+            
+            </div>
           </div>
           <div>
             <Link to="/">
@@ -356,13 +367,13 @@ function Header({ activeHeading }) {
             >
               <AiOutlineShoppingCart size={30} />
               <span class="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center">
-                {/* {cart && cart.length} */}
+                {cart && cart.length}
               </span>
             </div>
           </div>
         </div>
         {/* header sidebar */}
-        {open && (
+        {/* {open && (
           <div className="fixed w-full bg-[#0000005f] z-20 h-full top-0 left-0">
             <div className="fixed w-[60%] bg-[#fff] h-screen top-0 left-0 z-10">
               <div className="w-full justify-between flex pr-3">
@@ -457,7 +468,19 @@ function Header({ activeHeading }) {
               </div>
             </div>
           </div>
-        )}
+        )} */}
+
+        {open ? <Sidebar 
+        
+        setOpen={setOpen}
+        searchTeam={searchTerm}
+        handleSearchChange={handleSearchChange}
+        searchData={searchData}
+        active={activeHeading}
+        /> : null}
+
+        {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
+
       </div>
     </>
   );

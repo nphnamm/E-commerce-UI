@@ -17,16 +17,16 @@ function Navbar({ active }) {
   ];
   console.log(t('nav.home'));
   return (
-    <div className={`block gap-6 800px:${styles.normalFlex}`}>
+    <div className={`block gap-6 p-[24px] 800px:p-0 800px:${styles.normalFlex}`}>
       {navItems &&
         navItems.map((i, index) => (
-          <div className="flex ">
+          <div className="flex rounded-[10px] p-4 bg-[#22bba7] mt-1 hover:shadow-3xl hover:">
             <Link
               to={i.url}
               className={`${active === index + 1
-                  ? "text-[#17dd1f]"
-                  : "text-black 800px:text-[#fff]"
-                } pb-[30px] 800px:pb-0 font-[500] cursor-pointer font-[16px] hover:text-[#e6eeff]`}
+                  ? "text-[#000]"
+                  : "text-white"
+                }  800px:pb-0 font-[500] cursor-pointer font-[16px] hover:text-[#e6eeff]`}
             >
               {i.title}
             </Link>
