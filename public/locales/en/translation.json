@@ -4,7 +4,8 @@
     "bestSelling": "Best Selling",
     "products": "Products",
     "events": "Events",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "becomeSeller": "Become Seller"
   },
   "dashboard": {
     "dashboard": "Dashboard",
@@ -42,5 +43,39 @@
     "processing": "Processing",
     "rows_per_page": "Rows per page",
     "of": "of"
+  },
+  "category": {
+    "Sofa": "Sofa",
+    "TV Cabinet": "TV Cabinet",
+    "Dining": "Dining",
+    "Wardrobe": "Wardrobe",
+    "Bed": "Bed",
+    "Dressing Table": "Dressing Table",
+    "Door": "Door",
+    "Divan": "Divan",
+    "Kitchen": "Kitchen",
+    "Lamp": "Lamp",
+    "Office": "Office",
+    "Reading Table": "Reading Table",
+    "Mattress": "Mattress",
+    "Chest Drawers": "Chest Drawers",
+    "Windows": "Windows",
+    "Miscellaneous": "Miscellaneous"
+  },
+  "brands": {
+    "Free_Shipping": "Free Shipping",
+    "From_all_orders_over_100$": "From all orders over 100$",
+    "Daily_Surprise_Offers": "Daily Surprise Offers",
+    "Save_up_to_25%_off": "Save up to 25% off",
+    "Affordable_Prices": "Affordable Prices",
+    "Get_Factory_direct_price": "Get Factory direct price",
+    "Secure_Payments": "Secure Payments",
+    "100%_protected_payments": "100% protected payments"
+  },
+  "target":{
+    "bestDeals":"Giá tốt nhất",
+    "popularEvents":"Event không chạy được",
+    "featured":"Featured Products"
+
   }
 }
