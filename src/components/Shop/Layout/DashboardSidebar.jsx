@@ -8,8 +8,11 @@ import { CiMoneyBill, CiSettings } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { HiOutlineReceiptRefund } from "react-icons/hi";
+import { useTranslation } from "react-i18next";
 
 const DashboardSideBar = ({ active }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="w-full h-[90vh] bg-white shadow-sm overflow-y-scroll sticky top-0 left-0 z-10">
       {/* single item */}
@@ -24,7 +27,7 @@ const DashboardSideBar = ({ active }) => {
               active === 1 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Dashboard
+             {t('dashboard.dashboard')}
           </h5>
         </Link>
       </div>
@@ -40,8 +43,8 @@ const DashboardSideBar = ({ active }) => {
               active === 2 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Orders
-          </h5>
+             {t('dashboard.all_orders')}
+             </h5>
         </Link>
       </div>
 
@@ -53,8 +56,8 @@ const DashboardSideBar = ({ active }) => {
               active === 3 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Products
-          </h5>
+             {t('dashboard.all_products')}
+             </h5>
         </Link>
       </div>
 
@@ -72,8 +75,8 @@ const DashboardSideBar = ({ active }) => {
               active === 4 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Create Product
-          </h5>
+             {t('dashboard.create_product')}
+             </h5>
         </Link>
       </div>
 
@@ -88,8 +91,8 @@ const DashboardSideBar = ({ active }) => {
               active === 5 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Events
-          </h5>
+             {t('dashboard.all_events')}
+             </h5>
         </Link>
       </div>
 
@@ -104,8 +107,8 @@ const DashboardSideBar = ({ active }) => {
               active === 6 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Create Event
-          </h5>
+             {t('dashboard.create_event')}
+             </h5>
         </Link>
       </div>
 
@@ -123,8 +126,8 @@ const DashboardSideBar = ({ active }) => {
               active === 7 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Withdraw Money
-          </h5>
+             {t('dashboard.withdraw_money')}
+             </h5>
         </Link>
       </div>
 
@@ -139,8 +142,8 @@ const DashboardSideBar = ({ active }) => {
               active === 8 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Shop Inbox
-          </h5>
+             {t('dashboard.shop_inbox')}
+             </h5>
         </Link>
       </div>
 
@@ -155,8 +158,8 @@ const DashboardSideBar = ({ active }) => {
               active === 9 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Discount Codes
-          </h5>
+             {t('dashboard.discount_codes')}
+             </h5>
         </Link>
       </div>
 
@@ -171,8 +174,8 @@ const DashboardSideBar = ({ active }) => {
               active === 10 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Refunds
-          </h5>
+             {t('dashboard.refunds')}
+             </h5>
         </Link>
       </div>
 
@@ -187,8 +190,8 @@ const DashboardSideBar = ({ active }) => {
               active === 11 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Settings
-          </h5>
+             {t('dashboard.settings')}
+             </h5>
         </Link>
       </div>
     </div>

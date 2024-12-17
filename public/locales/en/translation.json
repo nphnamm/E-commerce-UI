@@ -1,10 +1,46 @@
 {
-    "nav": {
-      "home": "Home",
-      "bestSelling": "Best Selling",
-      "products": "Products",
-      "events": "Events",
-      "faq": "FAQ"
-    }
+  "nav": {
+    "home": "Home",
+    "bestSelling": "Best Selling",
+    "products": "Products",
+    "events": "Events",
+    "faq": "FAQ"
+  },
+  "dashboard": {
+    "dashboard": "Dashboard",
+    "all_orders": "All Orders",
+    "all_products": "All Products",
+    "create_product": "Create Product",
+    "all_events": "All Events",
+    "create_event": "Create Event",
+    "withdraw_money": "Withdraw Money",
+    "shop_inbox": "Shop Inbox",
+    "discount_codes": "Discount Codes",
+    "refunds": "Refunds",
+    "settings": "Settings",
+    "shop_name": "Shop Name",
+    "shop_description": "Shop Description",
+    "shop_address": "Shop Address",
+    "shop_phone_number": "Shop Phone Number",
+    "shop_zip_code": "Shop Zip Code",
+    "update_shop": "Update Shop",
+    "enter_shop_description": "Enter your shop description"
+  },
+  "overview": {
+    "overview": "Overview",
+    "account_balance": "Account Balance (with 10% service charge)",
+    "withdraw_money": "Withdraw Money",
+    "all_orders": "All Orders",
+    "view_orders": "View Orders",
+    "all_products": "All Products",
+    "view_products": "View Products",
+    "latest_orders": "Latest Orders",
+    "order_id": "Order ID",
+    "status": "Status",
+    "items_qty": "Items Qty",
+    "total": "Total",
+    "processing": "Processing",
+    "rows_per_page": "Rows per page",
+    "of": "of"
+  }
 }
-  

@@ -1,10 +1,46 @@
 {
-    "nav": {
-      "home": "Trang Chủ",
-      "bestSelling": "Bán Chạy Nhất",
-      "products": "Sản Phẩm",
-      "events": "Sự Kiện",
-      "faq": "Câu Hỏi Thường Gặp"
-    }
+  "nav": {
+    "home": "Trang Chủ",
+    "bestSelling": "Bán Chạy Nhất",
+    "products": "Sản Phẩm",
+    "events": "Sự Kiện",
+    "faq": "Câu Hỏi Thường Gặp"
+  },
+  "dashboard": {
+    "dashboard": "Bảng điều khiển",
+    "all_orders": "Tất cả đơn hàng",
+    "all_products": "Tất cả sản phẩm",
+    "create_product": "Tạo sản phẩm",
+    "all_events": "Tất cả sự kiện",
+    "create_event": "Tạo sự kiện",
+    "withdraw_money": "Rút tiền",
+    "shop_inbox": "Hộp thư cửa hàng",
+    "discount_codes": "Mã giảm giá",
+    "refunds": "Hoàn tiền",
+    "settings": "Cài đặt",
+    "shop_name": "Tên cửa hàng",
+    "shop_description": "Mô tả cửa hàng",
+    "shop_address": "Địa chỉ cửa hàng",
+    "shop_phone_number": "Số điện thoại cửa hàng",
+    "shop_zip_code": "Mã bưu điện cửa hàng",
+    "update_shop": "Cập nhật cửa hàng",
+    "enter_shop_description": "Nhập mô tả cửa hàng của bạn"
+  },
+  "overview": {
+    "overview": "Tổng quan",
+    "account_balance": "Số dư tài khoản (bao gồm 10% phí dịch vụ)",
+    "withdraw_money": "Rút tiền",
+    "all_orders": "Tất cả đơn hàng",
+    "view_orders": "Xem đơn hàng",
+    "all_products": "Tất cả sản phẩm",
+    "view_products": "Xem sản phẩm",
+    "latest_orders": "Đơn hàng mới nhất",
+    "order_id": "Mã đơn hàng",
+    "status": "Trạng thái",
+    "items_qty": "Số lượng",
+    "total": "Tổng cộng",
+    "processing": "Đang xử lý",
+    "rows_per_page": "Số hàng mỗi trang",
+    "of": "trên"
   }
-  
+}

@@ -20,21 +20,33 @@ const ProductDetailsPage = () => {
   useEffect(() => {
     const data = allProducts && allProducts.find((i) => i._id === id);
     const filteredData = allProducts && allProducts.filter(obj => obj.tags === data.tags);
+    const uniqueSizes = [];
+    const seenSizes = new Set();
+    const uniqueColors = [];
+    const seenColor = new Set();
     const filterdSize = filteredData && filteredData
-      .filter(obj => obj.size) // chỉ lấy những object có thuộc tính size
-      .map((obj, index) => ({
-        id: index,
-        size: obj.size,
-      }));
-    const filterdColors = filteredData && filteredData
-      .filter(obj => obj.size) // chỉ lấy những object có thuộc tính size
-      .map((obj, index) => ({
-        id: index,
-        size: obj.color,
-      }));
-    console.log('flterData', filterdSize);
-    setFilterdColors(filterdColors)
-    setSizesData(filterdSize)
+      .forEach((obj, index) => {
+        if (!seenSizes.has(obj.size)) {
+          seenSizes.add(obj.size);
+          uniqueSizes.push({
+            id: index, // giữ lại index đầu tiên của mỗi size
+            size: obj.size,
+          });
+        }
+      });
+      const filterdColors = filteredData && filteredData
+      .forEach((obj, index) => {
+        if (!seenColor.has(obj.color)) {
+          seenColor.add(obj.color);
+          uniqueColors.push({
+            id: index, // giữ lại index đầu tiên của mỗi size
+            color: obj.color,
+          });
+        }
+      });
+    console.log('size', filterdSize);
+    setFilterdColors(uniqueColors)
+    setSizesData(uniqueSizes)
     setData(data);
     // const collection = allProducts.filter((obj) => obj?.tags === data?.tags);
     // console.log("collection", collection);
@@ -61,10 +73,9 @@ const ProductDetailsPage = () => {
   // console.log("check dataaa", id);
 
   return (
-    allProducts && sizesData && filterdColors ?
+    data ?
       (<div>
         <Header />
-
         <ProductDetails data={data} sizesData={sizesData} filterdColors={filterdColors} />
         {data && <SuggestedProduct data={data} />}
         <Footer />

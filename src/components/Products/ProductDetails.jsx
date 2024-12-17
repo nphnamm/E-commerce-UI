@@ -18,19 +18,24 @@ import {
 import { toast } from "react-toastify";
 import { addTocart } from "../../redux/actions/cart";
 import axios from "axios";
+import Loader from "../Layout/Loader";
 
-const ProductDetails = ({ data,sizesData ,filterdColors}) => {
+const ProductDetails = ({ data, sizesData, filterdColors }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
   const { user, isAuthenticated } = useSelector((state) => state.user);
   const { products } = useSelector((state) => state.products);
+  const [productOfTags,setProductOfTags] = useState([] || null);
   const [count, setCount] = useState(1);
   const [click, setClick] = useState(false);
   const [select, setSelect] = useState(0);
   const [selectedSize, setSelectedSize] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
+  const [tags, setTags] = useState(data?.tags);
+  const [detailProduct, setDetailProduct] = useState({ images: [], ...data });
+  const [colorOfProduct, setColorOfProduct] = useState(filterdColors)
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  console.log("data id", data?.name);
   useEffect(() => {
 
     if (wishlist && wishlist.find((i) => i._id === data?._id)) {
@@ -38,15 +43,23 @@ const ProductDetails = ({ data,sizesData ,filterdColors}) => {
     } else {
       setClick(false);
     }
-
     // setSizesData(filterdSize)
 
   }, [data, wishlist]);
   useEffect(() => {
     // const filteredData = data.filter(obj => obj.tags === data.tags);
     dispatch(getAllProductsShop(data && data?.shop._id));
-    
-    console.log('filterdColors', filterdColors)
+    if (!tags) {
+      setTags(data?.tags);
+    }
+    if (!detailProduct) {
+      setDetailProduct(data)
+    }
+    if (!filterdColors) {
+      setColorOfProduct(filterdColors)
+    }
+    setSelectedColor(null)
+
 
   }, []);
   // console.log("data tags", data?.tags);
@@ -71,6 +84,22 @@ const ProductDetails = ({ data,sizesData ,filterdColors}) => {
   };
   const handleSizeClick = (size) => {
     setSelectedSize(size);
+    setSelectedColor(null)
+
+
+  };
+  const handleColorClick = (color) => {
+    setSelectedColor(color);
+    console.log(productOfTags); 
+
+    const result = productOfTags.filter(product => product.size === selectedSize && product.color == color);
+    if (result) {
+      console.log(result) 
+      console.log(tags);
+      setDetailProduct(result[0])
+
+    }
+
   };
 
   const addToCartHandler = (id) => {
@@ -125,58 +154,95 @@ const ProductDetails = ({ data,sizesData ,filterdColors}) => {
       toast.error("Please login to create a conversation");
     }
   };
+  useEffect(() => {
+    if (products) {
+      const productAfterSelectedSize = products.filter((product) => product.tags.includes(tags) && product.size == selectedSize);
+      console.log('selectedSize', selectedSize)
+      console.log('tags', tags)
+      console.log('tags', filterdColors)
+      setProductOfTags(productAfterSelectedSize)
+      if (productAfterSelectedSize) {
+        console.log('1', productAfterSelectedSize);
 
+        const result = productAfterSelectedSize.map((item, index) => ({
+          id: index,
+          color: item.color // Đổi "color" thành "size" theo yêu cầu
+        }));
+
+        console.log(result);
+        setColorOfProduct(result);
+      }
+    }
+
+  }, [selectedSize])
+
+  useEffect(() => {
+
+    if (wishlist && wishlist.find((i) => i._id === data?._id)) {
+      setClick(true);
+    } else {
+    
+      setClick(false);
+    }
+    if (data) {
+      setTags(data?.tags || []);
+    }
+    if (!filterdColors) {
+      setColorOfProduct(filterdColors);
+    }
+
+    // setSizesData(filterdSize)
+
+  }, [detailProduct, wishlist]);
+  console.log(detailProduct);
   return (
     <div className="bg-white">
-      {(data && sizesData)? (
+      {(detailProduct && sizesData) ? (
         <div className={`${styles.section} w-[90%] 800px:w-[80%]`}>
           <div className="w-full py-5">
             <div className="block w-full 800px:flex">
               <div className="w-full 800px:w-[50%]">
                 <img
-                  src={`${data && data.images[select]?.url}`}
+                  src={`${detailProduct?.images[select]?.url}`}
                   alt=""
                   className="w-[80%]"
                 />
                 <div className="w-full flex">
-                  {data &&
-                    data.images.map((i, index) => (
-                      <div
-                        className={`${
-                          select === 0 ? "border" : "null"
-                        } cursor-pointer`}
-                      >
+                  {detailProduct?.images?.length > 0 && (
+                    <div className="w-full flex">
+                      {detailProduct.images.map((i, index) => (
                         <img
+                          key={index}
                           src={`${i?.url}`}
-                          alt=""
-                          className="h-[200px] overflow-hidden mr-3 mt-3"
+                          alt={`thumbnail-${index}`}
+                          className="h-[200px] overflow-hidden mr-3 mt-3 cursor-pointer"
                           onClick={() => setSelect(index)}
                         />
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+                  )}
                   <div
-                    className={`${
-                      select === 1 ? "border" : "null"
-                    } cursor-pointer`}
+                    className={`${select === 1 ? "border" : "null"
+                      } cursor-pointer`}
                   ></div>
                 </div>
               </div>
               <div className="w-full 800px:w-[50%] pt-5">
                 <h1 className={`${styles.productTitle}`}>{data.name}</h1>
-                <p>{data.description}</p>
+                <p className="line-clamp-2">{detailProduct?.description}</p>
                 <div className="flex pt-3">
-                  <h4 className={`${styles.productDiscountPrice}`}>
-                  {parseInt(data.discountPrice).toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        })}
+                  <h4 className={`${styles?.productDiscountPrice}`}>
+                    {parseInt(detailProduct?.discountPrice).toLocaleString("vi-VN", {
+                      style: "currency",
+                      currency: "VND",
+                    })}
                   </h4>
                   <h3 className={`${styles.price}`}>
-                    {data.originalPrice ? parseInt(data.originalPrice).toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        }) : null}
-                    
+                    {detailProduct?.originalPrice ? parseInt(detailProduct?.originalPrice).toLocaleString("vi-VN", {
+                      style: "currency",
+                      currency: "VND",
+                    }) : null}
+
                   </h3>
                 </div>
 
@@ -187,11 +253,10 @@ const ProductDetails = ({ data,sizesData ,filterdColors}) => {
                     {sizesData.map((size) => (
                       <div
                         // key={size.id}
-                        className={`p-3 m-1 border ${
-                          selectedSize === size.size
-                            ? "border-primary"
-                            : "border-secondary"
-                        }`}
+                        className={`p-3 m-1 border ${selectedSize == size.size
+                            ? "text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                            : "text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+                          }`}
                         style={{ cursor: "pointer" }}
                         onClick={() => handleSizeClick(size.size)}
                       >
@@ -199,13 +264,26 @@ const ProductDetails = ({ data,sizesData ,filterdColors}) => {
                       </div>
                     ))}
                   </div>
-                  {selectedSize && (
-                    <div className="mt-3">
-                      <p>
-                        You selected: <strong>{selectedSize}</strong>
-                      </p>
-                    </div>
-                  )}
+
+                </div>
+                <div className="container mt-4">
+                  <h5>Select Color</h5>
+                  <div className="flex justify-content-start">
+                    {colorOfProduct?.map((color) => (
+                      <div
+                        // key={size.id}
+                        className={`p-3 m-1 border ${selectedColor == color.color
+                            ? "text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                            : "text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+                          }`}
+                        style={{ cursor: "pointer" }}
+                        onClick={() => handleColorClick(color.color)}
+                      >
+                        {color.color}
+                      </div>
+                    ))}
+                  </div>
+
                 </div>
 
                 <div className="flex items-center mt-12 justify-between pr-3">
@@ -231,7 +309,7 @@ const ProductDetails = ({ data,sizesData ,filterdColors}) => {
                       <AiFillHeart
                         size={30}
                         className="cursor-pointer"
-                        onClick={() => removeFromWishlistHandler(data)}
+                        onClick={() => removeFromWishlistHandler(detailProduct)}
                         color={click ? "red" : "#333"}
                         title="Remove from wishlist"
                       />
@@ -239,7 +317,7 @@ const ProductDetails = ({ data,sizesData ,filterdColors}) => {
                       <AiOutlineHeart
                         size={30}
                         className="cursor-pointer"
-                        onClick={() => addToWishlistHandler(data)}
+                        onClick={() => addToWishlistHandler(detailProduct)}
                         color={click ? "red" : "#333"}
                         title="Add to wishlist"
                       />
@@ -248,24 +326,24 @@ const ProductDetails = ({ data,sizesData ,filterdColors}) => {
                 </div>
                 <div
                   className={`${styles.button} !mt-6 !rounded !h-11 flex items-center`}
-                  onClick={() => addToCartHandler(data._id)}
+                  onClick={() => addToCartHandler(detailProduct._id)}
                 >
                   <span className="text-white flex items-center">
                     Add to cart <AiOutlineShoppingCart className="ml-1" />
                   </span>
                 </div>
                 <div className="flex items-center pt-8">
-                  <Link to={`/shop/preview/${data?.shop._id}`}>
+                  <Link to={`/shop/preview/${detailProduct?.shop._id}`}>
                     <img
-                      src={`${data?.shop?.avatar?.url}`}
+                      src={`${detailProduct?.shop?.avatar?.url}`}
                       alt=""
                       className="w-[50px] h-[50px] rounded-full mr-2"
                     />
                   </Link>
                   <div className="pr-8">
-                    <Link to={`/shop/preview/${data?.shop._id}`}>
+                    <Link to={`/shop/preview/${detailProduct?.shop._id}`}>
                       <h3 className={`${styles.shop_name} pb-1 pt-1`}>
-                        {data.shop.name}
+                        {detailProduct?.shop?.name}
                       </h3>
                     </Link>
                     <h5 className="pb-3 text-[15px]">
@@ -285,7 +363,7 @@ const ProductDetails = ({ data,sizesData ,filterdColors}) => {
             </div>
           </div>
           <ProductDetailsInfo
-            data={data}
+            data={detailProduct}
             products={products}
             totalReviewsLength={totalReviewsLength}
             averageRating={averageRating}
@@ -293,7 +371,7 @@ const ProductDetails = ({ data,sizesData ,filterdColors}) => {
           <br />
           <br />
         </div>
-      ) : null}
+      ) : (<Loader />)}
     </div>
   );
 };
