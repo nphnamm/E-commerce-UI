@@ -5,6 +5,9 @@
     "products": "Products",
     "events": "Events",
     "faq": "FAQ",
+    "search":"Search",
+    "seachProduct":"Search Product...",
+    "goDashboard":"Go Dashboard",
     "becomeSeller": "Become Seller"
   },
   "dashboard": {
@@ -46,19 +49,19 @@
   },
   "category": {
     "Sofa": "Sofa",
-    "TV Cabinet": "TV Cabinet",
+    "TV_Cabinet": "TV Cabinet",
     "Dining": "Dining",
     "Wardrobe": "Wardrobe",
     "Bed": "Bed",
-    "Dressing Table": "Dressing Table",
+    "Dressing_Table": "Dressing Table",
     "Door": "Door",
     "Divan": "Divan",
     "Kitchen": "Kitchen",
     "Lamp": "Lamp",
     "Office": "Office",
-    "Reading Table": "Reading Table",
+    "Reading_Table": "Reading Table",
     "Mattress": "Mattress",
-    "Chest Drawers": "Chest Drawers",
+    "Chest_Drawers": "Chest Drawers",
     "Windows": "Windows",
     "Miscellaneous": "Miscellaneous"
   },
@@ -72,10 +75,58 @@
     "Secure_Payments": "Secure Payments",
     "100%_protected_payments": "100% protected payments"
   },
-  "target":{
-    "bestDeals":"Giá tốt nhất",
-    "popularEvents":"Event không chạy được",
-    "featured":"Featured Products"
-
+  "target": {
+    "myCategory":"My category",
+    "bestDeals": "Best Deals",
+    "popularEvents": "Popular Events",
+    "featured": "Featured Products"
+  },
+  "footer": {
+    "subscribe_section": {
+      "subscribe_prompt": "Đăng ký để nhận tin tức, sự kiện và ưu đãi",
+      "input_placeholder": "Nhập email của bạn...",
+      "submit_button": "Gửi"
+    },
+    "company_section": {
+      "title": "Công Ty",
+      "about_us": "Về chúng tôi",
+      "careers": "Tuyển dụng",
+      "store_locations": "Địa điểm cửa hàng",
+      "our_blog": "Blog của chúng tôi",
+      "reviews": "Đánh giá"
+    },
+    "shop_section": {
+      "title": "Cửa Hàng",
+      "game_video": "Trò chơi & Video",
+      "phone_tablets": "Điện thoại & Máy tính bảng",
+      "computers_laptops": "Máy tính & Laptop",
+      "sport_watches": "Đồng hồ thể thao",
+      "events": "Sự kiện"
+    },
+    "support_section": {
+      "title": "Hỗ Trợ",
+      "faq": "Câu hỏi thường gặp",
+      "reviews": "Đánh giá",
+      "contact_us": "Liên hệ chúng tôi",
+      "shipping": "Vận chuyển",
+      "live_chat": "Trò chuyện trực tuyến"
+    },
+    "footer": {
+      "rights_reserved": "\u00a9 2024 Hoai Nam. Mọi quyền được bảo lưu.",
+      "terms": "Điều khoản",
+      "privacy_policy": "Chính sách bảo mật"
+    },
+    "social_media": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    },
+    "payment_methods": {
+      "paypal": "PayPal",
+      "visa": "VISA",
+      "mastercard": "MasterCard",
+      "stripe": "Stripe"
+    }
   }
 }

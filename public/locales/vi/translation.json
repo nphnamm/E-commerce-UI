@@ -5,7 +5,9 @@
     "products": "Sản Phẩm",
     "events": "Sự Kiện",
     "faq": "Câu Hỏi Thường Gặp",
-    "search": "Search",
+    "search": "Tìm kiếm",
+    "seachProduct":"Tìm kiếm sản phẩm...",
+    "goDashboard":"Tới trang điều khiển",
     "becomeSeller": "Trở thành nhà bán hàng"
   },
   "dashboard": {
@@ -47,36 +49,84 @@
   },
   "category": {
     "Sofa": "Sofa",
-    "TV Cabinet": "Tủ TV",
+    "TV_Cabinet": "Tủ TV",
     "Dining": "Bàn ăn",
     "Wardrobe": "Tủ quần áo",
     "Bed": "Giường",
-    "Dressing Table": "Bàn trang điểm",
+    "Dressing_Table": "Bàn trang điểm",
     "Door": "Cửa",
     "Divan": "Giường băng",
     "Kitchen": "Nhà bếp",
     "Lamp": "Đèn",
     "Office": "Văn phòng",
-    "Reading Table": "Bàn đọc sách",
+    "Reading_Table": "Bàn đọc sách",
     "Mattress": "Nệm",
-    "Chest Drawers": "Tủ ngăn kéo",
+    "Chest_Drawers": "Tủ ngăn kéo",
     "Windows": "Cửa sổ",
     "Miscellaneous": "Khác"
   },
   "brands": {
-    "Free_Shipping": "Free Shipping",
-    "From_all_orders_over_100$": "From all orders over 100$",
-    "Daily_Surprise_Offers": "Daily Surprise Offers",
-    "Save_up_to_25%_off": "Save up to 25% off",
-    "Affordable_Prices": "Affordable Prices",
-    "Get_Factory_direct_price": "Get Factory direct price",
-    "Secure_Payments": "Secure Payments",
-    "100%_protected_payments": "100% protected payments"
+    "Free_Shipping": "Miễn phí vận chuyển",
+    "From_all_orders_over_100$": "Áp dụng cho tất cả đơn hàng trên 100$",
+    "Daily_Surprise_Offers": "Ưu đãi bất ngờ mỗi ngày",
+    "Save_up_to_25%_off": "Tiết kiệm lên đến 25%",
+    "Affordable_Prices": "Giá cả phải chăng",
+    "Get_Factory_direct_price": "Nhận giá trực tiếp từ nhà máy",
+    "Secure_Payments": "Thanh toán an toàn",
+    "100%_protected_payments": "Thanh toán được bảo vệ 100%"
   },
-  "target":{
-    "bestDeals":"Best Deals",
-    "popularEvents":"Popular Events",
-    "featured":"Featured Products"
-
+  "target": {
+    "myCategory":"Danh mục của tôi",
+    "bestDeals": "Sản phầm bán chạy nhất",
+    "popularEvents": "Sự kiện nổi bật",
+    "featured": "Những sản phẩm đặc trưng"
+  },
+  "footer": {
+    "subscribe_section": {
+      "subscribe_prompt": "Đăng ký để nhận tin tức, sự kiện và ưu đãi",
+      "input_placeholder": "Nhập email của bạn...",
+      "submit_button": "Gửi"
+    },
+    "company_section": {
+      "title": "Công Ty",
+      "about_us": "Về chúng tôi",
+      "careers": "Tuyển dụng",
+      "store_locations": "Địa điểm cửa hàng",
+      "our_blog": "Blog của chúng tôi",
+      "reviews": "Đánh giá"
+    },
+    "shop_section": {
+      "title": "Cửa Hàng",
+      "game_video": "Trò chơi & Video",
+      "phone_tablets": "Điện thoại & Máy tính bảng",
+      "computers_laptops": "Máy tính & Laptop",
+      "sport_watches": "Đồng hồ thể thao",
+      "events": "Sự kiện"
+    },
+    "support_section": {
+      "title": "Hỗ Trợ",
+      "faq": "Câu hỏi thường gặp",
+      "reviews": "Đánh giá",
+      "contact_us": "Liên hệ chúng tôi",
+      "shipping": "Vận chuyển",
+      "live_chat": "Trò chuyện trực tuyến"
+    },
+    "footer": {
+      "rights_reserved": "\u00a9 2024 Hoai Nam. Mọi quyền được bảo lưu.",
+      "terms": "Điều khoản",
+      "privacy_policy": "Chính sách bảo mật"
+    },
+    "social_media": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    },
+    "payment_methods": {
+      "paypal": "PayPal",
+      "visa": "VISA",
+      "mastercard": "MasterCard",
+      "stripe": "Stripe"
+    }
   }
 }

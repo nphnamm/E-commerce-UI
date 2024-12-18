@@ -26,6 +26,8 @@ import logoUs from '../../Assests/images/us.png';
 import Siderbar from "./Siderbar";
 import Sidebar from "./Siderbar";
 function Header({ activeHeading }) {
+
+  const { t } = useTranslation();
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const { isSeller } = useSelector((state) => state.seller);
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -124,7 +126,7 @@ function Header({ activeHeading }) {
                   <input
                     type="text"
                     className="search-input pl-5 h-[48px] w-full border border-qgray-border bg-white flex-1 rounded-[10px] focus:border-[#22bba7] focus:ring-2 focus:ring-[#22bba7] focus:outline-none transition-all duration-300"
-                    placeholder="Search Product..."
+                    placeholder={t('nav.seachProduct')}
                     onChange={handleSearchChange}
                     value={searchTerm}
                   />
@@ -156,7 +158,7 @@ function Header({ activeHeading }) {
                 bg-[#22bba7] text-white rounded-[10px]"
                   type="button"
                 >
-                  Search
+                  {t('nav.search')}
                 </button>
               </div>
             </div>
@@ -177,8 +179,8 @@ function Header({ activeHeading }) {
                 {user?.role === "Admin"
                   ? "Admin Dashboard"
                   : isSeller
-                    ? "Go Dashboard"
-                    : "Become Seller"}
+                    ? t('nav.goDashboard')
+                    : t('nav.becomeSeller')}
               </h1>
             </Link>
           </div>
