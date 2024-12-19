@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Layout/Header";
 import styles from "../styles/styles";
-import { productData } from "../static/data";
 import Footer from "../components/Layout/Footer";
-import { useSearchParams } from "react-router-dom";
 import Loader from "./../components/Layout/Loader";
 import { useSelector } from "react-redux";
 import ProductCard from "./../components/Route/ProductCard/ProductCard";

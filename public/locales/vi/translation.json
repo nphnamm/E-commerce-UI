@@ -1,81 +1,180 @@
 {
-  "header": {
-    "searchPlaceholder": "Tìm kiếm sản phẩm...",
-    "searchButton": "Tìm kiếm",
-    "allCategories": "Tất cả danh mục",
-    "adminDashboard": "Bảng điều khiển quản trị",
-    "goDashboard": "Đi đến bảng điều khiển",
-    "becomeSeller": "Trở thành người bán",
-    "wishlist": "Danh sách yêu thích",
-    "login": "Đăng nhập",
-    "signup": "Đăng ký"
-  },
-  "cart": {
-    "emptyCart": "Giỏ hàng của bạn đang trống!",
-    "items": "mặt hàng",
-    "checkoutNow": "Thanh toán ngay",
-    "cardError": "Sản phẩm có số lượng hạn chế"
-  },
-  "wishlist": {
-    "emptyWishlist": "Danh sách yêu thích của bạn đang trống!",
-    "items": "mặt hàng"
-  },
   "nav": {
-    "home": "Trang chủ",
-    "bestSelling": "Bán chạy nhất",
-    "products": "Sản phẩm",
-    "events": "Sự kiện",
-    "faq": "Câu hỏi thường gặp"
+    "home": "Trang Chủ",
+    "bestSelling": "Bán Chạy Nhất",
+    "products": "Sản Phẩm",
+    "events": "Sự Kiện",
+    "faq": "Câu Hỏi Thường Gặp",
+    "search": "Tìm kiếm",
+    "seachProduct": "Tìm kiếm sản phẩm...",
+    "goDashboard": "Tới trang điều khiển",
+    "becomeSeller": "Trở thành nhà bán hàng"
   },
-  "login": {
-    "title": "Đăng nhập vào tài khoản của bạn",
-    "emailLabel": "Địa chỉ email",
-    "passwordLabel": "Mật khẩu",
-    "rememberMe": "Ghi nhớ đăng nhập",
-    "forgotPassword": "Quên mật khẩu?",
-    "button": "ĐĂNG NHẬP",
-    "noAccount": "Chưa có tài khoản?",
-    "signUp": "Đăng ký",
-    "loginSuccess": "Đăng nhập thành công!",
-    "loginFailed": "Đăng nhập thất bại. Vui lòng kiểm tra email hoặc mật khẩu của bạn."
+  "dashboard": {
+    "dashboard": "Bảng điều khiển",
+    "all_orders": "Tất cả đơn hàng",
+    "all_products": "Tất cả sản phẩm",
+    "create_product": "Tạo sản phẩm",
+    "all_events": "Tất cả sự kiện",
+    "create_event": "Tạo sự kiện",
+    "withdraw_money": "Rút tiền",
+    "shop_inbox": "Hộp thư cửa hàng",
+    "discount_codes": "Mã giảm giá",
+    "refunds": "Hoàn tiền",
+    "settings": "Cài đặt",
+    "shop_name": "Tên cửa hàng",
+    "shop_description": "Mô tả cửa hàng",
+    "shop_address": "Địa chỉ cửa hàng",
+    "shop_phone_number": "Số điện thoại cửa hàng",
+    "shop_zip_code": "Mã bưu điện cửa hàng",
+    "update_shop": "Cập nhật cửa hàng",
+    "enter_shop_description": "Nhập mô tả cửa hàng của bạn"
   },
-  "signup": {
-    "title": "Đăng ký tài khoản mới",
-    "fullName": "Họ và tên",
-    "emailLabel": "Địa chỉ email",
-    "passwordLabel": "Mật khẩu",
-    "uploadAvatar": "Tải lên tệp",
-    "signUpButton": "ĐĂNG KÝ",
-    "noAccount": "Chưa có tài khoản?",
-    "signIn": "Đăng nhập",
-    "successMessage": "Người dùng đã đăng ký thành công!",
-    "errorMessage": "Đã xảy ra lỗi khi đăng ký người dùng."
+  "overview": {
+    "overview": "Tổng quan",
+    "account_balance": "Số dư tài khoản (bao gồm 10% phí dịch vụ)",
+    "withdraw_money": "Rút tiền",
+    "all_orders": "Tất cả đơn hàng",
+    "view_orders": "Xem đơn hàng",
+    "all_products": "Tất cả sản phẩm",
+    "view_products": "Xem sản phẩm",
+    "latest_orders": "Đơn hàng mới nhất",
+    "order_id": "Mã đơn hàng",
+    "status": "Trạng thái",
+    "items_qty": "Số lượng",
+    "total": "Tổng cộng",
+    "processing": "Đang xử lý",
+    "rows_per_page": "Số hàng mỗi trang",
+    "of": "trên"
   },
-  "shopCreate": {
-    "title": "Đăng ký làm người bán",
-    "shopName": "Tên cửa hàng",
-    "phoneNumber": "Số điện thoại",
-    "email": "Địa chỉ email",
-    "address": "Địa chỉ",
-    "zipCode": "Mã bưu điện",
-    "password": "Mật khẩu",
-    "uploadAvatar": "Tải lên tệp",
-    "rememberMe": "Ghi nhớ đăng nhập",
-    "forgotPassword": "Quên mật khẩu?",
-    "submit": "Gửi",
-    "alreadyAccount": "Đã có tài khoản?",
-    "signIn": "Đăng nhập"
+  "category": {
+    "allCategory": "Các loại hàng",
+    "Sofa": "Sofa",
+    "TV_Cabinet": "Tủ TV",
+    "Dining": "Bàn ăn",
+    "Wardrobe": "Tủ quần áo",
+    "Bed": "Giường",
+    "Dressing_Table": "Bàn trang điểm",
+    "Door": "Cửa",
+    "Divan": "Giường băng",
+    "Kitchen": "Nhà bếp",
+    "Lamp": "Đèn",
+    "Office": "Đồ nội thất văn phòng",
+    "Reading_Table": "Bàn đọc sách",
+    "Mattress": "Nệm",
+    "Chest_Drawers": "Tủ ngăn kéo",
+    "Windows": "Cửa sổ",
+    "Miscellaneous": "Khác",
+    "Computers_and_Laptops": "Máy tính và Laptop",
+    "Cosmetics_and_Body_Care": "Mỹ phẩm và Chăm sóc cơ thể",
+    "Accessories": "Phụ kiện",
+    "Clothes": "Quần áo",
+    "Shoes": "Giày dép",
+    "Gifts": "Quà tặng",
+    "Pet_Care": "Chăm sóc thú cưng",
+    "Mobile_and_Tablets": "Điện thoại và Máy tính bảng",
+    "Music_and_Gaming": "Âm nhạc và Trò chơi",
+    "Others": "Khác"
   },
-  "categories": {
-    "computers": "Máy tính và Laptop",
-    "cosmetics": "Mỹ phẩm và Chăm sóc cơ thể",
-    "accessories": "Phụ kiện",
-    "cloths": "Quần áo",
-    "shoes": "Giày dép",
-    "gifts": "Quà tặng",
-    "petCare": "Chăm sóc thú cưng",
-    "mobile": "Điện thoại và Máy tính bảng",
-    "music": "Âm nhạc và Trò chơi",
-    "others": "Khác"
+  "slides": {
+    "slide_1": {
+      "title": "Thiết Bị Thực Tế Ảo",
+      "description": "Trải nghiệm VR sống động"
+    },
+    "slide_2": {
+      "title": "Tai Nghe Chất Lượng Cao",
+      "description": "Lắng nghe âm thanh đỉnh cao"
+    },
+    "slide_3": {
+      "title": "Kính VR BOX 3D",
+      "description": "Khám phá bộ sưu tập công nghệ, thiết bị hoàn hảo"
+    },
+    "shopNow": "Đi đến cửa hàng"
+  },
+  "brands": {
+    "Free_Shipping": "Miễn phí vận chuyển",
+    "From_all_orders_over_100$": "Áp dụng cho tất cả đơn hàng trên 100$",
+    "Daily_Surprise_Offers": "Ưu đãi bất ngờ mỗi ngày",
+    "Save_up_to_25%_off": "Tiết kiệm lên đến 25%",
+    "Affordable_Prices": "Giá cả phải chăng",
+    "Get_Factory_direct_price": "Nhận giá trực tiếp từ nhà máy",
+    "Secure_Payments": "Thanh toán an toàn",
+    "100%_protected_payments": "Thanh toán được bảo vệ 100%"
+  },
+  "target": {
+    "myCategory": "Danh mục của tôi",
+    "bestDeals": "Sản phầm bán chạy nhất",
+    "popularEvents": "Sự kiện nổi bật",
+    "featured": "Những sản phẩm đặc trưng"
+  },
+  "footer": {
+    "subscribe_section": {
+      "subscribe": "Đăng ký",
+      "sub-subscribe": "chúng tôi để nhận tin tức",
+      "eventsAndOffers": "sự kiện và ưu đãi",
+      "input_placeholder": "Nhập email của bạn...",
+      "submit_button": "Gửi"
+    },
+    "company_section": {
+      "slogan": "Ngôi nhà và các yếu tố cần thiết để tạo ra những sản phẩm đẹp",
+      "title": "Công Ty",
+      "about_us": "Về chúng tôi",
+      "careers": "Tuyển dụng",
+      "store_locations": "Địa điểm cửa hàng",
+      "our_blog": "Blog của chúng tôi",
+      "reviews": "Đánh giá"
+    },
+    "shop_section": {
+      "title": "Cửa Hàng",
+      "game_video": "Trò chơi & Video",
+      "phone_tablets": "Điện thoại & Máy tính bảng",
+      "computers_laptops": "Máy tính & Laptop",
+      "sport_watches": "Đồng hồ thể thao",
+      "events": "Sự kiện"
+    },
+    "support_section": {
+      "title": "Hỗ Trợ",
+      "faq": "Câu hỏi thường gặp",
+      "reviews": "Đánh giá",
+      "contact_us": "Liên hệ chúng tôi",
+      "shipping": "Vận chuyển",
+      "live_chat": "Trò chuyện trực tuyến"
+    },
+    "footer": {
+      "rights_reserved": "\u00a9 2024 Hoai Nam. Mọi quyền được bảo lưu.",
+      "terms": "Điều khoản",
+      "privacy_policy": "Chính sách bảo mật"
+    },
+    "social_media": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    },
+    "payment_methods": {
+      "paypal": "PayPal",
+      "visa": "VISA",
+      "mastercard": "MasterCard",
+      "stripe": "Stripe"
+    }
+  },
+  "product_card": {
+    "select_size": "Vui lòng chọn kích cở",
+    "select_color": "Vui lòng chọn màu sắc",
+    "add_to_cart": "Thêm vào giỏ hàng",
+    "remove_from_cart": "Xóa khỏi giỏ hàng",
+    "add_to_wishlist": "Thêm vào danh sách yêu thích",
+    "remove_from_wishlist": "Xóa khỏi danh sách yêu thích",
+    "send_message": "Gửi tin nhắn",
+    "product_details": "Chi tiết sản phẩm",
+    "product_reviews": "Đánh giá sản phẩm",
+    "seller_information": "Thông tin người bán",
+    "ratings": "Số lượng đánh giá",
+    "no_reviews": "Sản phẩm này chưa có đánh giá nào!",
+    "join_on": "Tham gia vào",
+    "total_products": "Tổng số lượng sản phẩm",
+    "total_reviews": "Tổng đánh giá",
+    "visit": "Tham quan shop",
+    "relatedProduct":"Những sản phẩm liên quan"
   }
 }

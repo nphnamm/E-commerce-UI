@@ -25,58 +25,179 @@
     "bestSelling": "Best Selling",
     "products": "Products",
     "events": "Events",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "search": "Search",
+    "seachProduct": "Search Product...",
+    "goDashboard": "Go Dashboard",
+    "becomeSeller": "Become Seller"
   },
-  "login": {
-    "title": "Login to your account",
-    "emailLabel": "Email Address",
-    "passwordLabel": "Password",
-    "rememberMe": "Remember me",
-    "forgotPassword": "Forgot your password?",
-    "button": "LOG IN",
-    "noAccount": "Don't have an account?",
-    "signUp": "Sign Up",
-    "loginSuccess": "Login Success!",
-    "loginFailed": "Login failed. Please check your email or password."
+  "dashboard": {
+    "dashboard": "Dashboard",
+    "all_orders": "All Orders",
+    "all_products": "All Products",
+    "create_product": "Create Product",
+    "all_events": "All Events",
+    "create_event": "Create Event",
+    "withdraw_money": "Withdraw Money",
+    "shop_inbox": "Shop Inbox",
+    "discount_codes": "Discount Codes",
+    "refunds": "Refunds",
+    "settings": "Settings",
+    "shop_name": "Shop Name",
+    "shop_description": "Shop Description",
+    "shop_address": "Shop Address",
+    "shop_phone_number": "Shop Phone Number",
+    "shop_zip_code": "Shop Zip Code",
+    "update_shop": "Update Shop",
+    "enter_shop_description": "Enter your shop description"
   },
-  "signup": {
-    "title": "Register as a new user",
-    "fullName": "Full Name",
-    "emailLabel": "Email Address",
-    "passwordLabel": "Password",
-    "uploadAvatar": "Upload a file",
-    "signUpButton": "SIGN UP",
-    "noAccount": "Not have any account?",
-    "signIn": "Sign In",
-    "successMessage": "User registered successfully!",
-    "errorMessage": "Error occurred while registering user."
+  "overview": {
+    "overview": "Overview",
+    "account_balance": "Account Balance (with 10% service charge)",
+    "withdraw_money": "Withdraw Money",
+    "all_orders": "All Orders",
+    "view_orders": "View Orders",
+    "all_products": "All Products",
+    "view_products": "View Products",
+    "latest_orders": "Latest Orders",
+    "order_id": "Order ID",
+    "status": "Status",
+    "items_qty": "Items Qty",
+    "total": "Total",
+    "processing": "Processing",
+    "rows_per_page": "Rows per page",
+    "of": "of"
   },
-  "shopCreate": {
-    "title": "Register as a seller",
-    "shopName": "Shop Name",
-    "phoneNumber": "Phone Number",
-    "email": "Email Address",
-    "address": "Address",
-    "zipCode": "Zip Code",
-    "password": "Password",
-    "uploadAvatar": "Upload a file",
-    "rememberMe": "Remember me",
-    "forgotPassword": "Forgot your password?",
-    "submit": "Submit",
-    "alreadyAccount": "Already have an account?",
-    "signIn": "Sign In"
+  "category": {
+    "allCategory":"All Categories",
+    "Sofa": "Sofa",
+    "TV_Cabinet": "TV Cabinet",
+    "Dining": "Dining Table",
+    "Wardrobe": "Wardrobe",
+    "Bed": "Bed",
+    "Dressing_Table": "Dressing Table",
+    "Door": "Door",
+    "Divan": "Divan",
+    "Kitchen": "Kitchen",
+    "Lamp": "Lamp",
+    "Office": "Office Furniture",
+    "Reading_Table": "Reading Table",
+    "Mattress": "Mattress",
+    "Chest_Drawers": "Chest of Drawers",
+    "Windows": "Windows",
+    "Miscellaneous": "Miscellaneous",
+    "Computers_and_Laptops": "Computers and Laptops",
+    "Cosmetics_and_Body_Care": "Cosmetics and Body Care",
+    "Accessories": "Accessories",
+    "Clothes": "Clothes",
+    "Shoes": "Shoes",
+    "Gifts": "Gifts",
+    "Pet_Care": "Pet Care",
+    "Mobile_and_Tablets": "Mobile and Tablets",
+    "Music_and_Gaming": "Music and Gaming",
+    "Others": "Others"
   },
-  "categories": {
-    "computers": "Computers and Laptops",
-    "cosmetics": "Cosmetics and Body Care",
-    "accessories": "Accessories",
-    "cloths": "Cloths",
-    "shoes": "Shoes",
-    "gifts": "Gifts",
-    "petCare": "Pet Care",
-    "mobile": "Mobile and Tablets",
-    "music": "Music and Gaming",
-    "others": "Others"
+  "slides": {
+    "slide_1": {
+      "title": "Virtual Reality Gear",
+      "description": "Experience Immersive VR"
+    },
+    "slide_2": {
+      "title": "High Quality Headphones",
+      "description": "Listen to the Best Sound"
+    },
+    "slide_3": {
+      "title": "VR BOX 3D Glass",
+      "description": "Explore Our Tech Collection Perfect Gadget"
+    },
+    "shopNow": "Shop Now"
+  },
+  "brands": {
+    "Free_Shipping": "Free Shipping",
+    "From_all_orders_over_100$": "From all orders over 100$",
+    "Daily_Surprise_Offers": "Daily Surprise Offers",
+    "Save_up_to_25%_off": "Save up to 25% off",
+    "Affordable_Prices": "Affordable Prices",
+    "Get_Factory_direct_price": "Get Factory direct price",
+    "Secure_Payments": "Secure Payments",
+    "100%_protected_payments": "100% protected payments"
+  },
+  "target": {
+    "myCategory": "My category",
+    "bestDeals": "Best Deals",
+    "popularEvents": "Popular Events",
+    "featured": "Featured Products"
+  },
+  "footer": {
+    "subscribe_section": {
+      "subscribe": "Subscribe",
+      "sub-subscribe": "us for get news",
+      "eventsAndOffers": "events and offers",
+      "input_placeholder": "Enter your email...",
+      "submit_button": "submit"
+    },
+    "company_section": {
+      "slogan": "The home and elements needed to create beautiful products",
+      "title": "Company",
+      "about_us": "About Us",
+      "careers": "Careers",
+      "store_locations": "Store Locations",
+      "our_blog": "Our Blog",
+      "reviews": "Reviews"
+    },
+    "shop_section": {
+      "title": "Shop",
+      "game_video": "Games & Videos",
+      "phone_tablets": "Phones & Tablets",
+      "computers_laptops": "Computers & Laptops",
+      "sport_watches": "Sport Watches",
+      "events": "Events"
+    },
+    "support_section": {
+      "title": "Support",
+      "faq": "FAQ",
+      "reviews": "Reviews",
+      "contact_us": "Contact Us",
+      "shipping": "Shipping",
+      "live_chat": "Live Chat"
+    },
+    "footer": {
+      "rights_reserved": "© 2024 Hoai Nam. All rights reserved.",
+      "terms": "Terms",
+      "privacy_policy": "Privacy Policy"
+    },
+    "social_media": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    },
+    "payment_methods": {
+      "paypal": "PayPal",
+      "visa": "VISA",
+      "mastercard": "MasterCard",
+      "stripe": "Stripe"
+    }
+
+  },
+  "product_card":{
+    "select_size":"Select size",
+    "select_color":"Select color",
+    "add_to_cart":"Add to cart",
+    "remove_from_cart":"Remove from cart",
+    "add_to_wishlist":"Add to wishlist",
+    "remove_from_wishlist":"Remove from wishlist",
+    "send_message":"Send message",
+    "product_details":"Product Details",
+    "product_reviews":"Product Reviews",
+    "seller_information":"Seller Information",
+    "ratings":"Ratings",
+    "no_reviews":"No Reviews have for this product!",
+    "join_on":"Joined on",
+    "total_products":"Total Products",
+    "total_reviews":"Total Reviews",
+    "visit":"Visit Shop",
+     "relatedProduct":"Related Product"
+    
   }
 }
-  

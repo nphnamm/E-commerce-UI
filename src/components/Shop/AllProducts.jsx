@@ -3,29 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   deleteProduct,
   getAllProductsShop,
-  getProductForUpdate,
-  updateProduct,
 } from "../../redux/actions/product";
 import {
   AiOutlineDelete,
   AiOutlineEye,
   AiFillEdit,
-  AiOutlinePlusCircle,
+  
 } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import Loader from "../Layout/Loader";
-import { RxCross1 } from "react-icons/rx";
-import { categoriesData, sizeData, storageData } from "../../static/data";
-import { toast } from "react-toastify";
 import UpdateModal from "../Modal/UpdateModal";
 
 function AllProducts() {
   const [open, setOpen] = useState(false);
 
   const { products, isLoading } = useSelector((state) => state.products);
-  const { product } = useState();
 
   const { seller } = useSelector((state) => state.seller);
   const dispatch = useDispatch();

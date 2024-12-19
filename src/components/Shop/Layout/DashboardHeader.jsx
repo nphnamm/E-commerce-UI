@@ -17,6 +17,8 @@ const DashboardHeader = () => {
           <img
             src="https://shopo.quomodothemes.website/assets/images/logo.svg"
             alt=""
+            style={{ filter: "brightness(1) invert(0)" }}
+
           />
         </Link>
       </div>

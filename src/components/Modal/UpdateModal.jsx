@@ -10,8 +10,6 @@ function UpdateModal({ open, setOpen, data }) {
   console.log("open", open);
   console.log("data in product", data);
   const { seller } = useSelector((state) => state.seller);
-  const { isLoading, success, error } = useSelector((state) => state.products);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [id, setId] = useState(data?._id);
 

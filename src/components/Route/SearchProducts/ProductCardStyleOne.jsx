@@ -1,14 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Icon from "../../Icon/Icon";
 import formatPrice from "../../../utils/formatPrice";
 
-export default function ProductCardStyleOne({ datas, type }) {
+const ProductCardStyleOne = React.memo(({ datas, type }) => {
   const [isHovered, setIsHovered] = useState(false);
-  console.log("product item", datas);
-  const available = (datas?.stock / (datas?.stock + datas?.sold_out)) * 100;
+  // console.log("product item", datas);
   const originalPrice = formatPrice(datas.originalPrice);
   const discountPrice = formatPrice(datas.discountPrice);
-  console.log('price', originalPrice);
+  // console.log('price', originalPrice);
   return (
     // <div
     //   className="product-card-one w-full h-full bg-white relative group overflow-hidden"
@@ -181,4 +180,7 @@ export default function ProductCardStyleOne({ datas, type }) {
       </div>
     </div>
   );
-}
+})
+
+export default ProductCardStyleOne;
+

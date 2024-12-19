@@ -8,7 +8,7 @@ import { categoriesData, storageData } from "../../static/data";
 import { sizeData } from "../../static/data";
 function CreateProduct() {
   const { seller } = useSelector((state) => state.seller);
-  const { isLoading, success, error } = useSelector((state) => state.products);
+  const { success, error } = useSelector((state) => state.products);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

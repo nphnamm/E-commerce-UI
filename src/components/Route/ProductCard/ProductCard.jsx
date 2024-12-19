@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "../../../styles/styles";
 import {
   AiFillHeart,
-  AiOutlineEye,
+
   AiOutlineHeart,
-  AiOutlineShoppingCart,
+
 } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import ProductDetailsCard from "../ProductDetailsCard/ProductDetailsCard";
 import Ratings from "../../Products/Ratings";
 import { toast } from "react-toastify";
 import {
@@ -16,15 +15,12 @@ import {
   removeFromWishlist,
 } from "../../../redux/actions/wishlist";
 import { addTocart } from "../../../redux/actions/cart";
-import { backend_url } from "../../../server";
 
 const ProductCard = ({ data, isEvent }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
   const [click, setClick] = useState(false);
-  const [open, setOpen] = useState(false);
   const [imgSrc, setImgSrc] = useState("Invalid Image Source");
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -62,17 +58,16 @@ const ProductCard = ({ data, isEvent }) => {
     }
   };
   const d = data.name;
-  const product_name = d.replace(/\s+/g, "-");
   // console.log("product from db  ", data);
   return (
     //TODO: Full width is 253
     <>
-      <section className="text-center my-5 px-5 ">
+      <section className="text-center my-5 px-5 shadow-xl pb-5 rounded-[10px]">
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
           {/* Product 1 */}
           <div className="col">
             <div className="card border-0 ">
-              <div className="group relative w-[258px] h-[320px] overflow-hidden  shadow-xl">
+              <div className="group relative w-[100%] h-[320px] overflow-hidden  shadow-xl rounded-[10px]">
                 <Link to={`/product/${data?._id}`}>
                   <img
                     src={data?.images[0]?.url}
@@ -98,7 +93,7 @@ const ProductCard = ({ data, isEvent }) => {
 
                 <h4
                   onClick={() => addToCartHandler(data._id)}
-                  className="relative top-[320px] text-center p-2.5 bg-[#fdfdfd] transition-all duration-200 ease-custom mx-2.5 uppercase font-medium text-sm z-30 cursor-pointer group-hover:top-[270px]"
+                  className="relative top-[320px] rounded-[4px] text-center p-2.5 bg-[#fdfdfd] transition-all duration-200 ease-custom mx-2.5 uppercase font-medium text-sm z-30 cursor-pointer group-hover:top-[270px] hover:bg-[#e0e0e0]"
                 >
                   Add to cart
                 </h4>
@@ -132,20 +127,20 @@ const ProductCard = ({ data, isEvent }) => {
                   <h5 className={`${styles.productDiscountPrice} `}>
                     {data.originalPrice === 0
                       ? parseInt(data.originalPrice).toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        })
+                        style: "currency",
+                        currency: "VND",
+                      })
                       : parseInt(data.discountPrice).toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        })}
+                        style: "currency",
+                        currency: "VND",
+                      })}
                   </h5>
                   <h4 className={`${styles.price}`}>
                     {data.originalPrice
                       ? parseInt(data.originalPrice).toLocaleString("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        })
+                        style: "currency",
+                        currency: "VND",
+                      })
                       : null}
                   </h4>
                 </div>{" "}

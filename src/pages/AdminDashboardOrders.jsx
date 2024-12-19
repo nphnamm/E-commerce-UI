@@ -8,7 +8,7 @@ import AdminSideBar from "../components/Admin/Layout/AdminSideBar";
 const AdminDashboardOrders = () => {
   const dispatch = useDispatch();
 
-  const { adminOrders, adminOrderLoading } = useSelector(
+  const { adminOrders } = useSelector(
     (state) => state.order
   );
 
@@ -25,9 +25,7 @@ const AdminDashboardOrders = () => {
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
-          ? "greenColor"
-          : "redColor";
+        return params.row.status === "Delivered" ? "greenColor" : "redColor";
       },
     },
     {

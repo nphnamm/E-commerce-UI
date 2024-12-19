@@ -16,9 +16,13 @@ module.exports = {
         "800px":"800px",
         "1300px":"1300px",
         "400px":"400px",
+      },
+      boxShadow: {
+        '3xl': '0 0 27px -10px rgba(0, 0, 0, 0.3)',
       }
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
+  
 }
 

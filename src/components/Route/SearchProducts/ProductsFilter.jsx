@@ -1,6 +1,9 @@
-import { Slider } from "@react-spectrum/slider";
+import { Slider } from "@mui/material";
 
 import Checkbox from "./../../Checkbox/Checkbox";
+import { useCallback, useEffect, useState } from "react";
+import _ from "lodash";
+
 
 export default function ProductsFilter({
   selectedCategories,
@@ -18,7 +21,12 @@ export default function ProductsFilter({
   filterstorage,
   className,
 }) {
-  console.log("brand", brands);
+  // console.log('volume',volume)
+
+  const handleChange = (event, newValue) => {
+    volumeHandler(newValue);
+  };
+
   return (
     <>
       <div
@@ -84,21 +92,42 @@ export default function ProductsFilter({
             <h1 className="text-black text-base font-500">Price Range</h1>
           </div>
           <div className="price-range mb-5">
-  
+
+            {/* 
+            <Slider
+                value={value} // Giá trị được lấy từ cha
+                onChange={handleChangeCommitted}
+                valueLabelDisplay="auto"
+                max={500000000}
+                min={0}
+
+              /> */}
+
             <Slider
               value={volume}
-              minValue={0}
-              maxValue={50000000}
+              onChangeCommitted={handleChange}
+              
+              max={500000000}
+              min={0}
             />
+
+
+            {/* <Slider
+              getAriaLabel={() => 'Temperature range'}
+              value={value}
+              onChange={handleChange}
+              valueLabelDisplay="auto"
+              getAriaValueText={valuetext}
+            /> */}
           </div>
           <p className="text-xs text-qblack font-400">
             Price:
-            {parseInt(volume.min).toLocaleString("vi-VN", {
+            {parseInt(volume[0]).toLocaleString("vi-VN", {
               style: "currency",
               currency: "VND",
             })}{" "}
             -{" "}
-            {parseInt(volume.max).toLocaleString("vi-VN", {
+            {parseInt(volume[1]).toLocaleString("vi-VN", {
               style: "currency",
               currency: "VND",
             })}

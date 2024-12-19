@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import styles from "../../styles/styles";
-import { IoBagHandleOutline } from "react-icons/io5";
-import { HiOutlineMinus, HiPlus } from "react-icons/hi";
-import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsCartPlus } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,11 +23,21 @@ const Wishlist = ({ setOpenWishlist }) => {
     setOpenWishlist(false);
   };
 
+  const handleClose = () => {
+    setIsVisible(false); // Tắt trạng thái hiển thị
+    setTimeout(() => {
+      setOpenWishlist(false); // Đóng component sau khi animation kết thúc
+    }, 300); // Thời gian khớp với animation
+  };
+
   return (
     <div className="fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10">
-      <div className="fixed top-0 right-0 h-full w-[80%] 800px:w-[25%] bg-white flex flex-col overflow-y-scroll justify-between shadow-sm">
+      <div className={`fixed top-0 right-0 h-full w-[80%] 800px:w-[25%] bg-white flex flex-col overflow-y-scroll justify-between shadow-sm transition-transform duration-300 
+      ${isVisible ? "translate-x-0" : "translate-x-full"}
+      `}
+      >
         {wishlist && wishlist.length === 0 ? (
-          <div className="w-full h-screen flex items-center justify-center">
+          <div className="w-full h-screen flex items-center justify-center ">
             <div className="flex w-full justify-end pt-5 pr-5 fixed top-3 right-3">
               <RxCross1
                 size={25}
@@ -48,8 +54,8 @@ const Wishlist = ({ setOpenWishlist }) => {
                 <RxCross1
                   size={25}
                   className="cursor-pointer"
-                  onClick={() => setOpenWishlist(false)}
-                />
+                  onClick={handleClose}
+                  />
               </div>
               {/* Item length */}
               <div className={`${styles.noramlFlex} p-4`}>
@@ -62,7 +68,7 @@ const Wishlist = ({ setOpenWishlist }) => {
 
               {/* cart Single Items */}
               <br />
-              <div className="w-full border-t">
+              <div className="w-full border-t p-1.5">
                 {wishlist &&
                   wishlist.map((i, index) => (
                     <CartSingle
@@ -83,19 +89,18 @@ const Wishlist = ({ setOpenWishlist }) => {
 
 const CartSingle = ({ data, removeFromWishlistHandler, addToCartHandler }) => {
   const [value, setValue] = useState(1);
-  const totalPrice = data.discountPrice * value;
 
   return (
-    <div className="border-b p-4">
-      <div className="w-full 800px:flex items-center">
-        <RxCross1
+    <div className="border-b  rounded-[10px]  p-4 shadow-3xl mb-[4px]">
+      <div className="w-full flex items-center justify-between ">
+      <RxCross1
           className="cursor-pointer 800px:mb-['unset'] 800px:ml-['unset'] mb-2 ml-2"
           onClick={() => removeFromWishlistHandler(data)}
         />
         <img
           src={data?.images[0]?.url}
           alt=""
-          className="w-[130px] h-min ml-2 mr-2 rounded-[5px]"
+          className="w-[80px] h-min ml-2 mr-2 rounded-[5px]"
         />
 
         <div className="pl-[5px] w-[208px]">

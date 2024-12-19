@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "../../styles/styles";
-import { AiOutlineArrowRight, AiOutlineMoneyCollect } from "react-icons/ai";
+import { AiOutlineMoneyCollect } from "react-icons/ai";
 import { MdBorderClear } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
@@ -37,9 +37,7 @@ const AdminDashboardMain = () => {
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
-        return params.getValue(params.id, "status") === "Delivered"
-          ? "greenColor"
-          : "redColor";
+        return params.row.status === "Delivered" ? "greenColor" : "redColor";
       },
     },
     {

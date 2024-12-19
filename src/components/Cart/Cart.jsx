@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import styles from "../../styles/styles";
 import { IoBagHandleOutline } from "react-icons/io5";
@@ -26,11 +26,20 @@ const Cart = ({ setOpenCart }) => {
   const quantityChangeHandler = (data) => {
     dispatch(addTocart(data));
   };
-  console.log("cart", cart);
+  const handleClose = () => {
+    setIsVisible(false); // Tắt trạng thái hiển thị
+    setTimeout(() => {
+      setOpenCart(false); // Đóng component sau khi animation kết thúc
+    }, 300); // Thời gian khớp với animation
+  };
+
 
   return (
     <div className="fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10">
-      <div className="fixed top-0 right-0 h-full w-[80%] 800px:w-[25%] bg-white flex flex-col overflow-y-scroll justify-between shadow-sm">
+       <div className={`fixed top-0 right-0 h-full w-[80%] 800px:w-[25%] bg-white flex flex-col overflow-y-scroll justify-between shadow-sm transition-transform duration-300 
+      ${isVisible ? "translate-x-0" : "translate-x-full"}
+      `}
+      >
         {cart && cart.length === 0 ? (
           <div className="w-full h-screen flex items-center justify-center">
             <div className="flex w-full justify-end pt-5 pr-5 fixed top-3 right-3">
@@ -49,7 +58,7 @@ const Cart = ({ setOpenCart }) => {
                 <RxCross1
                   size={25}
                   className="cursor-pointer"
-                  onClick={() => setOpenCart(false)}
+                  onClick={() => handleClose(false)}
                 />
               </div>
               {/* Item length */}
@@ -100,7 +109,6 @@ const Cart = ({ setOpenCart }) => {
 const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
   const [value, setValue] = useState(data.qty);
   const totalPrice = data.discountPrice * value;
-  const [editedName, setEditedName] = useState("");
   const increment = (data) => {
     if (data.stock < value) {
       toast.error("Product stock limited");
@@ -115,17 +123,13 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
     const updateCartData = { ...data, qty: value === 1 ? 1 : value - 1 };
     quantityChangeHandler(updateCartData);
   };
-  function truncateText(text, maxLength) {
-    if (text.length > maxLength) {
-      return text.substring(0, maxLength) + "...";
-    } else {
-      return text;
-    }
-  }
+
+  
+
 
   return (
     <div className="border-b p-4">
-      <div className="w-full flex items-center">
+      <div className="w-full flex items-center bg-[#f7eeee] rounded-[10px] justify-between px-[15px]">
         <div>
           <div
             className={`bg-[#e44343] border border-[#e4434373] rounded-full w-[25px] h-[25px] ${styles.normalFlex} justify-center cursor-pointer`}
@@ -144,7 +148,7 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
         <img
           src={data?.images[0].url}
           alt=""
-          className="w-[130px] h-min ml-2 mr-2 rounded-[5px]"
+          className="w-[65px] h-min ml-2 mr-2 rounded-[5px]"
         />
         <div className="pl-[5px]">
           <h1>{data.name.substring(0, 20) + "..."}</h1>

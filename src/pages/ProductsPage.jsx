@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Layout/Header'
 import styles from '../styles/styles'
-import { productData } from '../static/data';
 import ProductCard from '../components/Route/ProductCard/ProductCard';
 import Footer from '../components/Layout/Footer';
 import { useSearchParams } from 'react-router-dom';

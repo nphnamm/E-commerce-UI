@@ -1,11 +1,10 @@
 import React from "react";
 
-import { IoBag, IoEyeOutline } from "react-icons/io5";
+import { IoEyeOutline } from "react-icons/io5";
 import { IoRepeatOutline } from "react-icons/io5";
 import { IoHeartOutline } from "react-icons/io5";
 import { IoBagAddOutline } from "react-icons/io5";
 import { IoStar } from "react-icons/io5";
-import { IoStarOutline } from "react-icons/io5";
 const ProductShowcase = () => {
   return (
     <div className="product-main">
