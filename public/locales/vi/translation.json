@@ -88,41 +88,6 @@
     "music": "Âm nhạc",
     "others": "Khác"
   },
-  "login": {
-    "title": "Đăng nhập vào tài khoản của bạn",
-    "emailLabel": "Địa chỉ Email",
-    "passwordLabel": "Mật khẩu",
-    "rememberMe": "Ghi nhớ tôi",
-    "forgotPassword": "Quên mật khẩu?",
-    "button": "ĐĂNG NHẬP",
-    "noAccount": "Chưa có tài khoản?",
-    "signUp": "Đăng ký",
-    "loginSuccess": "Đăng nhập thành công!",
-    "loginFailed": "Đăng nhập thất bại. Vui lòng kiểm tra email hoặc mật khẩu của bạn."
-  },
-  "signup": {
-    "title": "Đăng ký tài khoản mới",
-    "fullName": "Họ và Tên",
-    "emailLabel": "Địa chỉ Email",
-    "passwordLabel": "Mật khẩu",
-    "uploadAvatar": "Tải lên tệp",
-    "signUpButton": "ĐĂNG KÝ",
-    "noAccount": "Chưa có tài khoản?",
-    "signIn": "Đăng nhập",
-    "successMessage": "Đăng ký tài khoản thành công!",
-    "errorMessage": "Đã xảy ra lỗi khi đăng ký tài khoản."
-  },
-  "Shoplogin": {
-    "title": "Đăng nhập cửa hàng của bạn",
-    "email": "Địa chỉ email",
-    "password": "Mật khẩu",
-    "remember": "Ghi nhớ đăng nhập",
-    "forgotPassword": "Quên mật khẩu?",
-    "button": "ĐĂNG NHẬP",
-    "noAccount": "Chưa có tài khoản?",
-    "signup": "Đăng ký",
-    "success": "Đăng nhập thành công!"
-  },
   "Shopcreate":{
     "registerTitle": "Đăng ký làm người bán",
     "shopName": "Tên cửa hàng",
