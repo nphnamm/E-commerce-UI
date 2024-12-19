@@ -97,6 +97,68 @@
     "Music_and_Gaming": "Music and Gaming",
     "Others": "Others"
   },
+  "categories":{
+    "computers": "Computers",
+    "cosmetics": "Cosmetics",
+    "accessories": "Accessories",
+    "cloths": "Cloths",
+    "shoes": "Shoes",
+    "gifts": "Gifts",
+    "petCare": "Pet Care",
+    "mobile": "Mobile",
+    "music": "Music",
+    "others": "Others"
+  },
+  "login": {
+    "title": "Login to your account",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot your password?",
+    "button": "LOG IN",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "loginSuccess": "Login Success!",
+    "loginFailed": "Login failed. Please check your email or password."
+  },
+  "signup": {
+    "title": "Register as a new user",
+    "fullName": "Full Name",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "uploadAvatar": "Upload a file",
+    "signUpButton": "SIGN UP",
+    "noAccount": "Not have any account?",
+    "signIn": "Sign In",
+    "successMessage": "User registered successfully!",
+    "errorMessage": "Error occurred while registering user."
+  },
+  "Shoplogin": {
+    "title": "Login to your shop",
+    "email": "Email Address",
+    "password": "Password",
+    "remember": "Remember me",
+    "forgotPassword": "Forgot your password?",
+    "button": "LOG IN",
+    "noAccount": "Not have any account?",
+    "signup": "Sign Up",
+    "success": "Login Success!"
+  },
+  "Shopcreate":{
+    "registerTitle": "Register as a seller",
+    "shopName": "Shop Name",
+    "phoneNumber": "Phone Number",
+    "emailAddress": "Email Address",
+    "address": "Address",
+    "zipCode": "Zip Code",
+    "password": "Password",
+    "avatar": "Upload a file",
+    "avatarimage":"Avatar",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot your password?",
+    "submitButton": "Submit",
+    "signIn": "Sign In"
+  },
   "slides": {
     "slide_1": {
       "title": "Virtual Reality Gear",
