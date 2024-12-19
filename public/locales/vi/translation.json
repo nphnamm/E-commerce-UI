@@ -228,6 +228,45 @@
     "phoneNumber":"Số Điện Thoại",
     "password":"Mật khẩu",
     "update":"Cập nhật"
+  },
+  "login": {
+    "title": "Đăng nhập vào tài khoản của bạn",
+    "emailLabel": "Địa chỉ email",
+    "passwordLabel": "Mật khẩu",
+    "rememberMe": "Ghi nhớ đăng nhập",
+    "forgotPassword": "Quên mật khẩu?",
+    "button": "ĐĂNG NHẬP",
+    "noAccount": "Chưa có tài khoản?",
+    "signUp": "Đăng ký",
+    "loginSuccess": "Đăng nhập thành công!",
+    "loginFailed": "Đăng nhập thất bại. Vui lòng kiểm tra email hoặc mật khẩu của bạn."
+  },
+  "signup": {
+    "title": "Đăng ký tài khoản mới",
+    "fullName": "Họ và tên",
+    "emailLabel": "Địa chỉ email",
+    "passwordLabel": "Mật khẩu",
+    "uploadAvatar": "Tải lên tệp",
+    "signUpButton": "ĐĂNG KÝ",
+    "noAccount": "Chưa có tài khoản?",
+    "signIn": "Đăng nhập",
+    "successMessage": "Người dùng đã đăng ký thành công!",
+    "errorMessage": "Đã xảy ra lỗi khi đăng ký người dùng."
+  },
+  "shopCreate": {
+    "title": "Đăng ký làm người bán",
+    "shopName": "Tên cửa hàng",
+    "phoneNumber": "Số điện thoại",
+    "email": "Địa chỉ email",
+    "address": "Địa chỉ",
+    "zipCode": "Mã bưu điện",
+    "password": "Mật khẩu",
+    "uploadAvatar": "Tải lên tệp",
+    "rememberMe": "Ghi nhớ đăng nhập",
+    "forgotPassword": "Quên mật khẩu?",
+    "submit": "Gửi",
+    "alreadyAccount": "Đã có tài khoản?",
+    "signIn": "Đăng nhập"
   }
   
 }

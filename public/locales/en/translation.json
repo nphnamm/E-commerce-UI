@@ -226,5 +226,44 @@
     "phoneNumber": "Phone Number",
     "password": "Password",
     "update": "Update"
-  }
+  },
+  "login": {
+    "title": "Login to your account",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot your password?",
+    "button": "LOG IN",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "loginSuccess": "Login Success!",
+    "loginFailed": "Login failed. Please check your email or password."
+  },
+  "signup": {
+    "title": "Register as a new user",
+    "fullName": "Full Name",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "uploadAvatar": "Upload a file",
+    "signUpButton": "SIGN UP",
+    "noAccount": "Not have any account?",
+    "signIn": "Sign In",
+    "successMessage": "User registered successfully!",
+    "errorMessage": "Error occurred while registering user."
+  },
+  "shopCreate": {
+    "title": "Register as a seller",
+    "shopName": "Shop Name",
+    "phoneNumber": "Phone Number",
+    "email": "Email Address",
+    "address": "Address",
+    "zipCode": "Zip Code",
+    "password": "Password",
+    "uploadAvatar": "Upload a file",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot your password?",
+    "submit": "Submit",
+    "alreadyAccount": "Already have an account?",
+    "signIn": "Sign In"
+  },
 }

@@ -258,7 +258,6 @@ function Header({ activeHeading }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [language, setLanguage] = useState('vi'); // Mặc định là tiếng Anh
   const [selectedIndex, setSelectedIndex] = useState(1);
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -609,7 +608,7 @@ function Header({ activeHeading }) {
               <div className="my-8 w-[92%] m-auto h-[40px] relative]">
                 <input
                   type="search"
-                  placeholder="Search Product..."
+                  placeholder={t("header.searchPlaceholder")} // translate
                   className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
                   value={searchTerm}
                   onChange={handleSearchChange}
@@ -641,13 +640,13 @@ function Header({ activeHeading }) {
                 {user?.role == "Admin" ? (
                   <Link to="/admin/dashboard">
                     <h1 className="text-[#fff] flex items-center">
-                      Admin Dashboard <IoIosArrowForward className="ml-1" />
+                    {t("header.adminDashboard")}<IoIosArrowForward className="ml-1" />
                     </h1>
                   </Link>
                 ) : (
                   <Link to="/shop-create">
                     <h1 className="text-[#fff] flex items-center">
-                      Become Seller <IoIosArrowForward className="ml-1" />
+                    {t("header.becomeSeller")} <IoIosArrowForward className="ml-1" />
                     </h1>
                   </Link>
                 )}
@@ -669,13 +668,13 @@ function Header({ activeHeading }) {
                       to="/login"
                       className="text-[18px] pr-[10px] text-[#000000b7]"
                     >
-                      Login /
+                       {t("header.login")}  /
                     </Link>
                     <Link
                       to="/sign-up"
                       className="text-[18px] text-[#000000b7]"
                     >
-                      Sign up
+                     {t("header.signup")}
                     </Link>
                   </>
                 )}
