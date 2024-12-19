@@ -14,6 +14,9 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
   const [avatar, setAvatar] = useState(null);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleFileInputChange = (e) => {
     const reader = new FileReader();
