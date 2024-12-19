@@ -88,21 +88,6 @@
     "music": "Âm nhạc",
     "others": "Khác"
   },
-  "Shopcreate":{
-    "registerTitle": "Đăng ký làm người bán",
-    "shopName": "Tên cửa hàng",
-    "phoneNumber": "Số điện thoại",
-    "emailAddress": "Địa chỉ email",
-    "address": "Địa chỉ",
-    "zipCode": "Mã bưu điện",
-    "password": "Mật khẩu",
-    "avatar": "Tải lên tệp",
-    "avatarimage":"Ảnh đại diện",
-    "rememberMe": "Ghi nhớ tôi",
-    "forgotPassword": "Quên mật khẩu?",
-    "submitButton": "Gửi",
-    "signIn": "Đăng nhập"
-  },
   "slides": {
     "slide_1": {
       "title": "Thiết Bị Thực Tế Ảo",
