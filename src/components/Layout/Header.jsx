@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { categoriesData } from "./../../static/data";
 import DropDown from "./DropDown";
@@ -16,14 +16,12 @@ import Navbar from "./Navbar";
 import { useSelector } from "react-redux";
 import Cart from "../Cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
-import { RxCross1 } from "react-icons/rx";
 import { useTranslation } from "react-i18next";
 import { Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 import { ArrowDropDown } from '@mui/icons-material';
 import LanguageIcon from '@mui/icons-material/Language';
 import logoVi from '../../Assests/images/vietnamese.png';
 import logoUs from '../../Assests/images/us.png';
-import Siderbar from "./Siderbar";
 import Sidebar from "./Siderbar";
 function Header({ activeHeading }) {
 
@@ -33,6 +31,220 @@ function Header({ activeHeading }) {
   const { wishlist } = useSelector((state) => state.wishlist);
   const { cart } = useSelector((state) => state.cart);
   const { allProducts } = useSelector((state) => state.products);
+
+   const categoriesData = [
+    {
+      id: 1,
+      title: t("category.Computers_and_Laptops"),
+      icon:'Computer',
+      subTitle: "",
+      image_Url:
+        "https://cdn.shopify.com/s/files/1/1706/9177/products/NEWAppleMacbookProwithM1ProChip14InchLaptop2021ModelMKGQ3LL_A_16GB_1TBSSD_custommacbd.jpg?v=1659592838",
+    },
+    {
+      id: 2,
+      title: t("category.Cosmetics_and_Body_Care"),
+      icon:'Comestic',
+      subTitle: "",
+      image_Url:
+        "https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2021-07/kosme1.png",
+    },
+    {
+      id: 3,
+      title: t("category.Accessories"),
+      icon:'Accessory',
+      subTitle: "",
+      image_Url:
+        "https://img.freepik.com/free-vector/ordering-goods-online-internet-store-online-shopping-niche-e-commerce-website-mother-buying-babies-clothes-footwear-toys-infant-accessories_335657-2345.jpg?w=2000",
+    },
+    {
+      id: 4,
+      title: t("category.Clothes"),
+      icon:'Cloth',
+  
+      subTitle: "",
+      image_Url:
+        "https://www.shift4shop.com/2015/images/industries/clothing/clothing-apparel.png",
+    },
+    {
+      id: 5,
+      title: t("category.Shoes"),
+      icon:'Shoe',
+  
+      subTitle: "",
+      image_Url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvBQPQMVNRd6TtDkGs2dCri0Y-rxKkFOiEWw&usqp=CAU",
+    },
+    {
+      id: 6,
+      title: t("category.Gifts"),
+      icon:'Gift',
+      subTitle: "",
+      image_Url:
+        "https://securecdn.pymnts.com/wp-content/uploads/2014/11/Gifts-Photo-700x489.jpg",
+    },
+    {
+      id: 7,
+      title:t("category.Pet_Care"),
+      icon:'Pet',
+  
+      subTitle: "",
+      image_Url: "https://cdn.openpr.com/T/c/Tc15444071_g.jpg",
+    },
+    {
+      id: 8,
+      icon:'Mobile',
+      title:t("category.Mobile_and_Tablets"),
+      subTitle: "",
+      image_Url:
+        "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mpwp3tua-apple-iphone-14-256gb-mavi-mpwp3tua-637986832343472449.jpg",
+    },
+    {
+      id: 9,
+      title:t("category.Music_and_Gaming"),
+      icon:'Gaming',
+      subTitle: "",
+      image_Url:
+        "https://static.vecteezy.com/system/resources/previews/011/996/555/original/3d-black-headphone-illustration-ecommerce-icon-png.png",
+    },
+    {
+      id: 10,
+      title: t("category.Others"),
+      icon:'Other',
+  
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 11,
+      title: "Sofa",
+      icon:'Sofa',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 12,
+      title: "TV Cabinet",
+      icon:'TVCabinet',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 13,
+      title: "Dining",
+      icon:'Dining',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 14,
+      title: "Wordrobe",
+      icon:'Wordrobe',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 15,
+      title: "Bed",
+      icon:'Bed',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 16,
+      title: "Dressing Table",
+      icon:'DressingTable',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 17,
+      title: "Door",
+      icon:'Door',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 18,
+      title: "Divan",
+      icon:'Divan',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 19,
+      title: "Kitchen",
+      icon:'Kitchen',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 20,
+      title: "Lamp",
+      icon:'Lamp',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 21,
+      title: "Office",
+      icon:'Office',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 22,
+      title: "Reading Table",
+      icon:'ReadingTable',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 23,
+      title: "Matress",
+      icon:'Mattress',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 23,
+      title: "Chest Drawers",
+      icon:'ChestDrawer',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 24,
+      title: "Windows",
+      icon:'Windows',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+    {
+      id: 25,
+      title: "Miscellaneous",
+      icon:'Miscellaneous',
+      subTitle: "",
+      image_Url:
+        "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+    },
+  ];
   const limitedCategoriesData = categoriesData.slice(0, 10);
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -203,7 +415,7 @@ function Header({ activeHeading }) {
           >
             <BiMenuAltLeft size={30} className="absolute top-3 left-2" />
             <button className="h-full w-full flex justify-between items-center pl-10 bg-white font-sans text-lg font-medium select-none rounded-t-md">
-              All categories
+            {t("category.allCategory")}
             </button>
             <IoIosArrowDown
               size={20}

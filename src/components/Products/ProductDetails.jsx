@@ -19,6 +19,7 @@ import { toast } from "react-toastify";
 import { addTocart } from "../../redux/actions/cart";
 import axios from "axios";
 import Loader from "../Layout/Loader";
+import { useTranslation } from "react-i18next";
 
 const ProductDetails = ({ data, sizesData, filterdColors }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -36,6 +37,7 @@ const ProductDetails = ({ data, sizesData, filterdColors }) => {
   const [colorOfProduct, setColorOfProduct] = useState(filterdColors)
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const {t} = useTranslation();
   useEffect(() => {
 
     if (wishlist && wishlist.find((i) => i._id === data?._id)) {
@@ -248,7 +250,7 @@ const ProductDetails = ({ data, sizesData, filterdColors }) => {
 
                 {/* selected size */}
                 <div className="container mt-4">
-                  <h5>Select Size</h5>
+                  <h5>{t("product_card.select_size")}</h5>
                   <div className="flex justify-content-start">
                     {sizesData.map((size) => (
                       <div
@@ -267,7 +269,7 @@ const ProductDetails = ({ data, sizesData, filterdColors }) => {
 
                 </div>
                 <div className="container mt-4">
-                  <h5>Select Color</h5>
+                  <h5>{t("product_card.select_color")}</h5>
                   <div className="flex justify-content-start">
                     {colorOfProduct?.map((color) => (
                       <div
@@ -311,7 +313,7 @@ const ProductDetails = ({ data, sizesData, filterdColors }) => {
                         className="cursor-pointer"
                         onClick={() => removeFromWishlistHandler(detailProduct)}
                         color={click ? "red" : "#333"}
-                        title="Remove from wishlist"
+                        title={t("product_card.remove_from_wishlist")}
                       />
                     ) : (
                       <AiOutlineHeart
@@ -319,7 +321,7 @@ const ProductDetails = ({ data, sizesData, filterdColors }) => {
                         className="cursor-pointer"
                         onClick={() => addToWishlistHandler(detailProduct)}
                         color={click ? "red" : "#333"}
-                        title="Add to wishlist"
+                        title={t("product_card.add_to_wishlist")}
                       />
                     )}
                   </div>
@@ -329,7 +331,7 @@ const ProductDetails = ({ data, sizesData, filterdColors }) => {
                   onClick={() => addToCartHandler(detailProduct._id)}
                 >
                   <span className="text-white flex items-center">
-                    Add to cart <AiOutlineShoppingCart className="ml-1" />
+                  {t("product_card.add_to_cart")} <AiOutlineShoppingCart className="ml-1" />
                   </span>
                 </div>
                 <div className="flex items-center pt-8">
@@ -347,7 +349,7 @@ const ProductDetails = ({ data, sizesData, filterdColors }) => {
                       </h3>
                     </Link>
                     <h5 className="pb-3 text-[15px]">
-                      ({averageRating}/5) Ratings
+                      ({averageRating}/5) {t("product_card.ratings")}
                     </h5>
                   </div>
                   <div
@@ -355,7 +357,7 @@ const ProductDetails = ({ data, sizesData, filterdColors }) => {
                     onClick={handleMessageSubmit}
                   >
                     <span className="text-white flex items-center">
-                      Send Message <AiOutlineMessage className="ml-1" />
+                    {t("product_card.send_message")} <AiOutlineMessage className="ml-1" />
                     </span>
                   </div>
                 </div>
@@ -383,7 +385,7 @@ const ProductDetailsInfo = ({
   averageRating,
 }) => {
   const [active, setActive] = useState(1);
-
+  const {t} = useTranslation();
   return (
     <div className="bg-[#f5f6fb] px-3 800px:px-10 py-2 rounded">
       <div className="w-full flex justify-between border-b pt-10 pb-2">
@@ -394,7 +396,7 @@ const ProductDetailsInfo = ({
             }
             onClick={() => setActive(1)}
           >
-            Product Details
+            {t("product_card.product_details")}
           </h5>
           {active === 1 ? (
             <div className={`${styles.active_indicator}`} />
@@ -407,7 +409,7 @@ const ProductDetailsInfo = ({
             }
             onClick={() => setActive(2)}
           >
-            Product Reviews
+              {t("product_card.product_reviews")}
           </h5>
           {active === 2 ? (
             <div className={`${styles.active_indicator}`} />
@@ -420,7 +422,7 @@ const ProductDetailsInfo = ({
             }
             onClick={() => setActive(3)}
           >
-            Seller Information
+            {t("product_card.seller_information")}
           </h5>
           {active === 3 ? (
             <div className={`${styles.active_indicator}`} />
@@ -457,7 +459,7 @@ const ProductDetailsInfo = ({
 
           <div className="w-full flex justify-center">
             {data && data.reviews.length === 0 && (
-              <h5>No Reviews have for this product!</h5>
+              <h5> {t("product_card.no_reviews")}</h5>
             )}
           </div>
         </div>
@@ -476,7 +478,7 @@ const ProductDetailsInfo = ({
                 <div className="pl-3">
                   <h3 className={`${styles.shop_name}`}>{data.shop.name}</h3>
                   <h5 className="pb-2 text-[15px]">
-                    ({averageRating}/5) Ratings
+                    ({averageRating}/5) {t("product_card.ratings")}
                   </h5>
                 </div>
               </div>
@@ -486,26 +488,26 @@ const ProductDetailsInfo = ({
           <div className="w-full 800px:w-[50%] mt-5 800px:mt-0 800px:flex flex-col items-end">
             <div className="text-left">
               <h5 className="font-[600]">
-                Joined on:{" "}
+              {t("product_card.join_on")}:{" "}
                 <span className="font-[500]">
                   {data.shop?.createdAt?.slice(0, 10)}
                 </span>
               </h5>
               <h5 className="font-[600] pt-3">
-                Total Products:{" "}
+              {t("product_card.total_products")}:{" "}
                 <span className="font-[500]">
                   {products && products.length}
                 </span>
               </h5>
               <h5 className="font-[600] pt-3">
-                Total Reviews:{" "}
+              {t("product_card.total_reviews")}:{" "}
                 <span className="font-[500]">{totalReviewsLength}</span>
               </h5>
-              <Link to="/">
+                <Link to="/">
                 <div
                   className={`${styles.button} !rounded-[4px] !h-[39.5px] mt-3`}
                 >
-                  <h4 className="text-white">Visit Shop</h4>
+                  <h4 className="text-white"> {t("product_card.visit")}</h4>
                 </div>
               </Link>
             </div>

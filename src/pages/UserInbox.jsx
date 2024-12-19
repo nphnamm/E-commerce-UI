@@ -9,9 +9,9 @@ import Header from "../components/Layout/Header";
 import { useSelector } from "react-redux";
 import socketIO from "socket.io-client";
 import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime'; // Import plugin
+import relativeTime from 'dayjs/plugin/relativeTime'; 
 dayjs.extend(relativeTime); 
-const ENDPOINT = "https://e-commerce-socket-s6ww.onrender.com/10000";
+const ENDPOINT = "https://e-commerce-socket-s6ww.onrender.com";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const UserInbox = () => {
@@ -394,7 +394,7 @@ const SellerInbox = ({
                   </div>
 
                   <p className="text-[12px] text-[#000000d3] pt-1">
-                    {dayjs(item.createdAt)}
+                  {dayjs(item.createdAt).format("DD/MM/YYYY HH:mm")}
                   </p>
                 </div>
               )}

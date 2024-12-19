@@ -2,27 +2,30 @@ import React, { useState } from "react";
 import Banner1 from "../../../Assests/images/banner-1.png";
 import Banner2 from "../../../Assests/images/banner-2.png";
 import Banner3 from "../../../Assests/images/banner-3.png";
+import { useTranslation } from "react-i18next";
 
 const Slider = ({ className }) => {
+  const { t } = useTranslation();
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
     {
       image: Banner3, // Đường dẫn đến hình thứ ba
-      title: "Virtual Reality Gear",
-      description: "Experience Immersive VR",
+      title: t('slides.slide_3.title'),
+      description: t('slides.slide_3.description'),
       buttonText: "Shop Now",
     },
     {
       image: Banner2, // Đường dẫn đến hình thứ hai
-      title: "High Quality Headphones",
-      description: "Listen to the Best Sound",
+      title: t('slides.slide_2.title'),
+      description: t('slides.slide_3.description'),
       buttonText: "Shop Now",
     },
     {
       image: Banner1, // Đường dẫn đến hình đầu tiên
-      title: "VR BOX 3D Glass",
-      description: "Explore Our Tech Collection Perfect Gadget",
+      title: t('slides.slide_1.title'),
+      description: t('slides.slide_3.description'),
       buttonText: "Shop Now",
     },
 
@@ -58,16 +61,17 @@ const Slider = ({ className }) => {
               <div class="w-full h-full xl:flex items-center pt-20 xl:pt-0">
                 <div class="xl:w-[626px] w-full">
                   <p class="md:text-[34px] text-[20px] font-medium text-qh3-blue mb-[7px]">
-                    VR BOX 3D Glass
+                  {slide.title}
                   </p>
                   <h1 class="md:text-[66px] text-[40px] font-bold text-qblack md:leading-[80px] leading-[48px] mb-[44px]">
-                    Explore Our Tech Collection Perfect Gadget
+                  {slide.description}
                   </h1>
                   <a href="/home-three" rel="noopener noreferrer">
                     <div class="w-[160px] h-[52px] bg-blue-600 flex justify-center items-center group rounded bg-qh3-blue text-white relative transition-all duration-300 ease-in-out overflow-hidden cursor-pointer banner-wrapper mb-[60px]">
                       <div class="flex space-x-1 items-center transition-all duration-300 ease-in-out relative z-10">
                         <span class="text-sm font-semibold tracking-wide leading-7 mr-2">
-                          Shop Now
+                        {t('slides.shopNow')}
+
                         </span>
                         <span>
                           <svg

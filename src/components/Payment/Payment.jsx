@@ -15,6 +15,7 @@ import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
 import { RxCross1 } from "react-icons/rx";
+import formatPrice from "../../utils/formatPrice";
 
 const Payment = () => {
   const [orderData, setOrderData] = useState([]);
@@ -36,7 +37,7 @@ const Payment = () => {
           {
             description: "Sunflower",
             amount: {
-              currency_code: "USD",
+              currency_code: "VND",
               value: orderData?.totalPrice,
             },
           },
@@ -411,6 +412,8 @@ const PaymentInfo = ({
 };
 
 const CartData = ({ orderData }) => {
+  console.log(orderData)
+
   const shipping = orderData?.shipping?.toFixed(2);
   return (
     <div className="w-full bg-[#fff] rounded-md p-5 pb-8">
@@ -418,10 +421,8 @@ const CartData = ({ orderData }) => {
         <h3 className="text-[16px] font-[400] text-[#000000a4]">subtotal:</h3>
 
         <h5 className="text-[18px] font-[600]">
-          {parseInt(orderData?.discountPrice).toLocaleString("vi-VN", {
-            style: "currency",
-            currency: "VND",
-          })}
+
+          {formatPrice(orderData?.subTotalPrice)}
         </h5>
       </div>
       <br />
@@ -443,7 +444,8 @@ const CartData = ({ orderData }) => {
         </h5>
       </div>
       <h5 className="text-[18px] font-[600] text-end pt-3">
-        ${orderData?.totalPrice}
+        {formatPrice(orderData?.totalPrice)}
+        
       </h5>
       <br />
     </div>

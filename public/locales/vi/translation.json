@@ -6,8 +6,8 @@
     "events": "Sự Kiện",
     "faq": "Câu Hỏi Thường Gặp",
     "search": "Tìm kiếm",
-    "seachProduct":"Tìm kiếm sản phẩm...",
-    "goDashboard":"Tới trang điều khiển",
+    "seachProduct": "Tìm kiếm sản phẩm...",
+    "goDashboard": "Tới trang điều khiển",
     "becomeSeller": "Trở thành nhà bán hàng"
   },
   "dashboard": {
@@ -48,6 +48,7 @@
     "of": "trên"
   },
   "category": {
+    "allCategory": "Các loại hàng",
     "Sofa": "Sofa",
     "TV_Cabinet": "Tủ TV",
     "Dining": "Bàn ăn",
@@ -58,12 +59,37 @@
     "Divan": "Giường băng",
     "Kitchen": "Nhà bếp",
     "Lamp": "Đèn",
-    "Office": "Văn phòng",
+    "Office": "Đồ nội thất văn phòng",
     "Reading_Table": "Bàn đọc sách",
     "Mattress": "Nệm",
     "Chest_Drawers": "Tủ ngăn kéo",
     "Windows": "Cửa sổ",
-    "Miscellaneous": "Khác"
+    "Miscellaneous": "Khác",
+    "Computers_and_Laptops": "Máy tính và Laptop",
+    "Cosmetics_and_Body_Care": "Mỹ phẩm và Chăm sóc cơ thể",
+    "Accessories": "Phụ kiện",
+    "Clothes": "Quần áo",
+    "Shoes": "Giày dép",
+    "Gifts": "Quà tặng",
+    "Pet_Care": "Chăm sóc thú cưng",
+    "Mobile_and_Tablets": "Điện thoại và Máy tính bảng",
+    "Music_and_Gaming": "Âm nhạc và Trò chơi",
+    "Others": "Khác"
+  },
+  "slides": {
+    "slide_1": {
+      "title": "Thiết Bị Thực Tế Ảo",
+      "description": "Trải nghiệm VR sống động"
+    },
+    "slide_2": {
+      "title": "Tai Nghe Chất Lượng Cao",
+      "description": "Lắng nghe âm thanh đỉnh cao"
+    },
+    "slide_3": {
+      "title": "Kính VR BOX 3D",
+      "description": "Khám phá bộ sưu tập công nghệ, thiết bị hoàn hảo"
+    },
+    "shopNow": "Đi đến cửa hàng"
   },
   "brands": {
     "Free_Shipping": "Miễn phí vận chuyển",
@@ -76,18 +102,21 @@
     "100%_protected_payments": "Thanh toán được bảo vệ 100%"
   },
   "target": {
-    "myCategory":"Danh mục của tôi",
+    "myCategory": "Danh mục của tôi",
     "bestDeals": "Sản phầm bán chạy nhất",
     "popularEvents": "Sự kiện nổi bật",
     "featured": "Những sản phẩm đặc trưng"
   },
   "footer": {
     "subscribe_section": {
-      "subscribe_prompt": "Đăng ký để nhận tin tức, sự kiện và ưu đãi",
+      "subscribe": "Đăng ký",
+      "sub-subscribe": "chúng tôi để nhận tin tức",
+      "eventsAndOffers": "sự kiện và ưu đãi",
       "input_placeholder": "Nhập email của bạn...",
       "submit_button": "Gửi"
     },
     "company_section": {
+      "slogan": "Ngôi nhà và các yếu tố cần thiết để tạo ra những sản phẩm đẹp",
       "title": "Công Ty",
       "about_us": "Về chúng tôi",
       "careers": "Tuyển dụng",
@@ -128,5 +157,24 @@
       "mastercard": "MasterCard",
       "stripe": "Stripe"
     }
+  },
+  "product_card": {
+    "select_size": "Vui lòng chọn kích cở",
+    "select_color": "Vui lòng chọn màu sắc",
+    "add_to_cart": "Thêm vào giỏ hàng",
+    "remove_from_cart": "Xóa khỏi giỏ hàng",
+    "add_to_wishlist": "Thêm vào danh sách yêu thích",
+    "remove_from_wishlist": "Xóa khỏi danh sách yêu thích",
+    "send_message": "Gửi tin nhắn",
+    "product_details": "Chi tiết sản phẩm",
+    "product_reviews": "Đánh giá sản phẩm",
+    "seller_information": "Thông tin người bán",
+    "ratings": "Số lượng đánh giá",
+    "no_reviews": "Sản phẩm này chưa có đánh giá nào!",
+    "join_on": "Tham gia vào",
+    "total_products": "Tổng số lượng sản phẩm",
+    "total_reviews": "Tổng đánh giá",
+    "visit": "Tham quan shop",
+    "relatedProduct":"Những sản phẩm liên quan"
   }
 }

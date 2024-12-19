@@ -5,9 +5,9 @@
     "products": "Products",
     "events": "Events",
     "faq": "FAQ",
-    "search":"Search",
-    "seachProduct":"Search Product...",
-    "goDashboard":"Go Dashboard",
+    "search": "Search",
+    "seachProduct": "Search Product...",
+    "goDashboard": "Go Dashboard",
     "becomeSeller": "Become Seller"
   },
   "dashboard": {
@@ -48,9 +48,10 @@
     "of": "of"
   },
   "category": {
+    "allCategory":"All Categories",
     "Sofa": "Sofa",
     "TV_Cabinet": "TV Cabinet",
-    "Dining": "Dining",
+    "Dining": "Dining Table",
     "Wardrobe": "Wardrobe",
     "Bed": "Bed",
     "Dressing_Table": "Dressing Table",
@@ -58,12 +59,37 @@
     "Divan": "Divan",
     "Kitchen": "Kitchen",
     "Lamp": "Lamp",
-    "Office": "Office",
+    "Office": "Office Furniture",
     "Reading_Table": "Reading Table",
     "Mattress": "Mattress",
-    "Chest_Drawers": "Chest Drawers",
+    "Chest_Drawers": "Chest of Drawers",
     "Windows": "Windows",
-    "Miscellaneous": "Miscellaneous"
+    "Miscellaneous": "Miscellaneous",
+    "Computers_and_Laptops": "Computers and Laptops",
+    "Cosmetics_and_Body_Care": "Cosmetics and Body Care",
+    "Accessories": "Accessories",
+    "Clothes": "Clothes",
+    "Shoes": "Shoes",
+    "Gifts": "Gifts",
+    "Pet_Care": "Pet Care",
+    "Mobile_and_Tablets": "Mobile and Tablets",
+    "Music_and_Gaming": "Music and Gaming",
+    "Others": "Others"
+  },
+  "slides": {
+    "slide_1": {
+      "title": "Virtual Reality Gear",
+      "description": "Experience Immersive VR"
+    },
+    "slide_2": {
+      "title": "High Quality Headphones",
+      "description": "Listen to the Best Sound"
+    },
+    "slide_3": {
+      "title": "VR BOX 3D Glass",
+      "description": "Explore Our Tech Collection Perfect Gadget"
+    },
+    "shopNow": "Shop Now"
   },
   "brands": {
     "Free_Shipping": "Free Shipping",
@@ -76,45 +102,48 @@
     "100%_protected_payments": "100% protected payments"
   },
   "target": {
-    "myCategory":"My category",
+    "myCategory": "My category",
     "bestDeals": "Best Deals",
     "popularEvents": "Popular Events",
     "featured": "Featured Products"
   },
   "footer": {
     "subscribe_section": {
-      "subscribe_prompt": "Đăng ký để nhận tin tức, sự kiện và ưu đãi",
-      "input_placeholder": "Nhập email của bạn...",
-      "submit_button": "Gửi"
+      "subscribe": "Subscribe",
+      "sub-subscribe": "us for get news",
+      "eventsAndOffers": "events and offers",
+      "input_placeholder": "Enter your email...",
+      "submit_button": "submit"
     },
     "company_section": {
-      "title": "Công Ty",
-      "about_us": "Về chúng tôi",
-      "careers": "Tuyển dụng",
-      "store_locations": "Địa điểm cửa hàng",
-      "our_blog": "Blog của chúng tôi",
-      "reviews": "Đánh giá"
+      "slogan": "The home and elements needed to create beautiful products",
+      "title": "Company",
+      "about_us": "About Us",
+      "careers": "Careers",
+      "store_locations": "Store Locations",
+      "our_blog": "Our Blog",
+      "reviews": "Reviews"
     },
     "shop_section": {
-      "title": "Cửa Hàng",
-      "game_video": "Trò chơi & Video",
-      "phone_tablets": "Điện thoại & Máy tính bảng",
-      "computers_laptops": "Máy tính & Laptop",
-      "sport_watches": "Đồng hồ thể thao",
-      "events": "Sự kiện"
+      "title": "Shop",
+      "game_video": "Games & Videos",
+      "phone_tablets": "Phones & Tablets",
+      "computers_laptops": "Computers & Laptops",
+      "sport_watches": "Sport Watches",
+      "events": "Events"
     },
     "support_section": {
-      "title": "Hỗ Trợ",
-      "faq": "Câu hỏi thường gặp",
-      "reviews": "Đánh giá",
-      "contact_us": "Liên hệ chúng tôi",
-      "shipping": "Vận chuyển",
-      "live_chat": "Trò chuyện trực tuyến"
+      "title": "Support",
+      "faq": "FAQ",
+      "reviews": "Reviews",
+      "contact_us": "Contact Us",
+      "shipping": "Shipping",
+      "live_chat": "Live Chat"
     },
     "footer": {
-      "rights_reserved": "\u00a9 2024 Hoai Nam. Mọi quyền được bảo lưu.",
-      "terms": "Điều khoản",
-      "privacy_policy": "Chính sách bảo mật"
+      "rights_reserved": "© 2024 Hoai Nam. All rights reserved.",
+      "terms": "Terms",
+      "privacy_policy": "Privacy Policy"
     },
     "social_media": {
       "facebook": "Facebook",
@@ -128,5 +157,26 @@
       "mastercard": "MasterCard",
       "stripe": "Stripe"
     }
+
+  },
+  "product_card":{
+    "select_size":"Select size",
+    "select_color":"Select color",
+    "add_to_cart":"Add to cart",
+    "remove_from_cart":"Remove from cart",
+    "add_to_wishlist":"Add to wishlist",
+    "remove_from_wishlist":"Remove from wishlist",
+    "send_message":"Send message",
+    "product_details":"Product Details",
+    "product_reviews":"Product Reviews",
+    "seller_information":"Seller Information",
+    "ratings":"Ratings",
+    "no_reviews":"No Reviews have for this product!",
+    "join_on":"Joined on",
+    "total_products":"Total Products",
+    "total_reviews":"Total Reviews",
+    "visit":"Visit Shop",
+     "relatedProduct":"Related Product"
+    
   }
 }

@@ -11,7 +11,7 @@ import socketIO from "socket.io-client";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime'; // Import plugin
 dayjs.extend(relativeTime); 
-const ENDPOINT = "https://e-commerce-socket-s6ww.onrender.com/10000";
+const ENDPOINT = "https://e-commerce-socket-s6ww.onrender.com";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const DashboardMessages = () => {
@@ -302,7 +302,7 @@ const MessageList = ({
     >
       <div className="relative">
         <img
-          src={`${backend_url}${user?.avatar}`}
+          src={user?.avatar?.url}
           alt=""
           className="w-[50px] h-[50px] rounded-full"
         />
@@ -337,13 +337,15 @@ const SellerInbox = ({
   activeStatus,
   handleImageUpload,
 }) => {
+  console.log('user',userData)
   return (
+    
     <div className="w-full min-h-full flex flex-col justify-between">
       {/* message header */}
       <div className="w-full flex p-3 items-center justify-between bg-slate-200">
         <div className="flex">
           <img
-            src={`${backend_url}${userData?.avatar}`}
+            src={userData?.avatar?.url}
             alt=""
             className="w-[60px] h-[60px] rounded-full object-cover"
           />
@@ -394,7 +396,8 @@ const SellerInbox = ({
                     </div>
 
                     <p className="text-[12px] text-[#000000d3] pt-1">
-                      {dayjs(item.createdAt)}
+                    {item.createdAt ? dayjs(item.createdAt).fromNow() : "No date available"}
+
                     </p>
                   </div>
                 )}
