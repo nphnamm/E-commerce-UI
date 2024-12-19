@@ -177,6 +177,54 @@
     "total_reviews":"Total Reviews",
     "visit":"Visit Shop",
      "relatedProduct":"Related Product"
-    
+  },
+  "cart": {
+    "isEmpty": "Cart is empty",
+    "checkout_now": "Checkout now",
+    "items": "Items",
+    "limited": "Out of stock"
+  },
+  "wishlist": {
+    "isEmpty": "Wishlist is empty",
+    "items": "Items"
+  },
+  "checkout": {
+    "shipping": "Shipping",
+    "payment": "Payment",
+    "success": "Success",
+    "shipping_address": "Shipping Address",
+    "name": "Full Name",
+    "phoneNumber": "Phone Number",
+    "country": "Country",
+    "city": "City",
+    "address_1": "Address 1",
+    "address_2": "Address 2",
+    "savedAddress": "Select Saved Address",
+    "goPayment": "Go to Payment Page",
+    "methodPayment": "Pay with Debit/Postpaid Card",
+    "nameOnCard": "Cardholder Name",
+    "expDate": "Expiry Date",
+    "cardNumber": "Card Number",
+    "submit": "Submit Payment",
+    "paywithPaypal": "Pay with PayPal",
+    "cash on Delivery": "Cash on Delivery",
+    "subTotal": "Subtotal",
+    "shippingFee": "Shipping Fee",
+    "discount": "Discount"
+  },
+  "profile": {
+    "profile": "Profile",
+    "orders": "Orders",
+    "refunds": "Refunds",
+    "inbox": "Inbox",
+    "track_order": "Track Order",
+    "change_password": "Change Password",
+    "address": "Address",
+    "admin":"Quản Trị Viên",
+    "logout": "Logout",
+    "name": "Full Name",
+    "phoneNumber": "Phone Number",
+    "password": "Password",
+    "update": "Update"
   }
 }

@@ -6,10 +6,12 @@ import { BsCartPlus } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromWishlist } from "../../redux/actions/wishlist";
 import { addTocart } from "../../redux/actions/cart";
+import { useTranslation } from "react-i18next";
 
 const Wishlist = ({ setOpenWishlist }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
   const dispatch = useDispatch();
+  const {t} = useTranslation();
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -50,7 +52,7 @@ const Wishlist = ({ setOpenWishlist }) => {
                 onClick={() => setOpenWishlist(false)}
               />
             </div>
-            <h5>Wishlist Items is empty!</h5>
+            <h5>{t("cart.isEmpty")}</h5>
           </div>
         ) : (
           <>
@@ -66,7 +68,7 @@ const Wishlist = ({ setOpenWishlist }) => {
               <div className={`${styles.noramlFlex} p-4`}>
                 <AiOutlineHeart size={25} />
                 <h5 className="pl-2 text-[20px] font-[500]">
-                  {wishlist && wishlist.length} items
+                  {wishlist && wishlist.length} {t("cart.items")}
                 </h5>
               </div>
 
@@ -93,6 +95,7 @@ const Wishlist = ({ setOpenWishlist }) => {
 
 const CartSingle = ({ data, removeFromWishlistHandler, addToCartHandler }) => {
   const [value, setValue] = useState(1);
+  const {t} = useTranslation();
 
   return (
     <div className="border-b  rounded-[10px]  p-4 shadow-3xl mb-[4px]">
@@ -122,7 +125,7 @@ const CartSingle = ({ data, removeFromWishlistHandler, addToCartHandler }) => {
           <BsCartPlus
             size={20}
             className="cursor-pointer"
-            tile="Add to cart"
+            tile={t("product_card.add_to_cart")}
             onClick={() => addToCartHandler(data)}
           />
         </div>

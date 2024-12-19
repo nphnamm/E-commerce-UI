@@ -7,11 +7,12 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addTocart, removeFromCart } from "../../redux/actions/cart";
+import { useTranslation } from "react-i18next";
 
 const Cart = ({ setOpenCart }) => {
   const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
+  const {t} = useTranslation();
   const removeFromCartHandler = (data) => {
     dispatch(removeFromCart(data));
   };
@@ -51,7 +52,7 @@ const Cart = ({ setOpenCart }) => {
                 onClick={() => setOpenCart(false)}
               />
             </div>
-            <h5>Cart Items is empty!</h5>
+            <h5>{t("cart.limited")}!</h5>
           </div>
         ) : (
           <>
@@ -67,7 +68,7 @@ const Cart = ({ setOpenCart }) => {
               <div className={`${styles.noramlFlex} p-4`}>
                 <IoBagHandleOutline size={25} />
                 <h5 className="pl-2 text-[20px] font-[500]">
-                  {cart && cart.length} items
+                  {cart && cart.length} {t("cart.items")} 
                 </h5>
               </div>
 
@@ -93,7 +94,7 @@ const Cart = ({ setOpenCart }) => {
                   className={`h-[45px] flex items-center justify-center w-[100%] bg-[#e44343] rounded-[5px]`}
                 >
                   <h1 className="text-[#fff] text-[18px] font-[600]">
-                    Checkout Now ({parseInt(totalPrice).toLocaleString("vi-VN", {
+                  {t("cart.checkout_now")} ({parseInt(totalPrice).toLocaleString("vi-VN", {
                           style: "currency",
                           currency: "VND",
                         })})

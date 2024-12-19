@@ -176,5 +176,58 @@
     "total_reviews": "Tổng đánh giá",
     "visit": "Tham quan shop",
     "relatedProduct":"Những sản phẩm liên quan"
+  },
+  "cart":{
+    "isEmpty":"Giỏ hàng trống",
+    "checkout_now":"Thanh toán ngay",
+    "items":"Mặt hàng",
+    "limited":"Sản phẩm hết hàng"
+
+  },
+  "wishlist":{
+    "isEmpty":"Danh sách yêu thích trống",
+    "items":"Mặt hàng"
+
+  },
+  "checkout":{
+    "shipping":"Vận chuyển",
+    "payment":"Thanh Toán",
+    "success":"Thành Công",
+    "shipping_address":"Địa Chỉ Giao Hàng",
+    "name":"Họ và Tên",
+    "phoneNumber":"Số Điện Thoại",
+    "country":"Quốc Gia",
+    "city":"Thành Phố",
+    "address_1":"Địa Chỉ 1",
+    "address_2":"Địa Chỉ 2",
+    "savedAddress":"Chọn Địa Chỉ Đã Lưu",
+    "goPayment":"Đến Trang Thanh Toán",
+    "methodPayment":"Thanh Toán Bằng Thẻ Ghi Nợ/Trả Sau",
+    "nameOnCard":"Tên Chủ Thẻ",
+    "expDate":"Ngày Hết Hạn",
+    "cardNumber":"Số Thẻ",
+    "submit":"Thanh Toán",
+    "paywithPaypal":"Thanh toán với Paypal",
+    "cash on Delivery":"Thanh toán bằng tiền mặt",
+    "subTotal":"Tổng phụ",
+    "shippingFee":"Phí vận chuyển",
+    "discount":"Giảm giá"
+  },
+  "profile":{
+    "profile":"Hồ sơ",
+    "orders":"Đơn hàng",
+    "refunds":"Hoàn trả",
+    "inbox":"Tin nhắn",
+    "track_order":"Theo dõi đơn hàng",
+    "change_password":"Thay đổi mật khẩu",
+    "address":"Địa chỉ",
+    "admin":"Quản Trị Viên",
+
+    "logout":"Đăng xuất",
+    "name":"Họ và Tên",
+    "phoneNumber":"Số Điện Thoại",
+    "password":"Mật khẩu",
+    "update":"Cập nhật"
   }
+  
 }
