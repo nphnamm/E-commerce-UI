@@ -6,6 +6,8 @@ import axios from "axios";
 import { server } from "./../../server";
 import { toast } from "react-toastify";
 import { RxAvatar } from "react-icons/rx";
+import { useTranslation } from "react-i18next";
+
 const ShopCreate = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -15,36 +17,10 @@ const ShopCreate = () => {
   const [avatar, setAvatar] = useState();
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
+  const { t } = useTranslation();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const config = {headers: {"Content-Type":"multipart/form-data"}}
-    // const newForm = new FormData();
-    // newForm.append('name',name);
-    // newForm.append('email',email);
-    // newForm.append('password',password);
-    // newForm.append('file',avatar);
-    // newForm.append('zipCode',zipCode);
-    // newForm.append('address',address);
-    // newForm.append('phoneNumber',phoneNumber);
-
-    // axios
-    //   .post(`${server}/shop/create-shop`, newForm,config)
-    //   .then((res) => {
-    //     toast.success(res.data.message);
-    //     setName("");
-    //     setEmail("");
-    //     setPassword("");
-    //     setAvatar();
-    //     setZipCode();
-    //     setAddress("");
-    //     setPhoneNumber();
-    //   })
-    //   .catch((error) => {
-    //     toast.error(error.response.data.message);
-    //     console.log('error', error);
-    //   });
-    e.preventDefault();
-
     axios
       .post(`${server}/shop/create-shop`, {
         name,
@@ -69,9 +45,8 @@ const ShopCreate = () => {
         toast.error(error.response.data.message);
       });
   };
+
   const handleFileInputChange = (e) => {
-    // const file = e.target.files[0];
-    // setAvatar(file);
     const reader = new FileReader();
 
     reader.onload = () => {
@@ -82,25 +57,21 @@ const ShopCreate = () => {
 
     reader.readAsDataURL(e.target.files[0]);
   };
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Register as a seller
+          {t('Shoplogin.registerTitle')}
         </h2>
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
-            {/* Shop Name */}
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Shop Name
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                {t('Shoplogin.shopName')}
               </label>
-
               <div className="mt-1">
                 <input
                   type="name"
@@ -108,19 +79,14 @@ const ShopCreate = () => {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-nnone focus:ring-blue-500 focus:border-blue-500"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
             </div>
-            {/* Phone Number */}
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Phone Number
+              <label htmlFor="phone-number" className="block text-sm font-medium text-gray-700">
+                {t('Shoplogin.phoneNumber')}
               </label>
-
               <div className="mt-1">
                 <input
                   type="number"
@@ -128,42 +94,30 @@ const ShopCreate = () => {
                   required
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-nnone focus:ring-blue-500 focus:border-blue-500"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
             </div>
-            {/* Email Adress */}
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email Address
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                {t('Shoplogin.emailAddress')}
               </label>
-
               <div className="mt-1">
                 <input
                   type="email"
-                  htmlFor="email"
                   name="email"
                   autoComplete="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-nnone focus:ring-blue-500 focus:border-blue-500"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
             </div>
-
-            {/* Address */}
             <div>
-              <label
-                htmlFor="address"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Address
+              <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+                {t('Shoplogin.address')}
               </label>
-
               <div className="mt-1">
                 <input
                   type="text"
@@ -171,17 +125,13 @@ const ShopCreate = () => {
                   required
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-nnone focus:ring-blue-500 focus:border-blue-500"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
             </div>
-            {/* Zip Code */}
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Zip Code
+              <label htmlFor="zipcode" className="block text-sm font-medium text-gray-700">
+                {t('Shoplogin.zipCode')}
               </label>
               <div className="mt-1">
                 <input
@@ -194,27 +144,20 @@ const ShopCreate = () => {
                 />
               </div>
             </div>
-            {/* Password */}
             <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Password
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                {t('Shoplogin.password')}
               </label>
-
               <div className="mt-1 relative">
                 <input
                   type={visible ? "text" : "password"}
-                  htmlFor="password"
                   name="password"
                   autoComplete="current-password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-nnone focus:ring-blue-500 focus:border-blue-500"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 />
-
                 {visible ? (
                   <AiOutlineEye
                     className="absolute right-2 top-2 cursor-pointer"
@@ -230,12 +173,10 @@ const ShopCreate = () => {
                 )}
               </div>
             </div>
-
             <div>
-              <label
-                htmlFor="avatar"
-                className="block text-sm font-medium text-gray-700"
-              ></label>
+              <label htmlFor="avatar" className="block text-sm font-medium text-gray-700">
+                {t('Shoplogin.avatarimage')}
+              </label>
               <div className="mt-2 flex items-center">
                 <span className="inline-block h-8 w-8 rounded-full overflow-hidden">
                   {avatar ? (
@@ -252,7 +193,7 @@ const ShopCreate = () => {
                   htmlFor="file-input"
                   className="ml-5 flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
                 >
-                  <span>Upload a file</span>
+                  <span>{t('Shoplogin.avatar')}</span>
                   <input
                     type="file"
                     name="avatar"
@@ -263,20 +204,16 @@ const ShopCreate = () => {
                 </label>
               </div>
             </div>
-
-            <div className={`${styles.normalFlex} justify-between`}>
-              <div className={`${styles.normalFlex}`}>
+            <div className="flex justify-between">
+              <div className="flex items-center">
                 <input
                   type="checkbox"
                   name="remember-me"
                   id="remember-me"
                   className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                 />
-                <label
-                  htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-900"
-                >
-                  Remember me
+                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+                  {t('Shoplogin.rememberMe')}
                 </label>
               </div>
               <div className="text-sm">
@@ -284,27 +221,22 @@ const ShopCreate = () => {
                   href=".forgot-password"
                   className="font-medium text-blue-600 hover:text-blue-50"
                 >
-                  Forgot your password?
+                  {t('Shoplogin.forgotPassword')}
                 </a>
               </div>
             </div>
-
             <div>
               <button
                 type="submit"
                 className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
               >
-                Submit
+                {t('Shoplogin.submitButton')}
               </button>
             </div>
-
-            <div className={`${styles.normalFlex} w-full`}>
-              <h4>Already have an account?</h4>
-              <Link
-                to="/shop-login"
-                className="text-blue-600 hover:text-blue-400 pl-2"
-              >
-                Sign Up Sign In
+            <div className="flex w-full justify-center">
+              <h4>{t('Already have an account?')}</h4>
+              <Link to="/shop-login" className="text-blue-600 hover:text-blue-400 pl-2">
+                {t('Shoplogin.signIn')}
               </Link>
             </div>
           </form>
