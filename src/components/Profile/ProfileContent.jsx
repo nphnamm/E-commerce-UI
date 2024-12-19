@@ -22,6 +22,7 @@ import {
 } from "../../redux/actions/user";
 import { Country, State } from "country-state-city";
 import { getAllOrdersOfUser } from "../../redux/actions/order";
+import { useTranslation } from "react-i18next";
 
 const ProfileContent = ({ active }) => {
   const { user, error, successMessage } = useSelector((state) => state.user);
