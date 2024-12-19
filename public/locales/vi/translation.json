@@ -208,6 +208,7 @@
     "shipping_address":"Địa Chỉ Giao Hàng",
     "name":"Họ và Tên",
     "phoneNumber":"Số Điện Thoại",
+    "zipCode":"Mã bưu điện",
     "country":"Quốc Gia",
     "city":"Thành Phố",
     "address_1":"Địa Chỉ 1",
@@ -220,10 +221,13 @@
     "cardNumber":"Số Thẻ",
     "submit":"Thanh Toán",
     "paywithPaypal":"Thanh toán với Paypal",
-    "cash on Delivery":"Thanh toán bằng tiền mặt",
+    "cashOnDelivery":"Thanh toán bằng tiền mặt",
     "subTotal":"Tổng phụ",
     "shippingFee":"Phí vận chuyển",
-    "discount":"Giảm giá"
+    "discount":"Giảm giá",
+    "CouponCode":"Mã giảm giá",
+    "ApplyCode":"Áp dụng mã",
+    "confirm":"Đặt hàng"
   },
   "profile":{
     "profile":"Hồ sơ",

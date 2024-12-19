@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 function Checkout() {
   const { user } = useSelector((state) => state.user);
@@ -21,6 +22,7 @@ function Checkout() {
   const [couponCodeData, setCouponCodeData] = useState(null);
   const [discountPrice, setDiscountPrice] = useState(null);
   const navigate = useNavigate();
+  const {t} = useTranslation()
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -134,7 +136,7 @@ function Checkout() {
         className={`${styles.button} w-[150px] 800px:w-[280px] mt-10`}
         onClick={paymentSubmit}
       >
-        <h5 className="text-white">Go to Payment</h5>
+        <h5 className="text-white">{t("checkout.goPayment")}</h5>
       </div>
     </div>
   );
@@ -155,14 +157,16 @@ const ShippingInfo = ({
   zipCode,
   setZipCode,
 }) => {
+      const {t} = useTranslation()
+  
   return (
     <div className="w-full 800px:w-[95%] bg-white rounded-md p-5 pb-8">
-      <h5 className="text-[18px] font-[500]">Shipping Address</h5>
+      <h5 className="text-[18px] font-[500]">{t("checkout.shipping_address")}</h5>
       <br />
       <form>
         <div className="w-full flex pb-3">
           <div className="w-[50%]">
-            <label className="block pb-2">Full Name</label>
+            <label className="block pb-2">{t("checkout.name")}</label>
             <input
               type="text"
               value={user && user.name}
@@ -171,7 +175,7 @@ const ShippingInfo = ({
             />
           </div>
           <div className="w-[50%]">
-            <label className="block pb-2">Email Address</label>
+            <label className="block pb-2">Email</label>
             <input
               type="email"
               value={user && user.email}
@@ -183,7 +187,7 @@ const ShippingInfo = ({
 
         <div className="w-full flex pb-3">
           <div className="w-[50%]">
-            <label className="block pb-2">Phone Number</label>
+            <label className="block pb-2">{t("checkout.phoneNumber")}</label>
             <input
               type="number"
               required
@@ -192,7 +196,7 @@ const ShippingInfo = ({
             />
           </div>
           <div className="w-[50%]">
-            <label className="block pb-2">Zip Code</label>
+            <label className="block pb-2">{t("checkout.zipCode")}</label>
             <input
               type="number"
               value={zipCode}
@@ -205,14 +209,14 @@ const ShippingInfo = ({
 
         <div className="w-full flex pb-3">
           <div className="w-[50%]">
-            <label className="block pb-2">Country</label>
+            <label className="block pb-2">{t("checkout.country")}</label>
             <select
               className="w-[95%] border h-[40px] rounded-[5px]"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
             >
               <option className="block pb-2" value="">
-                Choose your country
+              {t("checkout.country")}
               </option>
               {Country &&
                 Country.getAllCountries().map((item) => (
@@ -223,14 +227,14 @@ const ShippingInfo = ({
             </select>
           </div>
           <div className="w-[50%]">
-            <label className="block pb-2">City</label>
+            <label className="block pb-2">{t("checkout.city")}</label>
             <select
               className="w-[95%] border h-[40px] rounded-[5px]"
               value={city}
               onChange={(e) => setCity(e.target.value)}
             >
               <option className="block pb-2" value="">
-                Choose your City
+              {t("checkout.city")}
               </option>
               {State &&
                 State.getStatesOfCountry(country).map((item) => (
@@ -244,7 +248,7 @@ const ShippingInfo = ({
 
         <div className="w-full flex pb-3">
           <div className="w-[50%]">
-            <label className="block pb-2">Address1</label>
+            <label className="block pb-2">{t("checkout.address_1")}</label>
             <input
               type="address"
               required
@@ -254,7 +258,7 @@ const ShippingInfo = ({
             />
           </div>
           <div className="w-[50%]">
-            <label className="block pb-2">Address2</label>
+            <label className="block pb-2">{t("checkout.address_2")}</label>
             <input
               type="address"
               value={address2}
@@ -271,7 +275,7 @@ const ShippingInfo = ({
         className="text-[18px] cursor-pointer inline-block"
         onClick={() => setUserInfo(!userInfo)}
       >
-        Choose From saved address
+        {t("checkout.savedAddress")}
       </h5>
       {userInfo && (
         <div>
@@ -307,10 +311,12 @@ const CartData = ({
   setCouponCode,
   discountPercentenge,
 }) => {
+  const {t} = useTranslation()
+
   return (
     <div className="w-full bg-[#fff] rounded-md p-5 pb-8">
       <div className="flex justify-between">
-        <h3 className="text-[16px] font-[400] text-[#000000a4]">subtotal:</h3>
+        <h3 className="text-[16px] font-[400] text-[#000000a4]">{t("checkout.subTotal")}:</h3>
         <h5 className="text-[18px] font-[600]">
         {parseInt(subTotalPrice).toLocaleString("vi-VN", {
                           style: "currency",
@@ -321,7 +327,7 @@ const CartData = ({
       </div>
       <br />
       <div className="flex justify-between">
-        <h3 className="text-[16px] font-[400] text-[#000000a4]">shipping:</h3>
+        <h3 className="text-[16px] font-[400] text-[#000000a4]">{t("checkout.shippingFee")}:</h3>
         <h5 className="text-[18px] font-[600]">
         {parseInt(shipping.toFixed(2)).toLocaleString("vi-VN", {
                           style: "currency",
@@ -331,7 +337,7 @@ const CartData = ({
       </div>
       <br />
       <div className="flex justify-between border-b pb-3">
-        <h3 className="text-[16px] font-[400] text-[#000000a4]">Discount:</h3>
+        <h3 className="text-[16px] font-[400] text-[#000000a4]">{t("checkout.discount")}:</h3>
         <h5 className="text-[18px] font-[600]">
           -{" "}
           {discountPercentenge ? parseInt(discountPercentenge).toLocaleString("vi-VN", {
@@ -353,7 +359,7 @@ const CartData = ({
         <input
           type="text"
           className={`${styles.input} h-[40px] pl-2`}
-          placeholder="Coupoun code"
+          placeholder={t("checkout.CouponCode")}
           value={couponCode}
           onChange={(e) => setCouponCode(e.target.value)}
           required
@@ -361,7 +367,7 @@ const CartData = ({
         <input
           className={`w-full h-[40px] border border-[#f63b60] text-center text-[#f63b60] rounded-[3px] mt-8 cursor-pointer`}
           required
-          value="Apply code"
+          value={t("checkout.ApplyCode")}
           type="submit"
         />
       </form>
