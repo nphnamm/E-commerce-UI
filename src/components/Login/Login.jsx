@@ -6,12 +6,14 @@ import axios  from 'axios';
 import { server } from './../../server';
 import { toast } from 'react-toastify';
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
   const { isAuthenticated, user } = useSelector((state) => state.user);
+  const  { t } = useTranslation();
   useEffect(() => {
     if (isAuthenticated) {
       navigate("/"); // Điều hướng về trang chủ nếu đã đăng nhập
@@ -25,20 +27,20 @@ const Login = () => {
       password: password
 
     },{withCredentials: true}).then((res)=>{
-      toast.success("Login Success!")
+      toast.success(t("login.loginSuccess"))
       navigate("/");
       window.location.reload();
     }).catch((err)=>{
       console.log(err);
        toast.error(err.response.data.message);
     })
-
   }
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Login to you account
+          {t('login.title')}
         </h2>
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -49,7 +51,7 @@ const Login = () => {
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Email Address
+                  {t('login.emailLabel')}
                 </label>
 
                 <div className="mt-1">
@@ -71,7 +73,7 @@ const Login = () => {
                   htmlFor="password"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Password
+                  {t('login.passwordLabel')}
                 </label>
 
                 <div className="mt-1 relative">
@@ -114,7 +116,7 @@ const Login = () => {
                       <label htmlFor="remember-me"
                       className="ml-2 block text-sm text-gray-900"
                       >
-                        Remember me
+                     {t('login.rememberMe')}
                       </label>
                   </div>
                   <div className="text-sm">
@@ -122,7 +124,7 @@ const Login = () => {
                     href=".forgot-password"
                     className="font-medium text-blue-600 hover:text-blue-50"
                     >
-                      Forgot your password?
+                       {t('login.forgotPassword')}
                     </a>
 
                   </div>
@@ -133,14 +135,14 @@ const Login = () => {
               type="submit"
               className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
               >
-                LOG IN  
+               {t('login.button')}
               </button>
             </div>
             
             <div className={`${styles.normalFlex} w-full`}>
-                  <h4>Not have any account?</h4>
-                  <Link to="/sign-up" className="text-blue-600 hover:text-blue-400 pl-2">Sign Up
-                  
+            <h4>{t('login.noAccount')}</h4>
+                  <Link to="/sign-up" className="text-blue-600 hover:text-blue-400 pl-2">
+                  {t('login.signUp')}
                   </Link>
             </div>
           </form>

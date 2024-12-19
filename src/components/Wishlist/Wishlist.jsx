@@ -11,11 +11,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeFromWishlist } from "../../redux/actions/wishlist";
 import { addTocart } from "../../redux/actions/cart";
 import { backend_url } from "../../server";
-
+import { useTranslation } from "react-i18next";
 const Wishlist = ({ setOpenWishlist }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
   const dispatch = useDispatch();
-
+  const  { t } = useTranslation();
   const removeFromWishlistHandler = (data) => {
     dispatch(removeFromWishlist(data));
   };
@@ -39,7 +39,7 @@ const Wishlist = ({ setOpenWishlist }) => {
                 onClick={() => setOpenWishlist(false)}
               />
             </div>
-            <h5>Wishlist Items is empty!</h5>
+            <h5>{t("wishlist.emptyWishlist")}</h5> {/* translate */}
           </div>
         ) : (
           <>
@@ -55,7 +55,8 @@ const Wishlist = ({ setOpenWishlist }) => {
               <div className={`${styles.noramlFlex} p-4`}>
                 <AiOutlineHeart size={25} />
                 <h5 className="pl-2 text-[20px] font-[500]">
-                  {wishlist && wishlist.length} items
+                  {wishlist && wishlist.length} {t("wishlist.items")} 
+                  {/* translate */}
                 </h5>
               </div>
 

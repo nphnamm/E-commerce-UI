@@ -1,10 +1,21 @@
 {
-    "nav": {
-      "home": "Trang Chủ",
-      "bestSelling": "Bán Chạy Nhất",
-      "products": "Sản Phẩm",
-      "events": "Sự Kiện",
-      "faq": "Câu Hỏi Thường Gặp"
-    }
+  "nav": {
+    "home": "Trang chủ",
+    "bestSelling": "Bán chạy nhất",
+    "products": "Sản phẩm",
+    "events": "Sự kiện",
+    "faq": "Câu hỏi thường gặp"
+  },
+  "login": {
+    "title": "Đăng nhập vào tài khoản của bạn",
+    "emailLabel": "Địa chỉ Email",
+    "passwordLabel": "Mật khẩu",
+    "rememberMe": "Ghi nhớ tôi",
+    "forgotPassword": "Quên mật khẩu?",
+    "button": "ĐĂNG NHẬP",
+    "noAccount": "Chưa có tài khoản?",
+    "signUp": "Đăng ký",
+    "loginSuccess": "Đăng nhập thành công!",
+    "loginFailed": "Đăng nhập thất bại. Vui lòng kiểm tra email hoặc mật khẩu của bạn."
   }
-  
+}

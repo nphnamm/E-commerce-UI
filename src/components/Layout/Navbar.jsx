@@ -3,7 +3,6 @@ import styles from "../../styles/styles";
 import { navItems } from "../../static/data";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
 function Navbar({ active }) {
   // console.log('active', active);
   // console.log('check', navItems);

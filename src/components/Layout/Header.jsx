@@ -44,7 +44,7 @@ function Header({ activeHeading }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [language, setLanguage] = useState('vi'); // Mặc định là tiếng Anh
   const [selectedIndex, setSelectedIndex] = useState(1);
-
+  const { t } = useTranslation();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -117,7 +117,7 @@ function Header({ activeHeading }) {
                   <input
                     type="text"
                     className="search-input pl-5 h-[48px] w-full border border-qgray-border bg-white flex-1"
-                    placeholder="Search Product..."
+                    placeholder={t("header.searchPlaceholder")} //translate
                     onChange={handleSearchChange}
                     value={searchTerm}
                   />
@@ -130,7 +130,7 @@ function Header({ activeHeading }) {
                 bg-[#1868d5] text-white"
                   type="button"
                 >
-                  Search
+                  {t("header.searchButton")} 
                 </button>
               </div>
             </div>
@@ -166,12 +166,12 @@ function Header({ activeHeading }) {
               }
             >
               <h1 className="text-[#fff] flex items-center">
-                {user?.role === "Admin"
-                  ? "Admin Dashboard"
-                  : isSeller
-                    ? "Go Dashboard"
-                    : "Become Seller"}
-              </h1>
+          {user?.role === "Admin"
+            ? t("header.adminDashboard") 
+            : isSeller
+            ? t("header.goDashboard") 
+            : t("header.becomeSeller")} 
+        </h1>
             </Link>
           </div>
         </div>
@@ -192,7 +192,7 @@ function Header({ activeHeading }) {
           >
             <BiMenuAltLeft size={30} className="absolute top-3 left-2" />
             <button className="h-full w-full flex justify-between items-center pl-10 bg-white font-sans text-lg font-medium select-none rounded-t-md">
-              All categories
+            {t("header.allCategories")} 
             </button>
             <IoIosArrowDown
               size={20}
@@ -377,7 +377,7 @@ function Header({ activeHeading }) {
               <div className="my-8 w-[92%] m-auto h-[40px] relative]">
                 <input
                   type="search"
-                  placeholder="Search Product..."
+                  placeholder={t("header.searchPlaceholder")} // translate
                   className="h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md"
                   value={searchTerm}
                   onChange={handleSearchChange}
@@ -409,13 +409,13 @@ function Header({ activeHeading }) {
                 {user?.role == "Admin" ? (
                   <Link to="/admin/dashboard">
                     <h1 className="text-[#fff] flex items-center">
-                      Admin Dashboard <IoIosArrowForward className="ml-1" />
+                    {t("header.adminDashboard")}<IoIosArrowForward className="ml-1" />
                     </h1>
                   </Link>
                 ) : (
                   <Link to="/shop-create">
                     <h1 className="text-[#fff] flex items-center">
-                      Become Seller <IoIosArrowForward className="ml-1" />
+                    {t("header.becomeSeller")} <IoIosArrowForward className="ml-1" />
                     </h1>
                   </Link>
                 )}
@@ -437,13 +437,13 @@ function Header({ activeHeading }) {
                       to="/login"
                       className="text-[18px] pr-[10px] text-[#000000b7]"
                     >
-                      Login /
+                       {t("header.login")}  /
                     </Link>
                     <Link
                       to="/sign-up"
                       className="text-[18px] text-[#000000b7]"
                     >
-                      Sign up
+                     {t("header.signup")}
                     </Link>
                   </>
                 )}

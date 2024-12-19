@@ -1,10 +1,22 @@
 {
-    "nav": {
-      "home": "Home",
-      "bestSelling": "Best Selling",
-      "products": "Products",
-      "events": "Events",
-      "faq": "FAQ"
-    }
+  "nav": {
+    "home": "Home",
+    "bestSelling": "Best Selling",
+    "products": "Products",
+    "events": "Events",
+    "faq": "FAQ"
+  },
+  "login": {
+    "title": "Login to your account",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot your password?",
+    "button": "LOG IN",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "loginSuccess": "Login Success!",
+    "loginFailed": "Login failed. Please check your email or password."
+  }
 }
   

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addTocart, removeFromCart } from "../../redux/actions/cart";
 import { backend_url } from "../../server";
+import { useTranslation } from "react-i18next";
 
 const Cart = ({ setOpenCart }) => {
   const { cart } = useSelector((state) => state.cart);
@@ -16,7 +17,7 @@ const Cart = ({ setOpenCart }) => {
   const removeFromCartHandler = (data) => {
     dispatch(removeFromCart(data));
   };
-
+  const  { t } = useTranslation();
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.qty * item.discountPrice,
     0
@@ -39,7 +40,7 @@ const Cart = ({ setOpenCart }) => {
                 onClick={() => setOpenCart(false)}
               />
             </div>
-            <h5>Cart Items is empty!</h5>
+            <h5>{t("cart.emptyCart")}</h5>{/* translate */}
           </div>
         ) : (
           <>
@@ -55,7 +56,7 @@ const Cart = ({ setOpenCart }) => {
               <div className={`${styles.noramlFlex} p-4`}>
                 <IoBagHandleOutline size={25} />
                 <h5 className="pl-2 text-[20px] font-[500]">
-                  {cart && cart.length} items
+                  {cart && cart.length} {t("cart.items")}{/* translate */}
                 </h5>
               </div>
 
@@ -81,7 +82,7 @@ const Cart = ({ setOpenCart }) => {
                   className={`h-[45px] flex items-center justify-center w-[100%] bg-[#e44343] rounded-[5px]`}
                 >
                   <h1 className="text-[#fff] text-[18px] font-[600]">
-                    Checkout Now ({parseInt(totalPrice).toLocaleString("vi-VN", {
+                  {t("cart.checkoutNow")} ({parseInt(totalPrice).toLocaleString("vi-VN", {
                           style: "currency",
                           currency: "VND",
                         })})
