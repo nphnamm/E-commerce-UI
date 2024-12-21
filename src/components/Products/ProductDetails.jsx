@@ -217,7 +217,7 @@ const ProductDetails = ({ data, sizesData, filterdColors }) => {
                           key={index}
                           src={`${i?.url}`}
                           alt={`thumbnail-${index}`}
-                          className="h-[200px] overflow-hidden mr-3 mt-3 cursor-pointer"
+                          className="h-[100px] lg:h-[200px] overflow-hidden mr-3 mt-3 cursor-pointer"
                           onClick={() => setSelect(index)}
                         />
                       ))}

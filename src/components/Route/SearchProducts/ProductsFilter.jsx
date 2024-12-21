@@ -19,6 +19,7 @@ export default function ProductsFilter({
   volumeHandler,
   storage,
   filterstorage,
+  filterToggle,
   className,
 }) {
   // console.log('volume',volume)
@@ -26,11 +27,11 @@ export default function ProductsFilter({
   const handleChange = (event, newValue) => {
     volumeHandler(newValue);
   };
-
+  console.log('filter', filterToggle)
   return (
     <>
       <div
-        className={`filter-widget w-full fixed lg:relative left-0 top-0 h-screen z-5 lg:h-auto overflow-y-scroll lg:overflow-y-auto bg-white px-[30px] pt-[40px] ${className || ""
+        className={`filter-widget  w-full ${filterToggle ? "lg:block" : "hidden"}   fixed lg:relative left-0 top-0 h-screen lg:z-100 lg:h-auto overflow-y-scroll lg:overflow-y-auto bg-white px-[30px] pt-[40px] ${className || ""
           } `}
       >
         <div className="filter-subject-item pb-10 border-b border-qgray-border">

@@ -170,6 +170,7 @@ export default function SearchProducts({ allProducts }) {
                     volumeHandler={(value) => setVolume(value)}
                     storage={storage}
                     filterstorage={filterStorage}
+                    filterToggle={filterToggle}
                     className="mb-[30px]"
                   />
                   {/* ads */}
@@ -182,8 +183,8 @@ export default function SearchProducts({ allProducts }) {
                   </div>
                 </div>
 
-                <div className="flex-1">
-                  <div className="products-sorting w-full bg-white md:h-[70px] flex md:flex-row flex-col md:space-y-0 space-y-5 md:justify-between md:items-center p-[30px] mb-[40px]">
+                <div className="flex-1 ">
+                  <div className={`products-sorting w-full bg-white md:h-[70px] flex md:flex-row flex-col md:space-y-0 space-y-5 md:justify-between md:items-center p-[30px] mb-[40px]`}>
                     <div>
                       <p className="font-400 text-[13px]">
                         <span className="text-qgray"> Showing</span> 1-
@@ -210,7 +211,7 @@ export default function SearchProducts({ allProducts }) {
                     <button
                       onClick={() => setToggle(!filterToggle)}
                       type="button"
-                      className="w-10 lg:hidden h-10 rounded flex justify-center items-center border border-qyellow text-qyellow"
+                      className="w-10 lg:hidden h-10 rounded flex justify-center items-center border border-yellow text-yellow"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -228,7 +229,7 @@ export default function SearchProducts({ allProducts }) {
                       </svg>
                     </button>
                   </div>
-                  <div className="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1  xl:gap-[30px] gap-5 mb-[40px]">
+                  <div className={`${filterToggle ? "hidden": "block"} grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1  xl:gap-[30px] gap-5 mb-[40px]`}>
                     <DataIteration
                       datas={products}
                       startLength={0}
