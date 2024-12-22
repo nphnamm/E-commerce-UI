@@ -6,12 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsShop } from "../../redux/actions/product";
 import { getAllEventsShop } from "../../redux/actions/event";
 import Ratings from "../Products/Ratings";
+import { useTranslation } from "react-i18next";
 const ShopProfileData = ({ isOwner }) => {
   const { products } = useSelector((state) => state.products);
   const { events } = useSelector((state) => state.events);
   const [active, setActive] = useState(1);
   const { id } = useParams();
   const dispatch = useDispatch();
+  const {t} = useTranslation()
   useEffect(() => {
     dispatch(getAllProductsShop(id));
     dispatch(getAllEventsShop(id));
@@ -29,7 +31,7 @@ const ShopProfileData = ({ isOwner }) => {
                 active === 1 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Shop Product
+              {t("shop.product")}
             </h5>
           </div>
           <div className="flex items-center" onClick={() => setActive(2)}>
@@ -38,7 +40,7 @@ const ShopProfileData = ({ isOwner }) => {
                 active === 2 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Running Events
+              {t("shop.running_events")}
             </h5>
           </div>
           <div className="flex items-center" onClick={() => setActive(3)}>
@@ -47,7 +49,7 @@ const ShopProfileData = ({ isOwner }) => {
                 active === 3 ? "text-red-500" : "text-[#333]"
               } cursor-pointer pr-[20px]`}
             >
-              Shop Reviews
+              {t("shop.reviews")}
             </h5>
           </div>
         </div>
@@ -56,7 +58,7 @@ const ShopProfileData = ({ isOwner }) => {
             <div>
               <Link to="/dashboard">
                 <div className={`${styles.button} !rounded-[4px] h-[42px]`}>
-                  <span className="text-[#fff]">Go Dashboard</span>
+                  <span className="text-[#fff]">{t("shop.go_dashboard")}</span>
                 </div>
               </Link>
             </div>
@@ -88,7 +90,7 @@ const ShopProfileData = ({ isOwner }) => {
           </div>
           {events && events.length === 0 && (
             <h5 className="w-full text-center py-5 text-[18px]">
-              No Events have for this shop!
+              {t("shop.no_events")}
             </h5>
           )}
         </div>
@@ -117,7 +119,7 @@ const ShopProfileData = ({ isOwner }) => {
             ))}
           {allReviews && allReviews.length === 0 && (
             <h5 className="w-full text-center py-5 text-[18px]">
-              No Reviews have for this shop!
+              {t("shop.no_reviews")}
             </h5>
           )}
         </div>

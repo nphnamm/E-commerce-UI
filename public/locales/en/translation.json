@@ -45,7 +45,12 @@
     "total": "Total",
     "processing": "Processing",
     "rows_per_page": "Rows per page",
-    "of": "of"
+    "of": "of",
+    "product_id": "Product ID",
+    "name": "Name",
+    "price": "Price",
+    "stock": "Stock",
+    "sold_out": "Sold Out"
   },
   "category": {
     "allCategory": "All Categories",
@@ -291,5 +296,40 @@
     "forgotPassword": "Forgot your password?",
     "submitButton": "Submit",
     "signIn": "Sign In"
+  },
+  "shop": {
+    "product": "Shop Product",
+    "running_events": "Running Events",
+    "no_events":"No Events have for this shop!",
+    "reviews": "Shop Reviews",
+    "no_reviews":"No Reviews have for this shop!",
+    "edit_shop": "Edit Shop",
+    "logout": "Log Out",  
+    "address": "Address",
+    "phone_number": "Phone Number",
+    "total_products": "Total Products",
+    "ratings": "Shop Ratings",
+    "joined_on": "Joined On",
+    "go_dashboard": "Go Dashboard"
+  },
+  "order_details": {
+    "title": "Order Details",
+    "order_id": "Order ID:",
+    "orders_list":"Order List",
+    "placed_on": "Placed on:",
+    "shipping_address": "Shipping Address:",
+    "order_status": "Order Status:",
+    "update_status": "Update Status",
+    "payment_info": "Payment Info:",
+    "status": "Status:",
+    "total_price": "Total Price:",
+    "write_a_letter":"Write a letter",
+    "write_a_comment":"Write a comment",
+    "submit":"Submit",
+    "paymentInfor":"Payment Info",
+    "give_a_refund":"Give a refund",
+    "send_message":"Gửi thông điệp"
+
+    
   }
 }

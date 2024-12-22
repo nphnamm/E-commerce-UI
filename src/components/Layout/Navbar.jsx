@@ -20,7 +20,7 @@ function Navbar({ active }) {
     <div className={`block gap-6 p-[24px] 800px:p-0 800px:${styles.normalFlex}`}>
       {navItems &&
         navItems.map((i, index) => (
-          <div className="flex rounded-[10px] p-4 bg-[#22bba7] mt-1 hover:shadow-3xl hover:">
+          <div className="flex  mt-1 hover:shadow-3xl hover:">
             <Link
               to={i.url}
               className={`${active === index + 1

@@ -5,6 +5,7 @@ import styles from "../../styles/styles";
 import axios from "axios";
 import { server } from "../../server";
 import { getAllProductsShop } from "../../redux/actions/product";
+import { useTranslation } from "react-i18next";
 
 const ShopInfo = ({ isOwner }) => {
   const [data, setData] = useState({});
@@ -12,7 +13,7 @@ const ShopInfo = ({ isOwner }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
   const dispatch = useDispatch();
-
+  const {t} = useTranslation()
   useEffect(() => {
     dispatch(getAllProductsShop(id));
     setIsLoading(true);
@@ -63,23 +64,23 @@ const ShopInfo = ({ isOwner }) => {
           </p>
         </div>
         <div className="p-3">
-          <h5 className="font-[600]">Address</h5>
+          <h5 className="font-[600]">{t("shop.address")}</h5>
           <h4 className="text-[#000000a6]">{data.address}</h4>
         </div>
         <div className="p-3">
-          <h5 className="font-[600]">Phone Number</h5>
+          <h5 className="font-[600]">{t("shop.phone_number")}</h5>
           <h4 className="text-[#000000a6]">{data.phoneNumber}</h4>
         </div>
         <div className="p-3">
-          <h5 className="font-[600]">Total Products</h5>
+          <h5 className="font-[600]">{t("shop.total_products")}</h5>
           <h4 className="text-[#000000a6]">{products && products?.length}</h4>
         </div>
         <div className="p-3">
-          <h5 className="font-[600]">Shop Ratings</h5>
+          <h5 className="font-[600]">{t("shop.ratings")}</h5>
           <h4 className="text-[#000000b0]">{averageRating}</h4>
         </div>
         <div className="p-3">
-          <h5 className="font-[600]">Joined On</h5>
+          <h5 className="font-[600]">{t("shop.joined_on")}</h5>
           <h4 className="text-[#000000b0]">{data?.createAt?.slice(0, 10)}</h4>
         </div>
         {isOwner && (
@@ -88,14 +89,14 @@ const ShopInfo = ({ isOwner }) => {
               <div
                 className={`${styles.button} !w-full !h-[42px] !rounded-[5px]`}
               >
-                <span className="text-white">Edit Shop</span>
+                <span className="text-white">{t("shop.edit_shop")}</span>
               </div>
             </Link>
             <div
               className={`${styles.button} !w-full !h-[42px] !rounded-[5px]`}
               onClick={logoutHandler}
             >
-              <span className="text-white">Log Out</span>
+              <span className="text-white">{t("shop.logout  ")}</span>
             </div>
           </div>
         )}

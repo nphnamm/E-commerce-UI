@@ -9,6 +9,8 @@ import { RxCross1 } from "react-icons/rx";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+import formatPrice from "../utils/formatPrice";
 
 const UserOrderDetails = () => {
   const { orders } = useSelector((state) => state.order);
@@ -18,12 +20,13 @@ const UserOrderDetails = () => {
   const [comment, setComment] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
   const [rating, setRating] = useState(1);
+  const { t } = useTranslation()
 
   const { id } = useParams();
 
   useEffect(() => {
     dispatch(getAllOrdersOfUser(user._id));
-  }, [dispatch,user._id]);
+  }, [dispatch, user._id]);
 
   const data = orders && orders.find((item) => item._id === id);
 
@@ -51,13 +54,13 @@ const UserOrderDetails = () => {
         toast.error(error);
       });
   };
-  
+
   const refundHandler = async () => {
-    await axios.put(`${server}/order/order-refund/${id}`,{
+    await axios.put(`${server}/order/order-refund/${id}`, {
       status: "Processing refund"
     }).then((res) => {
-       toast.success(res.data.message);
-    dispatch(getAllOrdersOfUser(user._id));
+      toast.success(res.data.message);
+      dispatch(getAllOrdersOfUser(user._id));
     }).catch((error) => {
       toast.error(error.response.data.message);
     })
@@ -68,16 +71,16 @@ const UserOrderDetails = () => {
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center">
           <BsFillBagFill size={30} color="crimson" />
-          <h1 className="pl-2 text-[25px]">Order Details</h1>
+          <h1 className="pl-2 text-[25px]">{t('overview.title')}</h1>
         </div>
       </div>
 
       <div className="w-full flex items-center justify-between pt-6">
         <h5 className="text-[#00000084]">
-          Order ID: <span>#{data?._id?.slice(0, 8)}</span>
+          {t('overview.order_id')}: <span>#{data?._id?.slice(0, 8)}</span>
         </h5>
         <h5 className="text-[#00000084]">
-          Placed on: <span>{data?.createdAt?.slice(0, 10)}</span>
+          {t('overview.placed_on')}: <span>{data?.createdAt?.slice(0, 10)}</span>
         </h5>
       </div>
 
@@ -86,30 +89,30 @@ const UserOrderDetails = () => {
       <br />
       {data &&
         data?.cart.map((item, index) => {
-          return(
-          <div className="w-full flex items-start mb-5">
-            <img
-              src={`${item.images[0]?.url}`}
-              alt=""
-              className="w-[80x] h-[80px]"
-            />
-            <div className="w-full">
-              <h5 className="pl-3 text-[20px]">{item.name}</h5>
-              <h5 className="pl-3 text-[20px] text-[#00000091]">
-                US${item.discountPrice} x {item.qty}
-              </h5>
-            </div>
-            {!item.isReviewed && data?.status === "Delivered" ?  <div
+          return (
+            <div className="w-full flex items-start mb-5">
+              <img
+                src={`${item.images[0]?.url}`}
+                alt=""
+                className="w-[80x] h-[80px]"
+              />
+              <div className="w-full">
+                <h5 className="pl-3 text-[20px]">{item.name}</h5>
+                <h5 className="pl-3 text-[20px] text-[#00000091]">
+                  {formatPrice(item.discountPrice)} x {item.qty}
+                </h5>
+              </div>
+              {!item.isReviewed && data?.status === "Delivered" ? <div
                 className={`${styles.button} text-[#fff]`}
                 onClick={() => setOpen(true) || setSelectedItem(item)}
               >
-                Write a review
+                {t('overview.order_id')}
               </div> : (
-             null
-            )}
-          </div>
+                null
+              )}
+            </div>
           )
-         })}
+        })}
 
       {/* review popup */}
       {open && (
@@ -123,7 +126,7 @@ const UserOrderDetails = () => {
               />
             </div>
             <h2 className="text-[30px] font-[500] font-Poppins text-center">
-              Give a Review
+
             </h2>
             <br />
             <div className="w-full flex">
@@ -135,7 +138,7 @@ const UserOrderDetails = () => {
               <div>
                 <div className="pl-3 text-[20px]">{selectedItem?.name}</div>
                 <h4 className="pl-3 text-[20px]">
-                  US${selectedItem?.discountPrice} x {selectedItem?.qty}
+                  {formatPrice(selectedItem?.discountPrice)} x {selectedItem?.qty}
                 </h4>
               </div>
             </div>
@@ -171,7 +174,7 @@ const UserOrderDetails = () => {
             <br />
             <div className="w-full ml-3">
               <label className="block text-[20px] font-[500]">
-                Write a comment
+                {t('overview.write_a_comment')}
                 <span className="ml-1 font-[400] text-[16px] text-[#00000052]">
                   (optional)
                 </span>
@@ -191,7 +194,8 @@ const UserOrderDetails = () => {
               className={`${styles.button} text-white text-[20px] ml-3`}
               onClick={rating > 1 ? reviewHandler : null}
             >
-              Submit
+              {t('overview.submit')}
+
             </div>
           </div>
         </div>
@@ -199,14 +203,16 @@ const UserOrderDetails = () => {
 
       <div className="border-t w-full text-right">
         <h5 className="pt-3 text-[18px]">
-          Total Price: <strong>US${data?.totalPrice}</strong>
+          {t('overview.totalPrice')}
+          : <strong>{formatPrice(data?.totalPrice)}</strong>
         </h5>
       </div>
       <br />
       <br />
       <div className="w-full 800px:flex items-center">
         <div className="w-full 800px:w-[60%]">
-          <h4 className="pt-3 text-[20px] font-[600]">Shipping Address:</h4>
+          <h4 className="pt-3 text-[20px] font-[600]"> {t('overview.shippingAddress')}
+            :</h4>
           <h4 className="pt-3 text-[20px]">
             {data?.shippingAddress.address1 +
               " " +
@@ -217,24 +223,26 @@ const UserOrderDetails = () => {
           <h4 className=" text-[20px]">{data?.user?.phoneNumber}</h4>
         </div>
         <div className="w-full 800px:w-[40%]">
-          <h4 className="pt-3 text-[20px]">Payment Info:</h4>
+          <h4 className="pt-3 text-[20px]">                {t('overview.paymentInfor')}
+          :</h4>
           <h4>
             Status:{" "}
             {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Not Paid"}
           </h4>
           <br />
-           {
+          {
             data?.status === "Delivered" && (
               <div className={`${styles.button} text-white`}
-              onClick={refundHandler}
-              >Give a Refund</div>
+                onClick={refundHandler}
+              >                {t('overview.give_a_refund')}
+</div>
             )
-           }
+          }
         </div>
       </div>
       <br />
       <Link to="/">
-        <div className={`${styles.button} text-white`}>Send Message</div>
+        <div className={`${styles.button} text-white`}>{t('overview.send_message')}</div>
       </Link>
       <br />
       <br />

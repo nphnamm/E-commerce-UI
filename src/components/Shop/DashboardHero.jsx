@@ -79,7 +79,10 @@ const DashboardHero = () => {
     row.push({
       id: item._id,
       itemsQty: item.cart.reduce((acc, item) => acc + item.qty, 0),
-      total: "US$ " + item.totalPrice,
+      total: parseInt(item.totalPrice).toLocaleString("vi-VN", {
+        style: "currency",
+        currency: "VND",
+      }),
       status: item.status,
     });
   });
@@ -98,7 +101,7 @@ const DashboardHero = () => {
               className={`${styles.productTitle} !text-[18px] leading-5 !font-[400] text-[#00000085]`}
             >
               {t('overview.account_balance')}{" "}
-              <span className="text-[16px]">(with 10% service charge)</span>
+              <span className="text-[16px]"></span>
             </h3>
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">{parseInt(availableBalance).toLocaleString("vi-VN", {
@@ -106,7 +109,7 @@ const DashboardHero = () => {
             currency: "VND",
           })}</h5>
           <Link to="/dashboard-withdraw-money">
-            <h5 className="pt-4 pl-[2] text-[#077f9c]">Withdraw Money</h5>
+            <h5 className="pt-4 pl-[2] text-[#077f9c]">{t('overview.withdraw_money')}</h5>
           </Link>
         </div>
 
@@ -116,12 +119,12 @@ const DashboardHero = () => {
             <h3
               className={`${styles.productTitle} !text-[18px] leading-5 !font-[400] text-[#00000085]`}
             >
-              All Orders
+              {t('overview.all_orders')}
             </h3>
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">{orders && orders.length}</h5>
           <Link to="/dashboard-orders">
-            <h5 className="pt-4 pl-2 text-[#077f9c]">View Orders</h5>
+            <h5 className="pt-4 pl-2 text-[#077f9c]">{t('overview.view_orders')}</h5>
           </Link>
         </div>
 
@@ -135,17 +138,17 @@ const DashboardHero = () => {
             <h3
               className={`${styles.productTitle} !text-[18px] leading-5 !font-[400] text-[#00000085]`}
             >
-              All Products
+              {t('overview.all_products')}
             </h3>
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">{products && products.length}</h5>
           <Link to="/dashboard-products">
-            <h5 className="pt-4 pl-2 text-[#077f9c]">View Products</h5>
+            <h5 className="pt-4 pl-2 text-[#077f9c]">{t('overview.view_products')}</h5>
           </Link>
         </div>
       </div>
       <br />
-      <h3 className="text-[22px] font-Poppins pb-2">Latest Orders</h3>
+      <h3 className="text-[22px] font-Poppins pb-2">{t('overview.latest_orders')}</h3>
       <div className="w-full min-h-[45vh] bg-white rounded">
         <DataGrid
           rows={row}

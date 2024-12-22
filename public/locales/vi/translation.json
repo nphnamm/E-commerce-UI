@@ -45,7 +45,12 @@
     "total": "Tổng cộng",
     "processing": "Đang xử lý",
     "rows_per_page": "Số hàng mỗi trang",
-    "of": "trên"
+    "of": "trên",
+    "product_id": "Mã sản phẩm",
+    "name": "Tên sản phẩm",
+    "price": "Giá",
+    "stock": "Tồn kho",
+    "sold_out": "Đã bán"
   },
   "category": {
     "allCategory": "Các loại hàng",
@@ -294,6 +299,34 @@
     "forgotPassword": "Quên mật khẩu?",
     "submitButton": "Gửi",
     "signIn": "Đăng nhập"
+  },
+  "shop": {
+    "product": "Sản phẩm cửa hàng",
+    "running_events": "Sự kiện đang diễn ra",
+    "no_events":"Cửa hàng này đang không có sự kiện nào diễn ra!",
+    "reviews": "Đánh giá cửa hàng",
+    "no_reviews":"Chưa có đánh giá nào cho cửa hàng, hãy trở thành người đánh giá đầu tiên cho cửa hàng",
+    "edit_shop": "Chỉnh sửa cửa hàng",
+    "logout": "Đăng xuất",
+    "address": "Địa chỉ",
+    "phone_number": "Số điện thoại",
+    "total_products": "Tổng sản phẩm",
+    "ratings": "Đánh giá cửa hàng",
+    "joined_on": "Tham gia vào ngày",
+    "go_dashboard": "Đi đến Bảng điều khiển"
+  },
+ "order_details": {
+    "title": "Chi tiết đơn hàng",
+    "order_id": "Mã đơn hàng:",
+    "orders_list":"Danh sách đơn hàng",
+    "placed_on": "Đặt vào ngày:",
+    "shipping_address": "Địa chỉ giao hàng:",
+    "order_status": "Trạng thái đơn hàng:",
+    "update_status": "Cập nhật trạng thái",
+    "payment_info": "Thông tin thanh toán:",
+    "status": "Trạng thái:",
+    "total_price": "Tổng đơn hàng:",
+    "write_a_letter":"Viết đánh giá"
+
   }
-  
 }

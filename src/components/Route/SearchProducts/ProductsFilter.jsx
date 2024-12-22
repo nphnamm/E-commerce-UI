@@ -21,17 +21,18 @@ export default function ProductsFilter({
   filterstorage,
   filterToggle,
   className,
+  filterToggleHandle
 }) {
   // console.log('volume',volume)
 
   const handleChange = (event, newValue) => {
     volumeHandler(newValue);
   };
-  console.log('filter', filterToggle)
+
   return (
     <>
       <div
-        className={`filter-widget  w-full ${filterToggle ? "lg:block" : "hidden"}   fixed lg:relative left-0 top-0 h-screen lg:z-100 lg:h-auto overflow-y-scroll lg:overflow-y-auto bg-white px-[30px] pt-[40px] ${className || ""
+        className={`filter-widget lg:block w-full ${filterToggle ? "block" : "hidden"}   fixed lg:relative left-0 top-0 h-screen lg:z-100 lg:h-auto overflow-y-scroll lg:overflow-y-auto bg-white px-[30px] pt-[40px] ${className || ""
           } `}
       >
         <div className="filter-subject-item pb-10 border-b border-qgray-border">
@@ -107,7 +108,7 @@ export default function ProductsFilter({
             <Slider
               value={volume}
               onChangeCommitted={handleChange}
-              
+
               max={500000000}
               min={0}
             />
@@ -254,7 +255,7 @@ export default function ProductsFilter({
           </div>
         </div>
         <button
-          // onClick={filterToggleHandler}
+          onClick={filterToggleHandle}
           type="button"
           className="w-10 h-10 fixed top-5 right-5 z-50 rounded  lg:hidden flex justify-center items-center border border-qred text-qred"
         >

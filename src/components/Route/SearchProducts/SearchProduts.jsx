@@ -45,7 +45,7 @@ export default function SearchProducts({ allProducts }) {
   const [pageNumber, setPageNumber] = useState(1);
   const [pageSize, setPageSize] = useState(10); // Default page size
   const [totalProduct, setTotalProduct] = useState(0);
-  const [filterToggle, setToggle] = useState(false);
+  const [filterToggle, setFilterToggle] = useState(false);
   const [loading, setLoading] = useState(false);
   const [volume, setVolume] = useState([0,500000]);
   const [storage, setStorage] = useState(null);
@@ -144,7 +144,7 @@ export default function SearchProducts({ allProducts }) {
   return (
     allProducts && (
       <>
-        <div className="products-page-wrapper w-full p-24 bg-[#f8f8f8]">
+        <div className="products-page-wrapper w-full p-4 lg:p-24 bg-[#f8f8f8]">
           <div className="container-x mx-auto">
             {/* <BreadcrumbCom /> */}
             {loading ? (
@@ -171,6 +171,7 @@ export default function SearchProducts({ allProducts }) {
                     storage={storage}
                     filterstorage={filterStorage}
                     filterToggle={filterToggle}
+                    filterToggleHandle={()=>setFilterToggle(false)}
                     className="mb-[30px]"
                   />
                   {/* ads */}
@@ -184,7 +185,7 @@ export default function SearchProducts({ allProducts }) {
                 </div>
 
                 <div className="flex-1 ">
-                  <div className={`products-sorting w-full bg-white md:h-[70px] flex md:flex-row flex-col md:space-y-0 space-y-5 md:justify-between md:items-center p-[30px] mb-[40px]`}>
+                  <div className={`products-sorting w-full bg-white md:h-[70px] flex flex-row space-y-0 justify-between items-center p-[30px] mb-[40px]`}>
                     <div>
                       <p className="font-400 text-[13px]">
                         <span className="text-qgray"> Showing</span> 1-
@@ -209,7 +210,7 @@ export default function SearchProducts({ allProducts }) {
                       </div>
                     </div>
                     <button
-                      onClick={() => setToggle(!filterToggle)}
+                      onClick={() => setFilterToggle(!filterToggle)}
                       type="button"
                       className="w-10 lg:hidden h-10 rounded flex justify-center items-center border border-yellow text-yellow"
                     >

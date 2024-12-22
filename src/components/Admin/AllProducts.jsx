@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { server } from "../../server";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const AllProducts = () => {
   const [data, setData] = useState([]);
-
+  const {t} = useTranslation()
   useEffect(() => {
     axios
       .get(`${server}/product/admin-all-products`, { withCredentials: true })
@@ -19,22 +20,22 @@ const AllProducts = () => {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "Product Id", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName:t('overview.product_id') , minWidth: 150, flex: 0.7 },
     {
       field: "name",
-      headerName: "Name",
+      headerName: t('overview.name'),
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "price",
-      headerName: "Price",
+      headerName: t('overview.price'),
       minWidth: 100,
       flex: 0.6,
     },
     {
       field: "Stock",
-      headerName: "Stock",
+      headerName: t('overview.stock'),
       type: "number",
       minWidth: 80,
       flex: 0.5,
@@ -42,7 +43,7 @@ const AllProducts = () => {
 
     {
       field: "sold",
-      headerName: "Sold out",
+      headerName: t('overview.sold_out'),
       type: "number",
       minWidth: 130,
       flex: 0.6,

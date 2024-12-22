@@ -15,9 +15,11 @@ import { Button } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import Loader from "../Layout/Loader";
 import UpdateModal from "../Modal/UpdateModal";
+import { useTranslation } from "react-i18next";
 
 function AllProducts() {
   const [open, setOpen] = useState(false);
+  const {t} = useTranslation()
 
   const { products, isLoading } = useSelector((state) => state.products);
 
@@ -52,22 +54,22 @@ function AllProducts() {
     dispatch(getAllProductsShop(seller._id));
   }, [dispatch, open]);
   const columns = [
-    { field: "id", headerName: "Product Id", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName:t('overview.product_id'), minWidth: 150, flex: 0.7 },
     {
       field: "name",
-      headerName: "Name",
+      headerName: t('overview.name'),
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "price",
-      headerName: "Price",
+      headerName: t('overview.price'),
       minWidth: 100,
       flex: 0.6,
     },
     {
       field: "Stock",
-      headerName: "Stock",
+      headerName: t('overview.stock'),
       type: "number",
       minWidth: 80,
       flex: 0.5,
@@ -75,7 +77,7 @@ function AllProducts() {
 
     {
       field: "sold",
-      headerName: "Sold out",
+      headerName: t('overview.sold_out'),
       type: "number",
       minWidth: 130,
       flex: 0.6,
