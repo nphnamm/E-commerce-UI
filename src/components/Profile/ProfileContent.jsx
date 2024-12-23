@@ -128,7 +128,7 @@ const ProfileContent = ({ active }) => {
             <form onSubmit={handleSubmit} aria-required={true}>
               <div className="w-full 800px:flex block pb-3">
                 <div className=" w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2 font-bold"></label>
+                  <label className="block pb-2 font-bold">{t("profile.name")}</label>
                   <input
                     type="text"
                     className={`${styles.input} !w-[95%] mb-4 800px:mb-0 rounded-[10px] h-[48px]`}
@@ -138,7 +138,7 @@ const ProfileContent = ({ active }) => {
                   />
                 </div>
                 <div className=" w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2 font-bold">Email Address</label>
+                  <label className="block pb-2 font-bold">Email</label>
                   <input
                     type="text"
                     className={`${styles.input} !w-[95%] mb-1 800px:mb-0 rounded-[10px] h-[48px]`}
@@ -150,7 +150,7 @@ const ProfileContent = ({ active }) => {
               </div>
               <div className="w-full 800px:flex block pb-3">
                 <div className="w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2 font-bold">Phone Number</label>
+                  <label className="block pb-2 font-bold">{t("profile.phoneNumber")}</label>
                   <input
                     type="text"
                     className={`${styles.input} !w-[95%] rounded-[10px] h-[48px]`}
@@ -161,8 +161,9 @@ const ProfileContent = ({ active }) => {
                 </div>
 
                 <div className=" w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2 font-bold">Enter your password</label>
+                  <label className="block pb-2 font-bold">{t("profile.password")}</label>
                   <input
+                  disabled
                     type="password"
                     className={`${styles.input} !w-[95%] mb-4 800px:mb-0 rounded-[10px] h-[48px]`}
                     required
@@ -175,7 +176,7 @@ const ProfileContent = ({ active }) => {
               <input
                 className={`w-[250px] h-[40px] border border-[#3a24db] text-center text-[#3a24db] rounded-[3px] mt-8 cursor-pointer`}
                 required
-                value="Update"
+                value={t("profile.update")}
                 type="submit"
               />
             </form>
@@ -224,17 +225,17 @@ const AllOrders = () => {
   const { user } = useSelector((state) => state.user);
   const { orders } = useSelector((state) => state.order);
   const dispatch = useDispatch();
-
+  const {t} = useTranslation()
   useEffect(() => {
     dispatch(getAllOrdersOfUser(user._id));
   }, []);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: t("overview.order_id"), minWidth: 150, flex: 0.7 },
 
     {
       field: "status",
-      headerName: "Status",
+      headerName: t("order_details.status"),
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
@@ -243,7 +244,7 @@ const AllOrders = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: t("overview.items_qty"),
       type: "number",
       minWidth: 130,
       flex: 0.7,
@@ -251,7 +252,7 @@ const AllOrders = () => {
 
     {
       field: "total",
-      headerName: "Total",
+      headerName: t("overview.total"),
       type: "number",
       minWidth: 130,
       flex: 0.8,
@@ -303,6 +304,7 @@ const AllRefundOrders = () => {
   const { user } = useSelector((state) => state.user);
   const { orders } = useSelector((state) => state.order);
   const dispatch = useDispatch();
+  const {t} = useTranslation();
 
   useEffect(() => {
     dispatch(getAllOrdersOfUser(user._id));
@@ -311,11 +313,11 @@ const AllRefundOrders = () => {
     orders && orders.filter((item) => item.status === "Processing refund");
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: t("overview.order_id"), minWidth: 150, flex: 0.7 },
 
     {
       field: "status",
-      headerName: "Status",
+      headerName: t("overview.status"),
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
@@ -324,7 +326,7 @@ const AllRefundOrders = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: t("overview.items_qty"),
       type: "number",
       minWidth: 130,
       flex: 0.7,
@@ -332,7 +334,7 @@ const AllRefundOrders = () => {
 
     {
       field: "total",
-      headerName: "Total",
+      headerName: t("overview.total"),
       type: "number",
       minWidth: 130,
       flex: 0.8,
@@ -387,16 +389,17 @@ const TrackOrder = () => {
   const { user } = useSelector((state) => state.user);
   const { orders } = useSelector((state) => state.order);
   const dispatch = useDispatch();
+  const {t} = useTranslation();
 
   useEffect(() => {
     dispatch(getAllOrdersOfUser(user._id));
   }, []);
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: t("overview.order_id"), minWidth: 150, flex: 0.7 },
 
     {
       field: "status",
-      headerName: "Status",
+      headerName: t("overview.status"),
       minWidth: 130,
       flex: 0.7,
       cellClassName: (params) => {
@@ -405,7 +408,7 @@ const TrackOrder = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: t("overview.items_qty"),
       type: "number",
       minWidth: 130,
       flex: 0.7,
@@ -413,7 +416,7 @@ const TrackOrder = () => {
 
     {
       field: "total",
-      headerName: "Total",
+      headerName: t("overview.total"),
       type: "number",
       minWidth: 130,
       flex: 0.8,
@@ -469,6 +472,7 @@ const ChangePassword = () => {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const {t} = useTranslation();
 
   const passwordChangeHandler = async (e) => {
     e.preventDefault();
@@ -492,7 +496,7 @@ const ChangePassword = () => {
   return (
     <div className="w-full px-5">
       <h1 className="block text-[25px] text-center font-[600] text-[#000000ba] pb-2">
-        Change Password
+        {t("profile.change_password")}
       </h1>
       <div className="w-full">
         <form
@@ -501,7 +505,7 @@ const ChangePassword = () => {
           className="flex flex-col items-center"
         >
           <div className=" w-[100%] 800px:w-[50%] mt-5">
-            <label className="block pb-2 font-bold">Enter your old password</label>
+            <label className="block pb-2 font-bold">{t("profile.enter_Old_Password")}</label>
             <input
               type="password"
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -511,7 +515,7 @@ const ChangePassword = () => {
             />
           </div>
           <div className=" w-[100%] 800px:w-[50%] mt-2">
-            <label className="block pb-2 font-bold">Enter your new password</label>
+            <label className="block pb-2 font-bold">{t("profile.enter_New_Password")}</label>
             <input
               type="password"
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -521,7 +525,7 @@ const ChangePassword = () => {
             />
           </div>
           <div className=" w-[100%] 800px:w-[50%] mt-2">
-            <label className="block pb-2 font-bold">Enter your confirm password</label>
+            <label className="block pb-2 font-bold">{t("profile.enter_Confirm_Password")}</label>
             <input
               type="password"
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -532,7 +536,7 @@ const ChangePassword = () => {
             <input
               className={`w-[95%] h-[40px] border border-[#3a24db] text-center text-[#3a24db] rounded-[3px] mt-8 cursor-pointer`}
               required
-              value="Update"
+              value={t("profile.update")}
               type="submit"
             />
           </div>
@@ -552,6 +556,7 @@ const Address = () => {
   const [addressType, setAddressType] = useState("");
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const {t} = useTranslation();
 
   const addressTypeData = [
     {
@@ -609,13 +614,14 @@ const Address = () => {
               />
             </div>
             <h1 className="text-center text-[25px] font-Poppins">
-              Add New Address
+            {t("profile.addNewAddress")}
             </h1>
             <div className="w-full">
               <form aria-required onSubmit={handleSubmit} className="w-full">
                 <div className="w-full block p-4">
                   <div className="w-full pb-2">
-                    <label className="block pb-2 font-bold">Country</label>
+                    <label className="block pb-2 font-bold">{t("profile.country")}
+                    </label>
                     <select
                       name=""
                       id=""
@@ -624,7 +630,7 @@ const Address = () => {
                       className="w-[95%] border h-[40px] rounded-[5px]"
                     >
                       <option value="" className="block border pb-2">
-                        choose your country
+                      {t("profile.choose_Your_Country")}
                       </option>
                       {Country &&
                         Country.getAllCountries().map((item) => (
@@ -640,7 +646,10 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2 font-bold">Choose your City</label>
+                    <label className="block pb-2 font-bold">
+                    {t("profile.city")}
+
+                      </label>
                     <select
                       name=""
                       id=""
@@ -649,7 +658,7 @@ const Address = () => {
                       className="w-[95%] border h-[40px] rounded-[5px]"
                     >
                       <option value="" className="block border pb-2">
-                        choose your city
+                      {t("profile.choose_Your_City")}
                       </option>
                       {State &&
                         State.getStatesOfCountry(country).map((item) => (
@@ -665,7 +674,10 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2 font-bold">Address 1</label>
+                    <label className="block pb-2 font-bold">
+                    {t("profile.address_1")}
+
+                    </label>
                     <input
                       type="address"
                       className={`${styles.input}`}
@@ -675,7 +687,10 @@ const Address = () => {
                     />
                   </div>
                   <div className="w-full pb-2">
-                    <label className="block pb-2 font-bold">Address 2</label>
+                    <label className="block pb-2 font-bold">
+                    {t("profile.address_2")}
+
+                      </label>
                     <input
                       type="address"
                       className={`${styles.input}`}
@@ -686,7 +701,11 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2 font-bold">Zip Code</label>
+                    <label className="block pb-2 font-bold">
+                    {t("profile.zipCode")}
+
+
+                    </label>
                     <input
                       type="number"
                       className={`${styles.input}`}
@@ -697,7 +716,10 @@ const Address = () => {
                   </div>
 
                   <div className="w-full pb-2">
-                    <label className="block pb-2 font-bold">Address Type</label>
+                    <label className="block pb-2 font-bold">
+                    {t("profile.address_Type")}
+
+                    </label>
                     <select
                       name=""
                       id=""
@@ -706,7 +728,7 @@ const Address = () => {
                       className="w-[95%] border h-[40px] rounded-[5px]"
                     >
                       <option value="" className="block border pb-2">
-                        Choose your Address Type
+                      {t("profile.choose_your_address_type")}
                       </option>
                       {addressTypeData &&
                         addressTypeData.map((item) => (
@@ -737,13 +759,13 @@ const Address = () => {
       )}
       <div className="flex w-full items-center justify-between">
         <h1 className="text-[25px] font-[600] text-[#000000ba] pb-2">
-          My Addresses
+        {t("profile.myAddressed")}
         </h1>
         <div
           className={`${styles.button} !rounded-md`}
           onClick={() => setOpen(true)}
         >
-          <span className="text-[#fff]">Add New</span>
+          <span className="text-[#fff]">{t("profile.addNewAddress")}</span>
         </div>
       </div>
       <br />
@@ -778,7 +800,7 @@ const Address = () => {
 
       {user && user.addresses.length === 0 && (
         <h5 className="text-center pt-8 text-[18px]">
-          You not have any saved address!
+          {t("profile.notHaveAddresses")}
         </h5>
       )}
     </div>

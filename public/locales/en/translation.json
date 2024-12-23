@@ -245,7 +245,22 @@
     "name": "Full Name",
     "phoneNumber": "Phone Number",
     "password": "Password",
-    "update": "Update"
+    "update": "Update",
+    "enter_Old_Password":"Enter your old password",
+    "enter_New_Password":"Enter your new password",
+    "enter_Confirm_Password":"Enter your confirm password",
+    "myAddressed":"My Addresses",
+    "addNewAddress":"Add New",
+    "notHaveAddresses":"You not have addresses",
+    "country":"Country",
+    "city":"City",
+    "choose_Your_Country":"Choose your country",
+    "choose_Your_City":"Choose your city",
+    "address_1":"Address 1",
+    "address_2":"Address 2",
+    "zipCode":"Zip Code",
+    "address_Type":"Addresses Type",
+    "choose_your_address_type":"Choose your address type"
   },
   "login": {
     "title": "Login to your account",

@@ -243,12 +243,28 @@
     "change_password":"Thay đổi mật khẩu",
     "address":"Địa chỉ",
     "admin":"Quản Trị Viên",
-
     "logout":"Đăng xuất",
     "name":"Họ và Tên",
     "phoneNumber":"Số Điện Thoại",
     "password":"Mật khẩu",
-    "update":"Cập nhật"
+    "update":"Cập nhật",
+    "enter_Old_Password":"Nhập mật khẩu cũ của bạn",
+    "enter_New_Password":"Nhập mật khẩu mới của bạn",
+    "enter_Confirm_Password":"Xác nhận mật khẩu mới",
+    "myAddressed":"Địa chỉ của tôi",
+    "addNewAddress":"Thêm mới địa chỉ",
+    "notHaveAddresses":"Bạn chưa có địa chỉ đã lưu!",
+    "country":"Quốc gia",
+    "city":"Thành phố",
+    "choose_Your_Country":"Chọn quốc gia của bạn",
+    "choose_Your_City":"Chọn thành phố của bạn",
+    "address_1":"Địa Chỉ 1",
+    "address_2":"Địa Chỉ 2",
+    "zipCode":"Mã bưu điện",
+    "address_Type":"Loại địa chỉ",
+    "choose_your_address_type":"Chọn loại địa chỉ của bạn"
+
+
   },
   "login": {
     "title": "Đăng nhập vào tài khoản của bạn",
