@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { categoriesData, sizeData, storageData } from "../../static/data";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { updateProduct } from "../../redux/actions/product";
+import { useTranslation } from "react-i18next";
 
 function UpdateModal({ open, setOpen, data }) {
   console.log("open", open);
@@ -19,6 +20,7 @@ function UpdateModal({ open, setOpen, data }) {
   const [category, setCategory] = useState(data?.category);
   const [size, setSize] = useState(data?.size);
   const [storage, setStorage] = useState(data?.storage);
+  const { t } = useTranslation();
 
   const [tags, setTags] = useState(data?.tags);
   const [originalPrice, setOriginalPrice] = useState(data?.originalPrice);
@@ -61,7 +63,7 @@ function UpdateModal({ open, setOpen, data }) {
       reader.readAsDataURL(file);
     });
   };
-  useEffect(() => {}, [images, name]);
+  useEffect(() => { }, [images, name]);
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -147,13 +149,13 @@ function UpdateModal({ open, setOpen, data }) {
             </div>
 
             <h5 className="text-[30px] font-Poppins text-center">
-              Update Product
-            </h5>
+              {t("update_product_form.title")}            </h5>
             <form onSubmit={handleSubmit}>
               <br />
               <div>
                 <label className="pb-2">
-                  Name <span className="text-red-500">*</span>
+                  {t("update_product_form.fields.name.label")}
+                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -161,12 +163,15 @@ function UpdateModal({ open, setOpen, data }) {
                   value={name}
                   className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Enter your product name..."
+                  placeholder={t("update_product_form.fields.name.placeholder")}
                 />
               </div>
               <br />
               <div>
-                <label className="pb-2">Description</label>
+                <label className="pb-2">
+                  {t("update_product_form.fields.description.label")}
+
+                </label>
                 <textarea
                   cols="30"
                   required
@@ -176,32 +181,36 @@ function UpdateModal({ open, setOpen, data }) {
                   value={description}
                   className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   onChange={(e) => setDescription(e.target.value)}
-                  placeholder="Enter your product tags..."
+                  placeholder={t("update_product_form.fields.description.placeholder")}
                 ></textarea>
               </div>
               <br />
               <div>
-                <label className="pb-2">Tags</label>
+                <label className="pb-2">
+                  {t("update_product_form.fields.tags.label")}
+                </label>
                 <input
                   type="text"
                   name="tags"
                   value={tags}
                   className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   onChange={(e) => setTags(e.target.value)}
-                  placeholder="Enter your product tags..."
+                  placeholder={t("update_product_form.fields.tags.placeholder")}
                 />
               </div>
               <br />
               <div>
                 <label className="pb-2">
-                  Category <span className="text-red-500">*</span>
+                  {t("update_product_form.fields.category.label")}
+                  <span className="text-red-500">*</span>
                 </label>
                 <select
                   className="w-full mt-2 border h-[35px] rounded-[5px]"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                 >
-                  <option value="Choose a category">Choose a category</option>
+                  <option value={t("update_product_form.fields.category.placeholder")}>
+                    {t("update_product_form.fields.category.placeholder")}</option>
                   {categoriesData &&
                     categoriesData.map((i) => (
                       <option value={i.title} key={i.title}>
@@ -213,14 +222,16 @@ function UpdateModal({ open, setOpen, data }) {
               <br />
               <div>
                 <label className="pb-2">
-                  Size <span className="text-red-500">*</span>
+                  {t("update_product_form.fields.size.label")}
+                  <span className="text-red-500">*</span>
                 </label>
                 <select
                   className="w-full mt-2 border h-[35px] rounded-[5px]"
                   value={size}
                   onChange={(e) => setSize(e.target.value)}
                 >
-                  <option value="Choose a size">Choose a size</option>
+                  <option value={t("update_product_form.fields.size.placeholder")}>{t("update_product_form.fields.size.placeholder")}</option>
+
                   {sizeData &&
                     sizeData.map((i) => (
                       <option value={i.title} key={i.title}>
@@ -232,14 +243,15 @@ function UpdateModal({ open, setOpen, data }) {
               <br />
               <div>
                 <label className="pb-2">
-                  Storage <span className="text-red-500">*</span>
+                  {t("update_product_form.fields.storage.label")}
+
                 </label>
                 <select
                   className="w-full mt-2 border h-[35px] rounded-[5px]"
                   value={storage}
                   onChange={(e) => setStorage(e.target.value)}
                 >
-                  <option value="Choose a size">Choose a storage</option>
+                  <option value={t("update_product_form.fields.storage.placeholder")}>{t("update_product_form.fields.storage.placeholder")}</option>
                   {storageData &&
                     storageData.map((i) => (
                       <option value={i.title} key={i.title}>
@@ -250,20 +262,22 @@ function UpdateModal({ open, setOpen, data }) {
               </div>
               <br />
               <div>
-                <label className="pb-2">Original Price</label>
+                <label className="pb-2">
+                {t("update_product_form.fields.original_price.label")} <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="number"
                   name="price"
                   value={originalPrice}
                   className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   onChange={(e) => setOriginalPrice(e.target.value)}
-                  placeholder="Enter your product price..."
-                />
+                  placeholder= {t("update_product_form.fields.original_price.placeholder")} 
+                  />
               </div>
               <br />
               <div>
                 <label className="pb-2">
-                  Price (With Discount) <span className="text-red-500">*</span>
+                {t("update_product_form.fields.price_with_discount.label")}  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="number"
@@ -271,13 +285,13 @@ function UpdateModal({ open, setOpen, data }) {
                   value={discountPrice}
                   className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   onChange={(e) => setDiscountPrice(e.target.value)}
-                  placeholder="Enter your product price with discount..."
-                />
+                  placeholder= {t("update_product_form.fields.price_with_discount.placeholder")}
+                  />
               </div>
               <br />
               <div>
                 <label className="pb-2">
-                  Product Stock <span className="text-red-500">*</span>
+                {t("update_product_form.fields.product_stock.label")} <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="number"
@@ -285,13 +299,13 @@ function UpdateModal({ open, setOpen, data }) {
                   value={stock}
                   className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   onChange={(e) => setStock(e.target.value)}
-                  placeholder="Enter your product stock..."
-                />
+                  placeholder= {t("update_product_form.fields.product_stock.placeholder")} 
+                  />
               </div>
               <br />
               <div>
                 <label className="pb-2">
-                  Upload Images <span className="text-red-500">*</span>
+                {t("update_product_form.fields.upload_images.label")}  <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="file"
@@ -323,7 +337,7 @@ function UpdateModal({ open, setOpen, data }) {
                 <div>
                   <input
                     type="submit"
-                    value="Update"
+                    value={t("update_product_form.button.update")}
                     className="mt-2 cursor-pointer appearance-none text-center block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   />
                 </div>

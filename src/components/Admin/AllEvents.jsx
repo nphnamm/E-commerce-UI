@@ -5,9 +5,12 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { server } from "../../server";
+import { useTranslation } from "react-i18next";
 
 const AllEvents = () => {
   const [events, setEvents] = useState([]);
+  const { t } = useTranslation();
+
   useEffect(() => {
     axios
       .get(`${server}/event/admin-all-events`, { withCredentials: true })
@@ -17,22 +20,22 @@ const AllEvents = () => {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "Product Id", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: t("overview.product_id"), minWidth: 150, flex: 0.7 },
     {
       field: "name",
-      headerName: "Name",
+      headerName: t("overview.name"),
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "price",
-      headerName: "Price",
+      headerName: t("overview.price"),
       minWidth: 100,
       flex: 0.6,
     },
     {
       field: "Stock",
-      headerName: "Stock",
+      headerName: t("overview.stock"),
       type: "number",
       minWidth: 80,
       flex: 0.5,
@@ -40,7 +43,7 @@ const AllEvents = () => {
 
     {
       field: "sold",
-      headerName: "Sold out",
+      headerName: t("overview.sold_out"),
       type: "number",
       minWidth: 130,
       flex: 0.6,
@@ -73,8 +76,10 @@ const AllEvents = () => {
       row.push({
         id: item._id,
         name: item.name,
-        price: "US$ " + item.discountPrice,
-        Stock: item.stock,
+        price: parseInt(item.discountPrice).toLocaleString("vi-VN", {
+          style: "currency",
+          currency: "VND",
+        }),        Stock: item.stock,
         sold: item.sold_out,
       });
     });

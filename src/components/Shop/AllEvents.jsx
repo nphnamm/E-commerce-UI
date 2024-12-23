@@ -6,10 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteEvent, getAllEventsShop } from "../../redux/actions/event";
 import Loader from "../Layout/Loader";
+import { useTranslation } from "react-i18next";
 
 const AllEvents = () => {
   const { events, isLoading } = useSelector((state) => state.events);
   const { seller } = useSelector((state) => state.seller);
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
 
@@ -23,22 +25,22 @@ const AllEvents = () => {
   }
 
   const columns = [
-    { field: "id", headerName: "Product Id", minWidth: 150, flex: 0.7 },
+    { field: "id", headerName: t("overview.product_id") , minWidth: 150, flex: 0.7 },
     {
       field: "name",
-      headerName: "Name",
+      headerName: t("overview.name"),
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "price",
-      headerName: "Price",
+      headerName: t("overview.price"),
       minWidth: 100,
       flex: 0.6,
     },
     {
       field: "Stock",
-      headerName: "Stock",
+      headerName: t("overview.stock"),
       type: "number",
       minWidth: 80,
       flex: 0.5,
@@ -46,7 +48,7 @@ const AllEvents = () => {
 
     {
       field: "sold",
-      headerName: "Sold out",
+      headerName: t("overview.sold_out"),
       type: "number",
       minWidth: 130,
       flex: 0.6,

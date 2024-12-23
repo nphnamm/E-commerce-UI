@@ -230,7 +230,7 @@
     "discount": "Discount",
     "CouponCode": "Coupon Code",
     "ApplyCode": "Apply code",
-    "confirm":"Confirm"
+    "confirm": "Confirm"
   },
   "profile": {
     "profile": "Profile",
@@ -246,21 +246,21 @@
     "phoneNumber": "Phone Number",
     "password": "Password",
     "update": "Update",
-    "enter_Old_Password":"Enter your old password",
-    "enter_New_Password":"Enter your new password",
-    "enter_Confirm_Password":"Enter your confirm password",
-    "myAddressed":"My Addresses",
-    "addNewAddress":"Add New",
-    "notHaveAddresses":"You not have addresses",
-    "country":"Country",
-    "city":"City",
-    "choose_Your_Country":"Choose your country",
-    "choose_Your_City":"Choose your city",
-    "address_1":"Address 1",
-    "address_2":"Address 2",
-    "zipCode":"Zip Code",
-    "address_Type":"Addresses Type",
-    "choose_your_address_type":"Choose your address type"
+    "enter_Old_Password": "Enter your old password",
+    "enter_New_Password": "Enter your new password",
+    "enter_Confirm_Password": "Enter your confirm password",
+    "myAddressed": "My Addresses",
+    "addNewAddress": "Add New",
+    "notHaveAddresses": "You not have addresses",
+    "country": "Country",
+    "city": "City",
+    "choose_Your_Country": "Choose your country",
+    "choose_Your_City": "Choose your city",
+    "address_1": "Address 1",
+    "address_2": "Address 2",
+    "zipCode": "Zip Code",
+    "address_Type": "Addresses Type",
+    "choose_your_address_type": "Choose your address type"
   },
   "login": {
     "title": "Login to your account",
@@ -315,11 +315,11 @@
   "shop": {
     "product": "Shop Product",
     "running_events": "Running Events",
-    "no_events":"No Events have for this shop!",
+    "no_events": "No Events have for this shop!",
     "reviews": "Shop Reviews",
-    "no_reviews":"No Reviews have for this shop!",
+    "no_reviews": "No Reviews have for this shop!",
     "edit_shop": "Edit Shop",
-    "logout": "Log Out",  
+    "logout": "Log Out",
     "address": "Address",
     "phone_number": "Phone Number",
     "total_products": "Total Products",
@@ -330,7 +330,7 @@
   "order_details": {
     "title": "Order Details",
     "order_id": "Order ID:",
-    "orders_list":"Order List",
+    "orders_list": "Order List",
     "placed_on": "Placed on:",
     "shipping_address": "Shipping Address:",
     "order_status": "Order Status:",
@@ -338,13 +338,167 @@
     "payment_info": "Payment Info:",
     "status": "Status:",
     "total_price": "Total Price:",
-    "write_a_letter":"Write a letter",
-    "write_a_comment":"Write a comment",
-    "submit":"Submit",
-    "paymentInfor":"Payment Info",
-    "give_a_refund":"Give a refund",
-    "send_message":"Gửi thông điệp"
+    "write_a_letter": "Write a letter",
+    "write_a_comment": "Write a comment",
+    "submit": "Submit",
+    "paymentInfor": "Payment Info",
+    "give_a_refund": "Give a refund",
+    "send_message": "Gửi thông điệp"
+  },
+  "inbox": {
+    "all_message": "All Messages",
+    "you": "You",
+    "enter_your_message": "Enter your message"
+  },
+  "create_product_form": {
+    "title": "Create Product",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your product name"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Enter your product description"
+      },
+      "tags": {
+        "label": "Tags",
+        "placeholder": "Enter your product tags"
+      },
+      "category": {
+        "label": "Category",
+        "placeholder": "Choose a category"
+      },
+      "size": {
+        "label": "Size",
+        "placeholder": "Choose a size"
+      },
+      "storage": {
+        "label": "Storage",
+        "placeholder": "Choose a storage"
+      },
+      "original_price": {
+        "label": "Original Price",
+        "placeholder": "Enter your product price"
+      },
+      "price_with_discount": {
+        "label": "Price (With Discount)",
+        "placeholder": "Enter your product price with discount"
+      },
+      "product_stock": {
+        "label": "Product Stock",
+        "placeholder": "Enter your product stock"
+      },
+      "upload_images": {
+        "label": "Upload Images",
+        "placeholder": "Add your product images"
+      }
+    },
+    "button": {
+      "create": "Create"
+    }
+  },
 
-    
+  "update_product_form": {
+    "title": "Update Product",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your product name"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Enter your product description"
+      },
+      "tags": {
+        "label": "Tags",
+        "placeholder": "Enter your product tags"
+      },
+      "category": {
+        "label": "Category",
+        "placeholder": "Choose a category"
+      },
+      "size": {
+        "label": "Size",
+        "placeholder": "Choose a size"
+      },
+      "storage": {
+        "label": "Storage",
+        "placeholder": "Choose a storage"
+      },
+      "original_price": {
+        "label": "Original Price",
+        "placeholder": "Enter your product price"
+      },
+      "price_with_discount": {
+        "label": "Price (With Discount)",
+        "placeholder": "Enter your product price with discount"
+      },
+      "product_stock": {
+        "label": "Product Stock",
+        "placeholder": "Enter your product stock"
+      },
+      "upload_images": {
+        "label": "Upload Images",
+        "placeholder": "Add your product images"
+      }
+    },
+    "button": {
+      "update": "Update"
+    }
+  },
+  "create_event_form": {
+    "title": "Update Product",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your product name"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Enter your product description"
+      },
+      "tags": {
+        "label": "Tags",
+        "placeholder": "Enter your product tags"
+      },
+      "category": {
+        "label": "Category",
+        "placeholder": "Choose a category"
+      },
+      "size": {
+        "label": "Size",
+        "placeholder": "Choose a size"
+      },
+      "storage": {
+        "label": "Storage",
+        "placeholder": "Choose a storage"
+      },
+      "original_price": {
+        "label": "Original Price",
+        "placeholder": "Enter your product price"
+      },
+      "price_with_discount": {
+        "label": "Price (With Discount)",
+        "placeholder": "Enter your product price with discount"
+      },
+      "product_stock": {
+        "label": "Product Stock",
+        "placeholder": "Enter your product stock"
+      },
+      "upload_images": {
+        "label": "Upload Images",
+        "placeholder": "Add your product images"
+      },
+      "start_date":{
+        "label":"Event Start Date"
+      },
+      "end_date":{
+        "label":"Event End Date"
+      }
+    },
+    "button": {
+      "update": "Update"
+    }
   }
 }

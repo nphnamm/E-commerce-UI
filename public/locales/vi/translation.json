@@ -343,6 +343,162 @@
     "status": "Trạng thái:",
     "total_price": "Tổng đơn hàng:",
     "write_a_letter":"Viết đánh giá"
-
+  },
+  "inbox":{
+    "all_message": "Tất cả tin nhắn",
+    "you":"Bạn",
+    "enter_your_message":"Vui lòng nhập tin nhắn"
+  },
+  "create_product_form": {
+    "title": "Tạo Sản Phẩm",
+    "fields": {
+      "name": {
+        "label": "Tên",
+        "placeholder": "Nhập tên sản phẩm"
+      },
+      "description": {
+        "label": "Mô Tả",
+        "placeholder": "Nhập mô tả sản phẩm"
+      },
+      "tags": {
+        "label": "Thẻ",
+        "placeholder": "Nhập thẻ sản phẩm"
+      },
+      "category": {
+        "label": "Danh Mục",
+        "placeholder": "Chọn danh mục"
+      },
+      "size": {
+        "label": "Kích Thước",
+        "placeholder": "Chọn kích thước"
+      },
+      "storage": {
+        "label": "Bộ Nhớ",
+        "placeholder": "Chọn bộ nhớ"
+      },
+      "original_price": {
+        "label": "Giá Gốc",
+        "placeholder": "Nhập giá gốc sản phẩm"
+      },
+      "price_with_discount": {
+        "label": "Giá (Đã Giảm)",
+        "placeholder": "Nhập giá sản phẩm sau giảm"
+      },
+      "product_stock": {
+        "label": "Tồn Kho",
+        "placeholder": "Nhập số lượng tồn kho"
+      },
+      "upload_images": {
+        "label": "Tải Ảnh",
+        "placeholder": "Thêm ảnh sản phẩm"
+      }
+    },
+    "button": {
+      "create": "Tạo"
+    }
+  },
+  "update_product_form": {
+    "title": "Chỉnh Sửa Sản Phẩm",
+    "fields": {
+      "name": {
+        "label": "Tên",
+        "placeholder": "Nhập tên sản phẩm"
+      },
+      "description": {
+        "label": "Mô Tả",
+        "placeholder": "Nhập mô tả sản phẩm"
+      },
+      "tags": {
+        "label": "Thẻ",
+        "placeholder": "Nhập thẻ sản phẩm"
+      },
+      "category": {
+        "label": "Danh Mục",
+        "placeholder": "Chọn danh mục"
+      },
+      "size": {
+        "label": "Kích Thước",
+        "placeholder": "Chọn kích thước"
+      },
+      "storage": {
+        "label": "Bộ Nhớ",
+        "placeholder": "Chọn bộ nhớ"
+      },
+      "original_price": {
+        "label": "Giá Gốc",
+        "placeholder": "Nhập giá gốc sản phẩm"
+      },
+      "price_with_discount": {
+        "label": "Giá (Đã Giảm)",
+        "placeholder": "Nhập giá sản phẩm sau giảm"
+      },
+      "product_stock": {
+        "label": "Tồn Kho",
+        "placeholder": "Nhập số lượng tồn kho"
+      },
+      "upload_images": {
+        "label": "Tải Ảnh",
+        "placeholder": "Thêm ảnh sản phẩm"
+      }
+    },
+    "button": {
+      "update": "Cập Nhật"
+    }
+  },  
+  "create_event_form": {
+    "title": "Tạo Sản Phẩm",
+    "fields": {
+      "name": {
+        "label": "Tên",
+        "placeholder": "Nhập tên sản phẩm"
+      },
+      "description": {
+        "label": "Mô Tả",
+        "placeholder": "Nhập mô tả sản phẩm"
+      },
+      "tags": {
+        "label": "Thẻ",
+        "placeholder": "Nhập thẻ sản phẩm"
+      },
+      "category": {
+        "label": "Danh Mục",
+        "placeholder": "Chọn danh mục"
+      },
+      "size": {
+        "label": "Kích Thước",
+        "placeholder": "Chọn kích thước"
+      },
+      "storage": {
+        "label": "Bộ Nhớ",
+        "placeholder": "Chọn bộ nhớ"
+      },
+      "original_price": {
+        "label": "Giá Gốc",
+        "placeholder": "Nhập giá gốc sản phẩm"
+      },
+      "price_with_discount": {
+        "label": "Giá (Đã Giảm)",
+        "placeholder": "Nhập giá sản phẩm sau giảm"
+      },
+      "product_stock": {
+        "label": "Tồn Kho",
+        "placeholder": "Nhập số lượng tồn kho"
+      },
+      "upload_images": {
+        "label": "Tải Ảnh",
+        "placeholder": "Thêm ảnh sản phẩm"
+      }
+      ,
+      "start_date":{
+        "label":"Ngày bắt đầu sự kiện"
+      },
+      "end_date":{
+        "label":"Ngày kết thúc sự kiện"
+      }
+    },
+    "button": {
+      "create": "Tạo"
+    }
   }
+  
 }

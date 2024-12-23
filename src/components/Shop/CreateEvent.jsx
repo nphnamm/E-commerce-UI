@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { categoriesData } from "../../static/data";
 import { toast } from "react-toastify";
 import { createevent } from "../../redux/actions/event";
+import { useTranslation } from "react-i18next";
 
 const CreateEvent = () => {
+  const { t } = useTranslation();
+
   const { seller } = useSelector((state) => state.seller);
   const { success, error } = useSelector((state) => state.events);
   const navigate = useNavigate();
@@ -44,7 +47,7 @@ const CreateEvent = () => {
       0,
       10
     );
-   
+
   };
 
   const handleEndDateChange = (e) => {
@@ -56,8 +59,8 @@ const CreateEvent = () => {
 
   const minEndDate = startDate
     ? new Date(startDate.getTime() + 1 * 24 * 60 * 60 * 1000)
-        .toISOString()
-        .slice(0, 10)
+      .toISOString()
+      .slice(0, 10)
     : "";
 
   useEffect(() => {
@@ -102,13 +105,17 @@ const CreateEvent = () => {
   console.log('check', success);
   return (
     <div className="w-[90%] 800px:w-[50%] bg-white  shadow h-[80vh] rounded-[4px] p-3 overflow-y-scroll">
-      <h5 className="text-[30px] font-Poppins text-center">Create Event</h5>
+      <h5 className="text-[30px] font-Poppins text-center">{t("create_event_form.title")}</h5>
+
       {/* create event form */}
       <form onSubmit={handleSubmit}>
         <br />
         <div>
           <label className="pb-2">
-            Name <span className="text-red-500">*</span>
+            {t("create_event_form.fields.name.label")}
+
+
+            <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -116,13 +123,15 @@ const CreateEvent = () => {
             value={name}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your event product name..."
+            placeholder={t("create_event_form.fields.name.placeholder")}
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Description <span className="text-red-500">*</span>
+            {t("create_event_form.fields.description.label")}
+
+            <span className="text-red-500">*</span>
           </label>
           <textarea
             cols="30"
@@ -133,20 +142,23 @@ const CreateEvent = () => {
             value={description}
             className="mt-2 appearance-none block w-full pt-2 px-3 border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Enter your event product description..."
+            placeholder={t("create_event_form.fields.description.placeholder")}
           ></textarea>
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Category <span className="text-red-500">*</span>
+            {t("create_event_form.fields.category.label")}
+
+            <span className="text-red-500">*</span>
           </label>
           <select
             className="w-full mt-2 border h-[35px] rounded-[5px]"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="Choose a category">Choose a category</option>
+            <option value={t("create_event_form.fields.category.placeholder")}>
+              {t("create_event_form.fields.category.placeholder")}</option>
             {categoriesData &&
               categoriesData.map((i) => (
                 <option value={i.title} key={i.title}>
@@ -169,20 +181,24 @@ const CreateEvent = () => {
         </div>
         <br />
         <div>
-          <label className="pb-2">Original Price</label>
+          <label className="pb-2">
+            {t("create_event_form.fields.original_price.label")}
+            <span className="text-red-500">*</span>
+
+          </label>
           <input
             type="number"
             name="price"
             value={originalPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setOriginalPrice(e.target.value)}
-            placeholder="Enter your event product price..."
+            placeholder={t("create_event_form.fields.original_price.placeholder")}
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Price (With Discount) <span className="text-red-500">*</span>
+            {t("create_event_form.fields.price_with_discount.label")}  <span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -190,13 +206,13 @@ const CreateEvent = () => {
             value={discountPrice}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setDiscountPrice(e.target.value)}
-            placeholder="Enter your event product price with discount..."
+            placeholder={t("create_event_form.fields.price_with_discount.placeholder")}
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Product Stock <span className="text-red-500">*</span>
+            {t("create_event_form.fields.product_stock.label")} <span className="text-red-500">*</span>
           </label>
           <input
             type="number"
@@ -204,13 +220,14 @@ const CreateEvent = () => {
             value={stock}
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setStock(e.target.value)}
-            placeholder="Enter your event product stock..."
+            placeholder={t("create_event_form.fields.product_stock.placeholder")}
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Event Start Date <span className="text-red-500">*</span>
+          {t("create_event_form.fields.start_date.label")}            
+            <span className="text-red-500">*</span>
           </label>
           <input
             type="date"
@@ -220,13 +237,14 @@ const CreateEvent = () => {
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={handleStartDateChange}
             min={today}
-            placeholder="Enter your event product stock..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Event End Date <span className="text-red-500">*</span>
+          {t("create_event_form.fields.end_date.label")}            
+            
+            <span className="text-red-500">*</span>
           </label>
           <input
             type="date"
@@ -236,13 +254,13 @@ const CreateEvent = () => {
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={handleEndDateChange}
             min={minEndDate}
-            placeholder="Enter your event product stock..."
           />
         </div>
         <br />
         <div>
           <label className="pb-2">
-            Upload Images <span className="text-red-500">*</span>
+          {t("create_event_form.fields.upload_images.label")}            
+            <span className="text-red-500">*</span>
           </label>
           <input
             type="file"
@@ -259,8 +277,8 @@ const CreateEvent = () => {
             {images &&
               images.map((i) => (
                 <img
-                src={URL.createObjectURL(i)}
-                key={i}
+                  src={URL.createObjectURL(i)}
+                  key={i}
                   alt=""
                   className="h-[120px] w-[120px] object-cover m-2"
                 />
@@ -270,7 +288,7 @@ const CreateEvent = () => {
           <div>
             <input
               type="submit"
-              value="Create"
+              value= {t("create_event_form.button.create")}  
               className="mt-2 cursor-pointer appearance-none text-center block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             />
           </div>
