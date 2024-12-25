@@ -62,7 +62,7 @@ const ShopCreate = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          {t('Shoplogin.registerTitle')}
+          {t('Shopcreate.registerTitle')}
         </h2>
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -70,7 +70,7 @@ const ShopCreate = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                {t('Shoplogin.shopName')}
+                {t('Shopcreate.shopName')}
               </label>
               <div className="mt-1">
                 <input
@@ -85,7 +85,7 @@ const ShopCreate = () => {
             </div>
             <div>
               <label htmlFor="phone-number" className="block text-sm font-medium text-gray-700">
-                {t('Shoplogin.phoneNumber')}
+                {t('Shopcreate.phoneNumber')}
               </label>
               <div className="mt-1">
                 <input
@@ -100,7 +100,7 @@ const ShopCreate = () => {
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                {t('Shoplogin.emailAddress')}
+                {t('Shopcreate.emailAddress')}
               </label>
               <div className="mt-1">
                 <input
@@ -116,7 +116,7 @@ const ShopCreate = () => {
             </div>
             <div>
               <label htmlFor="address" className="block text-sm font-medium text-gray-700">
-                {t('Shoplogin.address')}
+                {t('Shopcreate.address')}
               </label>
               <div className="mt-1">
                 <input
@@ -131,7 +131,7 @@ const ShopCreate = () => {
             </div>
             <div>
               <label htmlFor="zipcode" className="block text-sm font-medium text-gray-700">
-                {t('Shoplogin.zipCode')}
+                {t('Shopcreate.zipCode')}
               </label>
               <div className="mt-1">
                 <input
@@ -146,7 +146,7 @@ const ShopCreate = () => {
             </div>
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                {t('Shoplogin.password')}
+                {t('Shopcreate.password')}
               </label>
               <div className="mt-1 relative">
                 <input
@@ -175,7 +175,7 @@ const ShopCreate = () => {
             </div>
             <div>
               <label htmlFor="avatar" className="block text-sm font-medium text-gray-700">
-                {t('Shoplogin.avatarimage')}
+                {t('Shopcreate.avatarimage')}
               </label>
               <div className="mt-2 flex items-center">
                 <span className="inline-block h-8 w-8 rounded-full overflow-hidden">
@@ -193,7 +193,7 @@ const ShopCreate = () => {
                   htmlFor="file-input"
                   className="ml-5 flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
                 >
-                  <span>{t('Shoplogin.avatar')}</span>
+                  <span>{t('Shopcreate.avatar')}</span>
                   <input
                     type="file"
                     name="avatar"
@@ -213,7 +213,7 @@ const ShopCreate = () => {
                   className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                 />
                 <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                  {t('Shoplogin.rememberMe')}
+                  {t('Shopcreate.rememberMe')}
                 </label>
               </div>
               <div className="text-sm">
@@ -221,7 +221,7 @@ const ShopCreate = () => {
                   href=".forgot-password"
                   className="font-medium text-blue-600 hover:text-blue-50"
                 >
-                  {t('Shoplogin.forgotPassword')}
+                  {t('Shopcreate.forgotPassword')}
                 </a>
               </div>
             </div>
@@ -230,13 +230,13 @@ const ShopCreate = () => {
                 type="submit"
                 className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
               >
-                {t('Shoplogin.submitButton')}
+                {t('Shopcreate.submitButton')}
               </button>
             </div>
             <div className="flex w-full justify-center">
               <h4>{t('Already have an account?')}</h4>
               <Link to="/shop-login" className="text-blue-600 hover:text-blue-400 pl-2">
-                {t('Shoplogin.signIn')}
+                {t('Shopcreate.signIn')}
               </Link>
             </div>
           </form>

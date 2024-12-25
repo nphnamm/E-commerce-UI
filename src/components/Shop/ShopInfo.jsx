@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from "../../styles/styles";
 import axios from "axios";
 import { server } from "../../server";
 import { getAllProductsShop } from "../../redux/actions/product";
 import { useTranslation } from "react-i18next";
+import { toast } from 'react-toastify';
 
 const ShopInfo = ({ isOwner }) => {
   const [data, setData] = useState({});
@@ -14,6 +15,8 @@ const ShopInfo = ({ isOwner }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const {t} = useTranslation()
+    const navigate = useNavigate();
+  
   useEffect(() => {
     dispatch(getAllProductsShop(id));
     setIsLoading(true);
@@ -29,10 +32,14 @@ const ShopInfo = ({ isOwner }) => {
       });
   }, []);
   const logoutHandler = async () => {
-    axios.get(`${server}/shop/logout`, {
-      withCredentials: true,
-    });
-    window.location.reload();
+    axios.get(`${server}/shop/logout`, { withCredentials: true }).then((res) => {
+      toast.success(res.data.message);
+      navigate("/shop-login");
+      window.location.reload(true);
+
+    }).catch((error) => {
+      console.log(error.response.data.message);
+    })
   };
   const totalReviewsLength =
     products &&

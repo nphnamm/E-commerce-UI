@@ -224,7 +224,7 @@ const UserOrderDetails = () => {
         </div>
         <div className="w-full 800px:w-[40%]">
           <h4 className="pt-3 text-[20px]">                {t('overview.paymentInfor')}
-          :</h4>
+            :</h4>
           <h4>
             Status:{" "}
             {data?.paymentInfo?.status ? data?.paymentInfo?.status : "Not Paid"}
@@ -235,7 +235,7 @@ const UserOrderDetails = () => {
               <div className={`${styles.button} text-white`}
                 onClick={refundHandler}
               >                {t('overview.give_a_refund')}
-</div>
+              </div>
             )
           }
         </div>
