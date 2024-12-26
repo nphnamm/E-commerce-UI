@@ -28,7 +28,11 @@
     "shop_phone_number": "Số điện thoại cửa hàng",
     "shop_zip_code": "Mã bưu điện cửa hàng",
     "update_shop": "Cập nhật cửa hàng",
-    "enter_shop_description": "Nhập mô tả cửa hàng của bạn"
+    "enter_shop_description": "Nhập mô tả cửa hàng của bạn",
+    "seeDetail":"Xem chi tiết",
+    "sold_out": "Đã bán",
+    "timeUp":"Gần hết giờ"
+
   },
   "overview": {
     "overview": "Tổng quan",

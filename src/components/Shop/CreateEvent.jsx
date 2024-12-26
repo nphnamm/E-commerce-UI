@@ -75,9 +75,40 @@ const CreateEvent = () => {
   }, [dispatch, error, success]);
 
   const handleImageChange = (e) => {
-    e.preventDefault();
-    let files = Array.from(e.target.files);
-    setImages((prevImages) => [...prevImages, ...files]);
+    // e.preventDefault();
+    // let files = Array.from(e.target.files);
+
+    // setImages((prevImages) => [...prevImages, ...files]);
+    // const reader = new FileReader();
+    // reader.readAsDataURL(files);
+
+    // console.log('check file', files);
+    // // setImages([]);
+
+    // files.forEach((file) => {
+    //   const reader = new FileReader();
+
+    //   reader.onload = () => {
+    //     if (reader.readyState === 2) {
+    //       setImages((old) => [...old, reader.result]);
+    //     }
+    //   };
+    //   reader.readAsDataURL(file);
+    // });
+    const files = Array.from(e.target.files);
+
+    // setImages([]);
+
+    files.forEach((file) => {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setImages((old) => [...old, reader.result]);
+        }
+      };
+      reader.readAsDataURL(file);
+    });
   };
 
   const handleSubmit = (e) => {
@@ -98,9 +129,25 @@ const CreateEvent = () => {
     newForm.append("shopId", seller._id);
     newForm.append("start_Date", startDate.toISOString());
     newForm.append("Finish_Date", endDate.toISOString());
+    const start_Date = startDate.toISOString();
+    const Finish_Date = endDate.toISOString();
 
+    dispatch(
+      createevent({
+        name,
+        description,
+        category,
+        tags,
+        originalPrice,
+        discountPrice,
+        stock,
+        shopId: seller._id,
+        images,
+        start_Date,
+        Finish_Date,
+      })
+    );
 
-    dispatch(createevent(newForm));
   };
   console.log('check', success);
   return (
@@ -226,7 +273,7 @@ const CreateEvent = () => {
         <br />
         <div>
           <label className="pb-2">
-          {t("create_event_form.fields.start_date.label")}            
+            {t("create_event_form.fields.start_date.label")}
             <span className="text-red-500">*</span>
           </label>
           <input
@@ -242,8 +289,8 @@ const CreateEvent = () => {
         <br />
         <div>
           <label className="pb-2">
-          {t("create_event_form.fields.end_date.label")}            
-            
+            {t("create_event_form.fields.end_date.label")}
+
             <span className="text-red-500">*</span>
           </label>
           <input
@@ -259,7 +306,7 @@ const CreateEvent = () => {
         <br />
         <div>
           <label className="pb-2">
-          {t("create_event_form.fields.upload_images.label")}            
+            {t("create_event_form.fields.upload_images.label")}
             <span className="text-red-500">*</span>
           </label>
           <input
@@ -277,7 +324,7 @@ const CreateEvent = () => {
             {images &&
               images.map((i) => (
                 <img
-                  src={URL.createObjectURL(i)}
+                  src={i}
                   key={i}
                   alt=""
                   className="h-[120px] w-[120px] object-cover m-2"
@@ -288,7 +335,7 @@ const CreateEvent = () => {
           <div>
             <input
               type="submit"
-              value= {t("create_event_form.button.create")}  
+              value={t("create_event_form.button.create")}
               className="mt-2 cursor-pointer appearance-none text-center block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             />
           </div>

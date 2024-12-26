@@ -499,13 +499,7 @@ const Category = () => {
             </div>
           </div>
         </>
-        <Slider
-          getAriaLabel={() => 'Temperature range'}
-          value={value}
-          onChange={handleChange}
-          valueLabelDisplay="auto"
-          getAriaValueText={valuetext}
-        />
+  
       </div>
     </div>
   );

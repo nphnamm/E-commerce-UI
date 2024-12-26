@@ -3,14 +3,34 @@ import { server } from "../../server";
 import { toast } from "react-toastify";
 
 // create event
-export const createevent = (newForm) => async (dispatch) => {
+export const createevent = ( name,
+  description,
+  category,
+  tags,
+  originalPrice,
+  discountPrice,
+  stock,
+  shopId,
+  images) => async (dispatch) => {
   try {
     dispatch({
       type: "eventCreateRequest",
     });
     const config = {headers :{"Content-Type":"multipart/form-data"}};
 
-    const { data } = await axios.post(`${server}/event/create-event`, newForm,config);
+
+    const { data } = await axios.post(
+      `${server}/event/create-event`,
+      name,
+      description,
+      category,
+      tags,
+      originalPrice,
+      discountPrice,
+      stock,
+      shopId,
+      images
+    );
     dispatch({
       type: "eventCreateSuccess",
       payload: data.event,

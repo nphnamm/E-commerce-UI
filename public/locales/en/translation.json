@@ -28,7 +28,12 @@
     "shop_phone_number": "Shop Phone Number",
     "shop_zip_code": "Shop Zip Code",
     "update_shop": "Update Shop",
-    "enter_shop_description": "Enter your shop description"
+    "enter_shop_description": "Enter your shop description",
+    "seeDetail":"See Detail",
+    "sold_out": "Sold",
+    "timeUp":"Time's up"
+
+
   },
   "overview": {
     "overview": "Overview",
@@ -52,6 +57,7 @@
     "stock": "Stock",
     "sold_out": "Sold Out"
   },
+
   "category": {
     "allCategory": "All Categories",
     "Sofa": "Sofa",
@@ -353,6 +359,7 @@
   "create_product_form": {
     "title": "Create Product",
     "fields": {
+    
       "name": {
         "label": "Name",
         "placeholder": "Enter your product name"

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const CountDown = ({ data }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const { t } = useTranslation();
   useEffect(() => {
     const timer = setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
@@ -18,7 +20,7 @@ const CountDown = ({ data }) => {
   });
   function calculateTimeLeft() {
     const difference = +new Date(data?.Finish_Date) - +new Date();
-   
+
     let timeLeft = {};
     if (difference > 0) {
       timeLeft = {
@@ -48,7 +50,11 @@ const CountDown = ({ data }) => {
       {timerComponents.length ? (
         timerComponents
       ) : (
-        <span className="text-[red] text-[25px] ">Time's Up</span>
+        <span className="text-[red] text-[25px] ">
+          {t("dashboard.timeUp")}
+
+
+        </span>
       )}
     </div>
   );
