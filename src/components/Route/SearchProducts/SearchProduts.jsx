@@ -5,6 +5,8 @@ import DataIteration from "./DataIteration";
 import ProductCardStyleOne from "./ProductCardStyleOne";
 import axios from "axios";
 import Loader from "../../Layout/Loader";
+import { server } from "../../../server";
+import { useLocation } from "react-router-dom";
 
 const categories = [
   { id: 1, title: "Computers and Laptops" },
@@ -19,10 +21,10 @@ const categories = [
   { id: 10, title: "Others" },
 ];
 const brands = [
-  { id: 1, title: "Yame" },
+  { id: 1, title: "ELEVEN" },
   { id: 2, title: "FPT" },
-  { id: 3, title: "Walton" },
-  { id: 4, title: "Oneplus" },
+  { id: 3, title: "Apple" },
+  { id: 4, title: "Adidas" },
   { id: 5, title: "Vivo" },
   { id: 6, title: "Oppo" },
   { id: 7, title: "Xiaomi" },
@@ -47,10 +49,18 @@ export default function SearchProducts({ allProducts }) {
   const [totalProduct, setTotalProduct] = useState(0);
   const [filterToggle, setFilterToggle] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [volume, setVolume] = useState([0,500000]);
+  const [volume, setVolume] = useState([0, 500000000]);
   const [storage, setStorage] = useState(null);
   const totalPages = Math.ceil(totalProduct / pageSize);
-  const [volum1, setVolum1] = useState([0,500000]);
+  
+  
+  const location = useLocation(); // Lấy thông tin từ URL
+  const [query, setQuery] = useState(""); // State để lưu từ khóa tìm kiếm
+  // Hàm lấy query từ URL
+  const getQueryFromURL = () => {
+    const params = new URLSearchParams(location.search);
+    return params.get("query") || ""; // Trả về từ khóa hoặc chuỗi rỗng nếu không có
+  };
 
   const filterStorage = (value) => {
     setStorage(value);
@@ -58,7 +68,7 @@ export default function SearchProducts({ allProducts }) {
   // console.log('volume', storage)
   // const volumeHandler = (newValue) => {
   //   setVolume({ min: newValue[0], max: newValue[1] });
-    
+
   // };
 
 
@@ -109,7 +119,7 @@ export default function SearchProducts({ allProducts }) {
 
     try {
       const response = await axios.patch(
-        "https://e-commerce-api-tzp0.onrender.com/api/v2/product/list",
+        `${server}/product/list`,
         body,
         {
           headers: { "Content-Type": "application/json" },
@@ -127,6 +137,7 @@ export default function SearchProducts({ allProducts }) {
   useEffect(() => {
     setFilterAPI((prev) => ({
       ...prev,
+      keyword:query,
       category: selectedCategories.length > 0 ? selectedCategories : null,
       brand: selectedBrands.length > 0 ? selectedBrands : null,
       size: selectedSizes.length > 0 ? selectedSizes : null,
@@ -134,13 +145,17 @@ export default function SearchProducts({ allProducts }) {
       maxPrice: volume[1],
       storage: storage,
     }));
-  }, [selectedCategories, selectedBrands,volume, storage, selectedSizes]);
+  }, [selectedCategories, selectedBrands, volume, storage, selectedSizes, pageSize,query]);
 
   useEffect(() => {
     fetchProducts();
   }, [filtersAPI]);
-
-  console.log('value', volum1);
+  // Theo dõi URL để lấy query
+  useEffect(() => {
+    const currentQuery = getQueryFromURL();
+    setQuery(currentQuery);
+  }, [location]);
+  console.log(query);
   return (
     allProducts && (
       <>
@@ -171,7 +186,7 @@ export default function SearchProducts({ allProducts }) {
                     storage={storage}
                     filterstorage={filterStorage}
                     filterToggle={filterToggle}
-                    filterToggleHandle={()=>setFilterToggle(false)}
+                    filterToggleHandle={() => setFilterToggle(false)}
                     className="mb-[30px]"
                   />
                   {/* ads */}
@@ -230,7 +245,7 @@ export default function SearchProducts({ allProducts }) {
                       </svg>
                     </button>
                   </div>
-                  <div className={`${filterToggle ? "hidden": "block"} grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1  xl:gap-[30px] gap-5 mb-[40px]`}>
+                  <div className={`${filterToggle ? "hidden" : "block"} grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1  xl:gap-[30px] gap-5 mb-[40px]`}>
                     <DataIteration
                       datas={products}
                       startLength={0}

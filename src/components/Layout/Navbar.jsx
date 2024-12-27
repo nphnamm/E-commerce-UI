@@ -11,7 +11,7 @@ function Navbar({ active }) {
   const navItems = [
     { id: 0, title: t('nav.home'), path: '/' },
     { id: 1, title: t('nav.bestSelling'), path: '/best-selling' },
-    { id: 2, title: t('nav.products'), path: '/products' },
+    { id: 2, title: t('nav.products'), path: '/search' },
     { id: 3, title: t('nav.events'), path: '/events' },
     { id: 4, title: t('nav.faq'), path: '/faq' },
   ];
@@ -22,7 +22,7 @@ function Navbar({ active }) {
         navItems.map((i, index) => (
           <div className="flex  mt-1 hover:shadow-3xl hover:">
             <Link
-              to={i.url}
+              to={i.path}
               className={`${active === index + 1
                   ? "text-[#000]"
                   : "text-white"

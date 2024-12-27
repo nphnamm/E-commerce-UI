@@ -37,6 +37,8 @@ const CountDown = ({ data }) => {
     if (!timeLeft[interval]) {
       return null;
     }
+    // console.log(timeLeft);
+    // console.log(interval)
     return (
       <span className="text-[25px] text-[#475ad2]">
         {timeLeft[interval]}

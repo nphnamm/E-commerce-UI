@@ -71,16 +71,16 @@ const UserOrderDetails = () => {
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center">
           <BsFillBagFill size={30} color="crimson" />
-          <h1 className="pl-2 text-[25px]">{t('overview.title')}</h1>
+          <h1 className="pl-2 text-[25px]">{t('order_details.title')}</h1>
         </div>
       </div>
 
       <div className="w-full flex items-center justify-between pt-6">
         <h5 className="text-[#00000084]">
-          {t('overview.order_id')}: <span>#{data?._id?.slice(0, 8)}</span>
+          {t('order_details.order_id')}: <span>#{data?._id?.slice(0, 8)}</span>
         </h5>
         <h5 className="text-[#00000084]">
-          {t('overview.placed_on')}: <span>{data?.createdAt?.slice(0, 10)}</span>
+          {t('order_details.placed_on')}: <span>{data?.createdAt?.slice(0, 10)}</span>
         </h5>
       </div>
 
@@ -106,7 +106,7 @@ const UserOrderDetails = () => {
                 className={`${styles.button} text-[#fff]`}
                 onClick={() => setOpen(true) || setSelectedItem(item)}
               >
-                {t('overview.order_id')}
+                {t('order_details.order_id')}
               </div> : (
                 null
               )}
@@ -174,7 +174,7 @@ const UserOrderDetails = () => {
             <br />
             <div className="w-full ml-3">
               <label className="block text-[20px] font-[500]">
-                {t('overview.write_a_comment')}
+                {t('order_details.write_a_comment')}
                 <span className="ml-1 font-[400] text-[16px] text-[#00000052]">
                   (optional)
                 </span>
@@ -194,7 +194,7 @@ const UserOrderDetails = () => {
               className={`${styles.button} text-white text-[20px] ml-3`}
               onClick={rating > 1 ? reviewHandler : null}
             >
-              {t('overview.submit')}
+              {t('order_details.submit')}
 
             </div>
           </div>
@@ -203,7 +203,7 @@ const UserOrderDetails = () => {
 
       <div className="border-t w-full text-right">
         <h5 className="pt-3 text-[18px]">
-          {t('overview.totalPrice')}
+          {t('order_details.total_price')}
           : <strong>{formatPrice(data?.totalPrice)}</strong>
         </h5>
       </div>
@@ -211,7 +211,7 @@ const UserOrderDetails = () => {
       <br />
       <div className="w-full 800px:flex items-center">
         <div className="w-full 800px:w-[60%]">
-          <h4 className="pt-3 text-[20px] font-[600]"> {t('overview.shippingAddress')}
+          <h4 className="pt-3 text-[20px] font-[600]"> {t('order_details.shipping_address')}
             :</h4>
           <h4 className="pt-3 text-[20px]">
             {data?.shippingAddress.address1 +
@@ -223,7 +223,7 @@ const UserOrderDetails = () => {
           <h4 className=" text-[20px]">{data?.user?.phoneNumber}</h4>
         </div>
         <div className="w-full 800px:w-[40%]">
-          <h4 className="pt-3 text-[20px]">                {t('overview.paymentInfor')}
+          <h4 className="pt-3 text-[20px]">                {t('order_details.paymentInfor')}
             :</h4>
           <h4>
             Status:{" "}
@@ -234,7 +234,7 @@ const UserOrderDetails = () => {
             data?.status === "Delivered" && (
               <div className={`${styles.button} text-white`}
                 onClick={refundHandler}
-              >                {t('overview.give_a_refund')}
+              >                {t('order_details.give_a_refund')}
               </div>
             )
           }
@@ -242,7 +242,7 @@ const UserOrderDetails = () => {
       </div>
       <br />
       <Link to="/">
-        <div className={`${styles.button} text-white`}>{t('overview.send_message')}</div>
+        <div className={`${styles.button} text-white`}>{t('order_details.send_message')}</div>
       </Link>
       <br />
       <br />

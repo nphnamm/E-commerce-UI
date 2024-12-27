@@ -337,15 +337,15 @@
   },
  "order_details": {
     "title": "Chi tiết đơn hàng",
-    "order_id": "Mã đơn hàng:",
+    "order_id": "Mã đơn hàng",
     "orders_list":"Danh sách đơn hàng",
-    "placed_on": "Đặt vào ngày:",
-    "shipping_address": "Địa chỉ giao hàng:",
-    "order_status": "Trạng thái đơn hàng:",
+    "placed_on": "Đặt vào ngày",
+    "shipping_address": "Địa chỉ giao hàng",
+    "order_status": "Trạng thái đơn hàng",
     "update_status": "Cập nhật trạng thái",
-    "payment_info": "Thông tin thanh toán:",
-    "status": "Trạng thái:",
-    "total_price": "Tổng đơn hàng:",
+    "payment_info": "Thông tin thanh toán",
+    "status": "Trạng thái",
+    "total_price": "Tổng đơn hàng",
     "write_a_letter":"Viết đánh giá"
   },
   "inbox":{

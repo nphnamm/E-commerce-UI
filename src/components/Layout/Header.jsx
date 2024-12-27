@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../styles/styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
 
   AiOutlineHeart,
@@ -258,6 +258,8 @@ function Header({ activeHeading }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [language, setLanguage] = useState('vi'); // Mặc định là tiếng Anh
   const [selectedIndex, setSelectedIndex] = useState(1);
+  const navigate = useNavigate();
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -300,10 +302,12 @@ function Header({ activeHeading }) {
     en: logoUs,
     vi: logoVi,
   };
-  // console.log("search term ", searchTerm);
-  // console.log("search data ", searchData);
-
-  // console.log("check ", productData);
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+    }
+  };
   window.addEventListener("scroll", () => {
     if (window.scrollY > 70) {
       setActive(true);
@@ -333,7 +337,7 @@ function Header({ activeHeading }) {
           <div className="w-[50%] ">
             <div className={`w-full h-full flex items-center justify-between gap-4`}>
               <div className="w-[100%] relative">
-                <form action="#" className="h-full ">
+                <form onSubmit={handleSearchSubmit} className="h-full ">
                   <input
                     type="text"
                     className="search-input pl-5 h-[48px] w-full border border-qgray-border bg-white flex-1 rounded-[10px] focus:border-[#22bba7] focus:ring-2 focus:ring-[#22bba7] focus:outline-none transition-all duration-300"
@@ -365,6 +369,7 @@ function Header({ activeHeading }) {
 
               <div className="h-[48px]">
                 <button
+                onClick={handleSearchSubmit}
                   className="w-[93px] h-full text-sm font-600
                 bg-[#22bba7] text-white rounded-[10px]"
                   type="button"
@@ -493,7 +498,7 @@ function Header({ activeHeading }) {
                 aria-controls="language-menu"
                 aria-haspopup="true"
                 onClick={handleClick}
-                className="bg-white text-black px-4 py-2 rounded cursor-pointer flex items-center shadow-md"
+                className="bg-white text-black px-4 py-2 rounded cursor-pointer flex items-center shadow-md min-w-[180px]"
               >
                 <LanguageIcon className="mr-2" />
                 {languageMap[language]} <ArrowDropDown className="ml-2" />

@@ -12,47 +12,42 @@ const ProductDetailsPage = () => {
   // const [collection, setCollection] = useState([]);
   const [sizesData, setSizesData] = useState([]);
   const [filterdColors, setFilterdColors] = useState([]);
-
+  const [searchParams] = useSearchParams();
+  const isEvent = searchParams.get("isEvent") === "true";
   const { id } = useParams();
 
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const data = allProducts && allProducts.find((i) => i._id === id);
-    const filteredData = allProducts && allProducts.filter(obj => obj.tags === data.tags);
+    // Lấy đúng nguồn dữ liệu dựa trên isEvent
+    const sourceData = isEvent ? allEvents : allProducts;
+
+    if (!sourceData || sourceData.length === 0) return;
+
+    const selectedData = sourceData.find((i) => i._id === id);
+    const filteredData = sourceData.filter((obj) => obj?.tags === selectedData?.tags);
+
     const uniqueSizes = [];
     const seenSizes = new Set();
+
     const uniqueColors = [];
-    const seenColor = new Set();
-    const filterdSize = filteredData && filteredData
-      .forEach((obj, index) => {
-        if (!seenSizes.has(obj.size)) {
-          seenSizes.add(obj.size);
-          uniqueSizes.push({
-            id: index, // giữ lại index đầu tiên của mỗi size
-            size: obj.size,
-          });
-        }
-      });
-      const filterdColors = filteredData && filteredData
-      .forEach((obj, index) => {
-        if (!seenColor.has(obj.color)) {
-          seenColor.add(obj.color);
-          uniqueColors.push({
-            id: index, // giữ lại index đầu tiên của mỗi size
-            color: obj.color,
-          });
-        }
-      });
-    console.log('size', filterdSize);
-    setFilterdColors(uniqueColors)
-    setSizesData(uniqueSizes)
-    setData(data);
-    // const collection = allProducts.filter((obj) => obj?.tags === data?.tags);
-    // console.log("collection", collection);
-    // getCollection(data?.tags);
-    // const filteredObjects = objects.filter(obj => obj.tags === "Branded 03 Vol 24");
-  }, [allProducts, allEvents, data]);
+    const seenColors = new Set();
+
+    filteredData.forEach((obj, index) => {
+      if (obj.size && !seenSizes.has(obj.size)) {
+        seenSizes.add(obj.size);
+        uniqueSizes.push({ id: index, size: obj.size });
+      }
+      if (obj.color && !seenColors.has(obj.color)) {
+        seenColors.add(obj.color);
+        uniqueColors.push({ id: index, color: obj.color });
+      }
+    });
+
+    setSizesData(uniqueSizes);
+    setFilterdColors(uniqueColors);
+    setData(selectedData);
+  }, [allProducts, allEvents, id, isEvent]);
 
   // const getCollection = async (tags) => {
   //   axios
