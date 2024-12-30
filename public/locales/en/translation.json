@@ -507,5 +507,17 @@
     "button": {
       "update": "Update"
     }
+  },
+  "withdraw":{
+    "withdraw":"Withdraw",
+    "available_balance":"Available Balance",
+    "available_withdraw_method":"Available Withdraw Methods",
+    "no_withdraw":"No Withdraw Methods available!",
+    "add_new":"Add new"
+  },
+  "inbox":{
+    ""
   }
+  
+
 }

@@ -15,6 +15,7 @@ import {
   removeFromWishlist,
 } from "../../../redux/actions/wishlist";
 import { addTocart } from "../../../redux/actions/cart";
+import { useTranslation } from "react-i18next";
 
 const ProductCard = ({ data, isEvent }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -22,7 +23,7 @@ const ProductCard = ({ data, isEvent }) => {
   const [click, setClick] = useState(false);
   const [imgSrc, setImgSrc] = useState("Invalid Image Source");
   const dispatch = useDispatch();
-
+  const {t} = useTranslation();
   useEffect(() => {
     if (wishlist && wishlist.find((i) => i._id === data._id)) {
       setClick(true);
@@ -58,7 +59,8 @@ const ProductCard = ({ data, isEvent }) => {
     }
   };
   const d = data.name;
-  // console.log("product from db  ", data);
+   console.log("product from db  ", data);
+
   return (
     //TODO: Full width is 253
     <>
@@ -146,10 +148,10 @@ const ProductCard = ({ data, isEvent }) => {
                 </div>{" "}
                 <div className="flex gap-2.5  flew-row items-start mt-2.5 ">
                   <div className="flex">
-                    <Ratings rating={data?.rating} />
+                    <Ratings rating={data?.ratings} />
                   </div>{" "}
                   <span className="text-gray-500 text-sm">
-                    {data?.sold_out} sold
+                    {data?.sold_out} {t("dashboard.sold_out")}
                   </span>
                 </div>
               </div>
