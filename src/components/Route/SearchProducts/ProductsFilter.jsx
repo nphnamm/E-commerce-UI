@@ -24,6 +24,21 @@ export default function ProductsFilter({
   filterToggleHandle
 }) {
   // console.log('volume',volume)
+  const [minPriceInput, setMinPriceInput] = useState('');
+  const [maxPriceInput, setMaxPriceInput] = useState('');
+  const handleApplyPriceFilter = () => {
+    const minPrice = minPriceInput === '' ? 0 : parseInt(minPriceInput);
+    const maxPrice = maxPriceInput === '' ? 500000000 : parseInt(maxPriceInput);
+
+    volumeHandler([minPrice, maxPrice]);
+    // applyPriceFilter(minPrice, maxPrice);
+  };
+  useEffect(() => {
+    if (volume && volume.length > 0) {
+      setMinPriceInput(volume[0])
+      setMaxPriceInput(volume[1])
+    }
+  }, [volume])
 
   const handleChange = (event, newValue) => {
     volumeHandler(newValue);
@@ -93,6 +108,22 @@ export default function ProductsFilter({
           <div className="subject-title mb-[30px]">
             <h1 className="text-black text-base font-500">Price Range</h1>
           </div>
+          <div className="flex space-x-4 mb-5">
+            <input
+              type="number"
+              placeholder="Min Price"
+              className="border p-2 text-xs w-1/2 "
+              value={minPriceInput}
+              onChange={(e) => setMinPriceInput(e.target.value)}
+            />
+            <input
+              type="number"
+              placeholder="Max Price"
+              className="border p-2 text-xs w-1/2"
+              value={maxPriceInput}
+              onChange={(e) => setMaxPriceInput(e.target.value)}
+            />
+          </div>
           <div className="price-range mb-5">
 
             {/* 
@@ -122,7 +153,7 @@ export default function ProductsFilter({
               getAriaValueText={valuetext}
             /> */}
           </div>
-          <p className="text-xs text-qblack font-400">
+          <p className="text-xs text-qblack font-400 mb-4">
             Price:
             {parseInt(volume[0]).toLocaleString("vi-VN", {
               style: "currency",
@@ -134,6 +165,15 @@ export default function ProductsFilter({
               currency: "VND",
             })}
           </p>
+
+
+          <button
+            onClick={handleApplyPriceFilter}
+            class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded min-w-[100px]">
+
+            Lọc
+          </button>
+
         </div>
         <div className="filter-subject-item pb-10 border-b border-qgray-border mt-10">
           <div className="subject-title mb-[30px]">

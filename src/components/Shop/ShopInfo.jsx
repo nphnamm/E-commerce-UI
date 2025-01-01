@@ -103,7 +103,7 @@ const ShopInfo = ({ isOwner }) => {
               className={`${styles.button} !w-full !h-[42px] !rounded-[5px]`}
               onClick={logoutHandler}
             >
-              <span className="text-white">{t("shop.logout  ")}</span>
+              <span className="text-white">{t("shop.logout")}</span>
             </div>
           </div>
         )}

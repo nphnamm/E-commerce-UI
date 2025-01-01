@@ -29,10 +29,9 @@
     "shop_zip_code": "Mã bưu điện cửa hàng",
     "update_shop": "Cập nhật cửa hàng",
     "enter_shop_description": "Nhập mô tả cửa hàng của bạn",
-    "seeDetail":"Xem chi tiết",
+    "seeDetail": "Xem chi tiết",
     "sold_out": "Đã bán",
-    "timeUp":"Gần hết giờ"
-
+    "timeUp": "Gần hết giờ"
   },
   "overview": {
     "overview": "Tổng quan",
@@ -85,7 +84,7 @@
     "Music_and_Gaming": "Âm nhạc và Trò chơi",
     "Others": "Khác"
   },
-  "categories":{
+  "categories": {
     "computers": "Máy tính",
     "cosmetics": "Mỹ phẩm",
     "accessories": "Phụ kiện",
@@ -196,79 +195,75 @@
     "total_products": "Tổng số lượng sản phẩm",
     "total_reviews": "Tổng đánh giá",
     "visit": "Tham quan shop",
-    "relatedProduct":"Những sản phẩm liên quan"
+    "relatedProduct": "Những sản phẩm liên quan"
   },
-  "cart":{
-    "isEmpty":"Giỏ hàng trống",
-    "checkout_now":"Thanh toán ngay",
-    "items":"Mặt hàng",
-    "limited":"Sản phẩm hết hàng"
-
+  "cart": {
+    "isEmpty": "Giỏ hàng trống",
+    "checkout_now": "Thanh toán ngay",
+    "items": "Mặt hàng",
+    "limited": "Sản phẩm hết hàng"
   },
-  "wishlist":{
-    "isEmpty":"Danh sách yêu thích trống",
-    "items":"Mặt hàng"
-
+  "wishlist": {
+    "isEmpty": "Danh sách yêu thích trống",
+    "items": "Mặt hàng"
   },
-  "checkout":{
-    "shipping":"Vận chuyển",
-    "payment":"Thanh Toán",
-    "success":"Thành Công",
-    "shipping_address":"Địa Chỉ Giao Hàng",
-    "name":"Họ và Tên",
-    "phoneNumber":"Số Điện Thoại",
-    "zipCode":"Mã bưu điện",
-    "country":"Quốc Gia",
-    "city":"Thành Phố",
-    "address_1":"Địa Chỉ 1",
-    "address_2":"Địa Chỉ 2",
-    "savedAddress":"Chọn Địa Chỉ Đã Lưu",
-    "goPayment":"Đến Trang Thanh Toán",
-    "methodPayment":"Thanh Toán Bằng Thẻ Ghi Nợ/Trả Sau",
-    "nameOnCard":"Tên Chủ Thẻ",
-    "expDate":"Ngày Hết Hạn",
-    "cardNumber":"Số Thẻ",
-    "submit":"Thanh Toán",
-    "paywithPaypal":"Thanh toán với Paypal",
-    "cashOnDelivery":"Thanh toán bằng tiền mặt",
-    "subTotal":"Tổng phụ",
-    "shippingFee":"Phí vận chuyển",
-    "discount":"Giảm giá",
-    "CouponCode":"Mã giảm giá",
-    "ApplyCode":"Áp dụng mã",
-    "confirm":"Đặt hàng"
+  "checkout": {
+    "shipping": "Vận chuyển",
+    "payment": "Thanh Toán",
+    "success": "Thành Công",
+    "shipping_address": "Địa Chỉ Giao Hàng",
+    "name": "Họ và Tên",
+    "phoneNumber": "Số Điện Thoại",
+    "zipCode": "Mã bưu điện",
+    "country": "Quốc Gia",
+    "city": "Thành Phố",
+    "address_1": "Địa Chỉ 1",
+    "address_2": "Địa Chỉ 2",
+    "savedAddress": "Chọn Địa Chỉ Đã Lưu",
+    "goPayment": "Đến Trang Thanh Toán",
+    "methodPayment": "Thanh Toán Bằng Thẻ Ghi Nợ/Trả Sau",
+    "nameOnCard": "Tên Chủ Thẻ",
+    "expDate": "Ngày Hết Hạn",
+    "cardNumber": "Số Thẻ",
+    "submit": "Thanh Toán",
+    "paywithPaypal": "Thanh toán với Paypal",
+    "cashOnDelivery": "Thanh toán bằng tiền mặt",
+    "subTotal": "Tổng phụ",
+    "shippingFee": "Phí vận chuyển",
+    "discount": "Giảm giá",
+    "CouponCode": "Mã giảm giá",
+    "ApplyCode": "Áp dụng mã",
+    "confirm": "Đặt hàng"
   },
-  "profile":{
-    "profile":"Hồ sơ",
-    "orders":"Đơn hàng",
-    "refunds":"Hoàn trả",
-    "inbox":"Tin nhắn",
-    "track_order":"Theo dõi đơn hàng",
-    "change_password":"Thay đổi mật khẩu",
-    "address":"Địa chỉ",
-    "admin":"Quản Trị Viên",
-    "logout":"Đăng xuất",
-    "name":"Họ và Tên",
-    "phoneNumber":"Số Điện Thoại",
-    "password":"Mật khẩu",
-    "update":"Cập nhật",
-    "enter_Old_Password":"Nhập mật khẩu cũ của bạn",
-    "enter_New_Password":"Nhập mật khẩu mới của bạn",
-    "enter_Confirm_Password":"Xác nhận mật khẩu mới",
-    "myAddressed":"Địa chỉ của tôi",
-    "addNewAddress":"Thêm mới địa chỉ",
-    "notHaveAddresses":"Bạn chưa có địa chỉ đã lưu!",
-    "country":"Quốc gia",
-    "city":"Thành phố",
-    "choose_Your_Country":"Chọn quốc gia của bạn",
-    "choose_Your_City":"Chọn thành phố của bạn",
-    "address_1":"Địa Chỉ 1",
-    "address_2":"Địa Chỉ 2",
-    "zipCode":"Mã bưu điện",
-    "address_Type":"Loại địa chỉ",
-    "choose_your_address_type":"Chọn loại địa chỉ của bạn"
-
-
+  "profile": {
+    "profile": "Hồ sơ",
+    "orders": "Đơn hàng",
+    "refunds": "Hoàn trả",
+    "inbox": "Tin nhắn",
+    "track_order": "Theo dõi đơn hàng",
+    "change_password": "Thay đổi mật khẩu",
+    "address": "Địa chỉ",
+    "admin": "Quản Trị Viên",
+    "logout": "Đăng xuất",
+    "name": "Họ và Tên",
+    "phoneNumber": "Số Điện Thoại",
+    "password": "Mật khẩu",
+    "update": "Cập nhật",
+    "enter_Old_Password": "Nhập mật khẩu cũ của bạn",
+    "enter_New_Password": "Nhập mật khẩu mới của bạn",
+    "enter_Confirm_Password": "Xác nhận mật khẩu mới",
+    "myAddressed": "Địa chỉ của tôi",
+    "addNewAddress": "Thêm mới địa chỉ",
+    "notHaveAddresses": "Bạn chưa có địa chỉ đã lưu!",
+    "country": "Quốc gia",
+    "city": "Thành phố",
+    "choose_Your_Country": "Chọn quốc gia của bạn",
+    "choose_Your_City": "Chọn thành phố của bạn",
+    "address_1": "Địa Chỉ 1",
+    "address_2": "Địa Chỉ 2",
+    "zipCode": "Mã bưu điện",
+    "address_Type": "Loại địa chỉ",
+    "choose_your_address_type": "Chọn loại địa chỉ của bạn"
   },
   "login": {
     "title": "Đăng nhập vào tài khoản của bạn",
@@ -305,7 +300,7 @@
     "signup": "Đăng ký",
     "success": "Đăng nhập thành công!"
   },
-  "Shopcreate":{
+  "Shopcreate": {
     "registerTitle": "Đăng ký làm người bán",
     "shopName": "Tên cửa hàng",
     "phoneNumber": "Số điện thoại",
@@ -314,7 +309,7 @@
     "zipCode": "Mã bưu điện",
     "password": "Mật khẩu",
     "avatar": "Tải lên tệp",
-    "avatarimage":"Ảnh đại diện",
+    "avatarimage": "Ảnh đại diện",
     "rememberMe": "Ghi nhớ tôi",
     "forgotPassword": "Quên mật khẩu?",
     "submitButton": "Gửi",
@@ -323,9 +318,9 @@
   "shop": {
     "product": "Sản phẩm cửa hàng",
     "running_events": "Sự kiện đang diễn ra",
-    "no_events":"Cửa hàng này đang không có sự kiện nào diễn ra!",
+    "no_events": "Cửa hàng này đang không có sự kiện nào diễn ra!",
     "reviews": "Đánh giá cửa hàng",
-    "no_reviews":"Chưa có đánh giá nào cho cửa hàng, hãy trở thành người đánh giá đầu tiên cho cửa hàng",
+    "no_reviews": "Chưa có đánh giá nào cho cửa hàng, hãy trở thành người đánh giá đầu tiên cho cửa hàng",
     "edit_shop": "Chỉnh sửa cửa hàng",
     "logout": "Đăng xuất",
     "address": "Địa chỉ",
@@ -335,10 +330,10 @@
     "joined_on": "Tham gia vào ngày",
     "go_dashboard": "Đi đến Bảng điều khiển"
   },
- "order_details": {
+  "order_details": {
     "title": "Chi tiết đơn hàng",
     "order_id": "Mã đơn hàng",
-    "orders_list":"Danh sách đơn hàng",
+    "orders_list": "Danh sách đơn hàng",
     "placed_on": "Đặt vào ngày",
     "shipping_address": "Địa chỉ giao hàng",
     "order_status": "Trạng thái đơn hàng",
@@ -346,12 +341,13 @@
     "payment_info": "Thông tin thanh toán",
     "status": "Trạng thái",
     "total_price": "Tổng đơn hàng",
-    "write_a_letter":"Viết đánh giá"
+    "write_a_letter": "Viết đánh giá"
   },
-  "inbox":{
+  "inbox": {
     "all_message": "Tất cả tin nhắn",
-    "you":"Bạn",
-    "enter_your_message":"Vui lòng nhập tin nhắn"
+    "you": "Bạn",
+    "enter_your_message": "Vui lòng nhập tin nhắn",
+    "photo": "Hình ảnh"
   },
   "create_product_form": {
     "title": "Tạo Sản Phẩm",
@@ -448,7 +444,7 @@
     "button": {
       "update": "Cập Nhật"
     }
-  },  
+  },
   "create_event_form": {
     "title": "Tạo Sản Phẩm",
     "fields": {
@@ -491,18 +487,33 @@
       "upload_images": {
         "label": "Tải Ảnh",
         "placeholder": "Thêm ảnh sản phẩm"
-      }
-      ,
-      "start_date":{
-        "label":"Ngày bắt đầu sự kiện"
       },
-      "end_date":{
-        "label":"Ngày kết thúc sự kiện"
+      "start_date": {
+        "label": "Ngày bắt đầu sự kiện"
+      },
+      "end_date": {
+        "label": "Ngày kết thúc sự kiện"
       }
     },
     "button": {
       "create": "Tạo"
     }
+  },
+  "coupon": {
+    "create_coupon_code": "Tạo mã giảm giá",
+    "coupon_code": "Mã giảm giá",
+    "value": "Giá trị",
+    "no_rows": "Không có hàng nào",
+    "name": "Tên",
+    "discount_percentage": "Phần trăm giảm giá",
+    "min_amount": "Số tiền tối thiểu",
+    "max_amount": "Số tiền tối đa",
+    "selected_product": "Sản phẩm được chọn",
+    "enter_coupon_code_name": "Nhập tên mã giảm giá của bạn...",
+    "enter_coupon_code_value": "Nhập giá trị mã giảm giá của bạn...",
+    "enter_min_amount": "Nhập số tiền tối thiểu...",
+    "enter_max_amount": "Nhập số tiền tối đa...",
+    "choose_selected_product": "Chọn một sản phẩm",
+    "create_button": "Tạo"
   }
-  
 }

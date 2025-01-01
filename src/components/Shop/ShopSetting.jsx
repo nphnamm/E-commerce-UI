@@ -6,6 +6,7 @@ import styles from "../../styles/styles";
 import axios from "axios";
 import { loadSeller } from "../../redux/actions/user";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const ShopSettings = () => {
   const { seller } = useSelector((state) => state.seller);
@@ -17,7 +18,7 @@ const ShopSettings = () => {
   const [address, setAddress] = useState(seller && seller.address);
   const [phoneNumber, setPhoneNumber] = useState(seller && seller.phoneNumber);
   const [zipCode, setZipcode] = useState(seller && seller.zipCode);
-
+  const { t } = useTranslation()
   const dispatch = useDispatch();
 
   // const handleImage = async (e) => {
@@ -126,7 +127,9 @@ const ShopSettings = () => {
         >
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Name</label>
+              <label className="block pb-2">
+                {t("dashboard.shop_name")}
+              </label>
             </div>
             <input
               type="name"
@@ -139,15 +142,18 @@ const ShopSettings = () => {
           </div>
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop description</label>
+              <label className="block pb-2">
+                {t("dashboard.shop_description")}
+
+              </label>
             </div>
             <input
               type="name"
-              placeholder={`${
-                seller?.description
+              placeholder={`${seller?.description
                   ? seller.description
-                  : "Enter your shop description"
-              }`}
+                  : t("dashboard.enter_shop_description")
+
+                }`}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
@@ -155,7 +161,10 @@ const ShopSettings = () => {
           </div>
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Address</label>
+              <label className="block pb-2">
+              {t("dashboard.shop_address")}
+         
+              </label>
             </div>
             <input
               type="name"
@@ -169,7 +178,12 @@ const ShopSettings = () => {
 
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Phone Number</label>
+              <label className="block pb-2">
+                
+              {t("dashboard.shop_phone_number")}
+
+
+              </label>
             </div>
             <input
               type="number"
@@ -183,7 +197,10 @@ const ShopSettings = () => {
 
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <div className="w-full pl-[3%]">
-              <label className="block pb-2">Shop Zip Code</label>
+              <label className="block pb-2">
+              {t("dashboard.shop_zip_code")}
+                
+                </label>
             </div>
             <input
               type="number"
@@ -198,7 +215,7 @@ const ShopSettings = () => {
           <div className="w-[100%] flex items-center flex-col 800px:w-[50%] mt-5">
             <input
               type="submit"
-              value="Update Shop"
+              value={t("dashboard.update_shop")}
               className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
               required
               readOnly

@@ -10,6 +10,8 @@ import { TfiGallery } from "react-icons/tfi";
 import socketIO from "socket.io-client";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime'; // Import plugin
+import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 dayjs.extend(relativeTime); 
 const ENDPOINT = "https://e-commerce-socket-s6ww.onrender.com";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
@@ -27,7 +29,7 @@ const DashboardMessages = () => {
   const [images, setImages] = useState();
   const [open, setOpen] = useState(false);
   const scrollRef = useRef(null);
-
+  const {t} = useTranslation()
   useEffect(() => {
     socketId.on("getMessage", (data) => {
       setArrivalMessage({
@@ -197,7 +199,7 @@ const DashboardMessages = () => {
     await axios.put(
       `${server}/conversation/update-last-message/${currentChat._id}`,
       {
-        lastMessage: "Photo",
+        lastMessage: t("inbox.photo"),
         lastMessageId: seller._id,
       }
     );
@@ -212,7 +214,8 @@ const DashboardMessages = () => {
       {!open && (
         <>
           <h1 className="text-center text-[30px] py-3 font-Poppins">
-            All Messages
+          {t("inbox.all_message")}
+
           </h1>
           {/* All messages list */}
           {conversations &&
@@ -316,7 +319,7 @@ const MessageList = ({
         <h1 className="text-[18px]">{user?.name}</h1>
         <p className="text-[16px] text-[#000c]">
           {!isLoading && data?.lastMessageId !== user?._id
-            ? "You:"
+            ? `${t("inbox.you")}:`
             : user?.name?.split(" ")[0] + ": "}{" "}
           {data?.lastMessage}
         </p>
@@ -428,7 +431,7 @@ const SellerInbox = ({
           <input
             type="text"
             required
-            placeholder="Enter your message..."
+            placeholder={t("inbox.enter_your_message")}
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             className={`${styles.input}`}

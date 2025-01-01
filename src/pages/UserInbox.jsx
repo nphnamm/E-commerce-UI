@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import socketIO from "socket.io-client";
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime'; 
+import { useTranslation } from "react-i18next";
 dayjs.extend(relativeTime); 
 const ENDPOINT = "https://e-commerce-socket-s6ww.onrender.com";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
@@ -28,6 +29,7 @@ const UserInbox = () => {
   const [open, setOpen] = useState(false);
   const scrollRef = useRef(null);
   console.log("socket Id", socketId);
+  const {t} = useTranslation()
 
   useEffect(() => {
     socketId.on("getMessage", (data) => {
@@ -198,7 +200,7 @@ const UserInbox = () => {
     await axios.put(
       `${server}/conversation/update-last-message/${currentChat._id}`,
       {
-        lastMessage: "Photo",
+        lastMessage: t("inbox.photo"),
         lastMessageId: user._id,
       }
     );
@@ -214,7 +216,7 @@ const UserInbox = () => {
         <>
           <Header />
           <h1 className="text-center text-[30px] py-3 font-Poppins">
-            All Messages
+          {t("inbox.all_message")}
           </h1>
           {/* All messages list */}
           {conversations &&

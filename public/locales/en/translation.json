@@ -331,7 +331,18 @@
     "total_products": "Total Products",
     "ratings": "Shop Ratings",
     "joined_on": "Joined On",
-    "go_dashboard": "Go Dashboard"
+    "go_dashboard": "Go Dashboard",
+    "shop_name": "Shop Name",
+    "shop_description": "Shop Description",
+    "shop_address": "Shop Address",
+    "shop_phone_number": "Shop Phone Number",
+    "shop_zip_code": "Shop Zip Code",
+    "enter_shop_name": "Enter your shop name...",
+    "enter_shop_description": "Enter your shop description...",
+    "enter_shop_address": "Enter your shop address...",
+    "enter_shop_phone_number": "Enter your shop phone number...",
+    "enter_shop_zip_code": "Enter your shop zip code...",
+    "update_shop_button": "Update Shop"
   },
   "order_details": {
     "title": "Order Details",
@@ -349,12 +360,14 @@
     "submit": "Submit",
     "paymentInfor": "Payment Info",
     "give_a_refund": "Give a refund",
-    "send_message": "Gửi thông điệp"
+    "send_message": "Send Message"
   },
   "inbox": {
     "all_message": "All Messages",
     "you": "You",
-    "enter_your_message": "Enter your message"
+    "enter_your_message": "Enter your message",
+    "photo":"Photo"
+
   },
   "create_product_form": {
     "title": "Create Product",
@@ -515,8 +528,22 @@
     "no_withdraw":"No Withdraw Methods available!",
     "add_new":"Add new"
   },
-  "inbox":{
-    ""
+  "coupon":{
+    "create_coupon_code":"Create Coupon code",
+    "coupon_code":"Coupon Code",
+    "value":"Value",
+    "no_rows":"No rows",
+    "name": "Name",
+    "discount_percentage": "Discount Percentage",
+    "min_amount": "Min Amount",
+    "max_amount": "Max Amount",
+    "selected_product": "Selected Product",
+    "enter_coupon_code_name": "Enter your coupon code name...",
+    "enter_coupon_code_value": "Enter your coupon code value...",
+    "enter_min_amount": "Enter your coupon code min amount...",
+    "enter_max_amount": "Enter your coupon code max amount...",
+    "choose_selected_product": "Choose a selected product",
+    "create_button": "Create"
   }
   
 

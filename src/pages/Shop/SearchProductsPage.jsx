@@ -18,7 +18,7 @@ function SearchProductsPage() {
   
   return (
     <div>
-    <Header />
+    <Header activeHeading={3}/>
     {allProducts && <SearchProducts allProducts={allProducts}/>}
     <Footer />
   </div>

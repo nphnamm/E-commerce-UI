@@ -57,7 +57,7 @@ const ShopProfileData = ({ isOwner }) => {
           {isOwner && (
             <div>
               <Link to="/dashboard">
-                <div className={`${styles.button} !rounded-[4px] h-[42px]`}>
+                <div className={`${styles.button} !min-w-[200px] !rounded-[4px] h-[42px]`}>
                   <span className="text-[#fff]">{t("shop.go_dashboard")}</span>
                 </div>
               </Link>
